@@ -1064,6 +1064,36 @@
         flex-direction: column;
       }
     }
+    @media (max-width: 680px) {
+  ...
+}
+
+/* Мына жерден жаңа CSS басталады */
+.result-box.show {
+  display: block !important;
+}
+
+.option.correct {
+  border-color: rgba(22, 163, 74, 0.55) !important;
+  background: rgba(240, 253, 244, 0.9) !important;
+  color: #14532d !important;
+}
+
+.option.wrong {
+  border-color: rgba(239, 68, 68, 0.45) !important;
+  background: rgba(254, 242, 242, 0.9) !important;
+  color: #7f1d1d !important;
+}
+
+.score-line {
+  margin-bottom: 12px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(22, 163, 74, 0.15);
+  font-weight: 950;
+}
+</style>
   </style>
 </head>
 
@@ -6627,6 +6657,72 @@
       });
     });
   });
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  function checkTest(testId) {
+    const testBox = document.querySelector('[data-test="' + testId + '"]');
+    const resultBox = document.querySelector('[data-result="' + testId + '"]');
+
+    if (!testBox || !resultBox) {
+      console.log("Test or result not found:", testId);
+      return;
+    }
+
+    const questions = testBox.querySelectorAll(".question");
+    let score = 0;
+
+    questions.forEach(function (question) {
+      const correctAnswer = question.getAttribute("data-answer");
+      const selected = question.querySelector('input[type="radio"]:checked');
+
+      question.querySelectorAll(".option").forEach(function (option) {
+        option.classList.remove("correct", "wrong");
+
+        const input = option.querySelector("input");
+        if (!input) return;
+
+        if (input.value === correctAnswer) {
+          option.classList.add("correct");
+        }
+
+        if (selected && input.checked && input.value !== correctAnswer) {
+          option.classList.add("wrong");
+        }
+      });
+
+      if (selected && selected.value === correctAnswer) {
+        score++;
+      }
+    });
+
+    const oldScore = resultBox.querySelector(".score-line");
+    if (oldScore) {
+      oldScore.remove();
+    }
+
+    const scoreLine = document.createElement("div");
+    scoreLine.className = "score-line";
+    scoreLine.innerHTML =
+      '<span class="inline-lang" data-lang="kk">Нәтиже: ' + score + ' / ' + questions.length + '</span>' +
+      '<span class="inline-lang" data-lang="ru">Результат: ' + score + ' / ' + questions.length + '</span>';
+
+    resultBox.prepend(scoreLine);
+    resultBox.classList.add("show");
+
+    resultBox.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest"
+    });
+  }
+
+  document.querySelectorAll("[data-check]").forEach(function (button) {
+    button.addEventListener("click", function () {
+      const testId = button.getAttribute("data-check");
+      checkTest(testId);
+    });
+  });
+});
+</script>
 </script>
 </body>
 </html>
