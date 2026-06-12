@@ -1,0 +1,3766 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>General English Grammar | Part 1</title>
+
+  <style>
+    :root {
+      --bg-1: #fff7fb;
+      --bg-2: #f4f0ff;
+      --bg-3: #eef7ff;
+      --text: #182033;
+      --muted: #6b7280;
+      --white: #ffffff;
+      --primary: #7c3aed;
+      --primary-dark: #5b21b6;
+      --pink: #ec4899;
+      --blue: #2563eb;
+      --green: #16a34a;
+      --orange: #f97316;
+      --red: #ef4444;
+      --yellow: #facc15;
+      --card: rgba(255, 255, 255, 0.82);
+      --border: rgba(124, 58, 237, 0.16);
+      --shadow: 0 24px 70px rgba(76, 29, 149, 0.14);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(236, 72, 153, 0.18), transparent 34%),
+        radial-gradient(circle at top right, rgba(37, 99, 235, 0.16), transparent 32%),
+        linear-gradient(135deg, var(--bg-1), var(--bg-2) 48%, var(--bg-3));
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(124, 58, 237, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(124, 58, 237, 0.045) 1px, transparent 1px);
+      background-size: 34px 34px;
+      pointer-events: none;
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      width: 520px;
+      height: 520px;
+      right: -160px;
+      bottom: -180px;
+      background: radial-gradient(circle, rgba(124, 58, 237, 0.18), transparent 65%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    .page-shell {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(18px);
+      background: rgba(255, 255, 255, 0.72);
+      border-bottom: 1px solid rgba(124, 58, 237, 0.12);
+    }
+
+    .topbar-inner {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 220px;
+    }
+
+    .brand-logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      background:
+        linear-gradient(135deg, var(--primary), var(--pink));
+      box-shadow: 0 14px 28px rgba(124, 58, 237, 0.25);
+    }
+
+    .brand-title {
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-subtitle {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 3px;
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .language-switch {
+      display: flex;
+      gap: 6px;
+      padding: 6px;
+      border: 1px solid rgba(124, 58, 237, 0.14);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.78);
+      box-shadow: 0 10px 30px rgba(76, 29, 149, 0.08);
+    }
+
+    .lang-btn {
+      border: 0;
+      cursor: pointer;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--muted);
+      font-weight: 800;
+      font-size: 13px;
+      transition: 0.25s ease;
+    }
+
+    .lang-btn.active {
+      color: white;
+      background: linear-gradient(135deg, var(--primary), var(--pink));
+      box-shadow: 0 10px 24px rgba(124, 58, 237, 0.22);
+    }
+
+    .ghost-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(124, 58, 237, 0.14);
+      background: rgba(255, 255, 255, 0.64);
+      color: var(--primary-dark);
+      font-weight: 800;
+      font-size: 13px;
+      transition: 0.25s ease;
+    }
+
+    .ghost-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(76, 29, 149, 0.12);
+    }
+
+    .hero {
+      padding: 56px 0 28px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      padding: 42px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(124, 58, 237, 0.14);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: -80px -90px auto auto;
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle, rgba(236, 72, 153, 0.18), transparent 68%);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: rgba(124, 58, 237, 0.09);
+      color: var(--primary-dark);
+      font-weight: 900;
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 6vw, 76px);
+      line-height: 0.94;
+      letter-spacing: -0.07em;
+      max-width: 820px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary), var(--pink));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-lead {
+      max-width: 760px;
+      color: #4b5563;
+      font-size: 18px;
+      line-height: 1.75;
+      margin-top: 22px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 48px;
+      padding: 13px 18px;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 14px;
+      border: 0;
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
+
+    .primary-btn {
+      color: white;
+      background: linear-gradient(135deg, var(--primary), var(--pink));
+      box-shadow: 0 16px 34px rgba(124, 58, 237, 0.24);
+    }
+
+    .secondary-btn {
+      color: var(--primary-dark);
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(124, 58, 237, 0.16);
+    }
+
+    .primary-btn:hover,
+    .secondary-btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .stats-panel {
+      display: grid;
+      gap: 14px;
+    }
+
+    .stat-card {
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(124, 58, 237, 0.14);
+      box-shadow: 0 18px 48px rgba(76, 29, 149, 0.1);
+    }
+
+    .stat-number {
+      font-size: 36px;
+      font-weight: 950;
+      letter-spacing: -0.06em;
+      color: var(--primary-dark);
+    }
+
+    .stat-label {
+      color: #4b5563;
+      line-height: 1.55;
+      margin-top: 6px;
+      font-weight: 650;
+    }
+
+    .section {
+      padding: 36px 0;
+      scroll-margin-top: 150px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .section-kicker {
+      color: var(--primary-dark);
+      font-weight: 950;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 4vw, 48px);
+      line-height: 1.05;
+      letter-spacing: -0.055em;
+    }
+
+    .section-desc {
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 720px;
+      margin-top: 12px;
+    }
+
+    .rules-track-wrap {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      background: rgba(255, 255, 255, 0.5);
+      border: 1px solid rgba(124, 58, 237, 0.12);
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+
+    .rules-track {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(230px, 1fr));
+      gap: 16px;
+    }
+
+    .rule-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 250px;
+      border: 1px solid rgba(124, 58, 237, 0.14);
+      border-radius: 26px;
+      padding: 22px;
+      background: rgba(255, 255, 255, 0.82);
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
+
+    .rule-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 22px 54px rgba(76, 29, 149, 0.16);
+    }
+
+    .rule-card::after {
+      content: "";
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      right: -56px;
+      top: -60px;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(124, 58, 237, 0.18), transparent 66%);
+    }
+
+    .rule-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 20px;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: 24px;
+      font-weight: 950;
+      margin-bottom: 18px;
+      box-shadow: 0 14px 28px rgba(76, 29, 149, 0.18);
+    }
+
+    .rule-card:nth-child(1) .rule-icon {
+      background: linear-gradient(135deg, var(--pink), var(--primary));
+    }
+
+    .rule-card:nth-child(2) .rule-icon {
+      background: linear-gradient(135deg, var(--blue), var(--primary));
+    }
+
+    .rule-card:nth-child(3) .rule-icon {
+      background: linear-gradient(135deg, var(--green), var(--blue));
+    }
+
+    .rule-card:nth-child(4) .rule-icon {
+      background: linear-gradient(135deg, var(--orange), var(--pink));
+    }
+
+    .rule-card h3 {
+      font-size: 26px;
+      letter-spacing: -0.045em;
+      margin-bottom: 5px;
+    }
+
+    .rule-mini {
+      color: var(--primary-dark);
+      font-weight: 900;
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    .rule-card p {
+      color: #4b5563;
+      line-height: 1.65;
+      font-size: 15px;
+    }
+
+    .rule-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(124, 58, 237, 0.08);
+      color: var(--primary-dark);
+      font-weight: 850;
+      font-size: 12px;
+    }
+
+    .sticky-nav {
+      position: sticky;
+      top: 74px;
+      z-index: 900;
+      padding: 10px 0;
+      backdrop-filter: blur(18px);
+      background: rgba(255, 247, 251, 0.76);
+      border-top: 1px solid rgba(124, 58, 237, 0.08);
+      border-bottom: 1px solid rgba(124, 58, 237, 0.1);
+    }
+
+    .nav-scroll {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 2px;
+      scrollbar-width: none;
+    }
+
+    .nav-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-item {
+      flex: 0 0 auto;
+      min-width: 132px;
+      border-radius: 18px;
+      padding: 11px 14px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(124, 58, 237, 0.13);
+      transition: 0.25s ease;
+    }
+
+    .nav-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 26px rgba(76, 29, 149, 0.1);
+    }
+
+    .nav-main {
+      display: block;
+      font-size: 14px;
+      font-weight: 950;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-sub {
+      display: block;
+      margin-top: 4px;
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.2;
+      font-weight: 700;
+    }
+
+    .content-card {
+      border-radius: var(--radius-xl);
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(124, 58, 237, 0.14);
+      box-shadow: var(--shadow);
+    }
+
+    .grammar-section {
+      padding: 42px 0;
+      scroll-margin-top: 150px;
+    }
+
+    .grammar-hero {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 20px;
+      align-items: stretch;
+      margin-bottom: 22px;
+    }
+
+    .grammar-title-card,
+    .grammar-info-card {
+      border-radius: var(--radius-xl);
+      padding: 28px;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(124, 58, 237, 0.14);
+      box-shadow: 0 18px 44px rgba(76, 29, 149, 0.1);
+    }
+
+    .grammar-title-card h2 {
+      font-size: clamp(34px, 5vw, 62px);
+      line-height: 0.95;
+      letter-spacing: -0.065em;
+    }
+
+    .grammar-title-card .translation {
+      margin-top: 12px;
+      color: var(--primary-dark);
+      font-weight: 950;
+      font-size: 18px;
+    }
+
+    .grammar-info-card p {
+      color: #4b5563;
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    .subunit-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .subunit-chip {
+      display: block;
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(124, 58, 237, 0.07);
+      border: 1px solid rgba(124, 58, 237, 0.12);
+      transition: 0.25s ease;
+    }
+
+    .subunit-chip:hover {
+      transform: translateY(-3px);
+      background: rgba(124, 58, 237, 0.1);
+    }
+
+    .subunit-chip strong {
+      display: block;
+      font-size: 13px;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .subunit-chip span {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    .subunit {
+      margin-top: 24px;
+      border-radius: var(--radius-xl);
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(124, 58, 237, 0.14);
+      box-shadow: 0 18px 48px rgba(76, 29, 149, 0.1);
+      overflow: hidden;
+      scroll-margin-top: 155px;
+    }
+
+    .subunit-header {
+      padding: 24px 26px;
+      background:
+        linear-gradient(135deg, rgba(124, 58, 237, 0.11), rgba(236, 72, 153, 0.09));
+      border-bottom: 1px solid rgba(124, 58, 237, 0.12);
+    }
+
+    .subunit-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--primary-dark);
+      font-size: 12px;
+      font-weight: 950;
+    }
+
+    .subunit-header h3 {
+      font-size: clamp(25px, 3vw, 38px);
+      letter-spacing: -0.05em;
+      line-height: 1.05;
+    }
+
+    .subunit-translation {
+      color: var(--muted);
+      margin-top: 8px;
+      font-weight: 750;
+    }
+
+    .subunit-body {
+      padding: 26px;
+    }
+
+    .lesson-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .lesson-box {
+      border-radius: 22px;
+      padding: 22px;
+      border: 1px solid rgba(124, 58, 237, 0.12);
+      background: rgba(255, 255, 255, 0.74);
+    }
+
+    .lesson-box h4 {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 16px;
+      margin-bottom: 12px;
+      color: var(--primary-dark);
+    }
+
+    .lesson-box p,
+    .lesson-box li {
+      color: #4b5563;
+      line-height: 1.75;
+      font-size: 15px;
+    }
+
+    .lesson-box ul {
+      padding-left: 20px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .formula-box {
+      margin: 18px 0;
+      padding: 18px;
+      border-radius: 22px;
+      background:
+        linear-gradient(135deg, rgba(124, 58, 237, 0.08), rgba(37, 99, 235, 0.07));
+      border: 1px dashed rgba(124, 58, 237, 0.28);
+      font-weight: 900;
+      color: var(--primary-dark);
+      line-height: 1.7;
+    }
+
+    .example-box {
+      margin-top: 14px;
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(248, 250, 252, 0.84);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+    }
+
+    .example-sentence {
+      font-size: 18px;
+      line-height: 1.75;
+      color: #111827;
+      margin-bottom: 8px;
+    }
+
+    .example-note {
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    .mark {
+      display: inline-block;
+      padding: 1px 7px 3px;
+      border-radius: 9px;
+      font-weight: 900;
+    }
+
+    .mark.noun {
+      background: rgba(239, 68, 68, 0.16);
+      color: #b91c1c;
+      box-shadow: inset 0 -2px 0 rgba(239, 68, 68, 0.26);
+    }
+
+    .mark.plural {
+      background: rgba(37, 99, 235, 0.15);
+      color: #1d4ed8;
+      box-shadow: inset 0 -2px 0 rgba(37, 99, 235, 0.24);
+    }
+
+    .mark.countable {
+      background: rgba(22, 163, 74, 0.16);
+      color: #15803d;
+      box-shadow: inset 0 -2px 0 rgba(22, 163, 74, 0.24);
+    }
+
+    .mark.uncountable {
+      background: rgba(249, 115, 22, 0.16);
+      color: #c2410c;
+      box-shadow: inset 0 -2px 0 rgba(249, 115, 22, 0.24);
+    }
+
+    .mark.possessive {
+      background: rgba(124, 58, 237, 0.16);
+      color: #5b21b6;
+      box-shadow: inset 0 -2px 0 rgba(124, 58, 237, 0.24);
+    }
+
+    .mark.article {
+      background: rgba(236, 72, 153, 0.16);
+      color: #be185d;
+      box-shadow: inset 0 -2px 0 rgba(236, 72, 153, 0.24);
+    }
+
+    .mark.adjective {
+      background: rgba(14, 165, 233, 0.16);
+      color: #0369a1;
+      box-shadow: inset 0 -2px 0 rgba(14, 165, 233, 0.24);
+    }
+
+    .mark.pronoun {
+      background: rgba(168, 85, 247, 0.16);
+      color: #7e22ce;
+      box-shadow: inset 0 -2px 0 rgba(168, 85, 247, 0.24);
+    }
+
+    .mistake-box {
+      margin-top: 18px;
+      border-radius: 22px;
+      padding: 18px;
+      background: rgba(254, 242, 242, 0.75);
+      border: 1px solid rgba(239, 68, 68, 0.18);
+    }
+
+    .mistake-box h4 {
+      color: #b91c1c;
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+
+    .mistake-box p {
+      color: #7f1d1d;
+      line-height: 1.65;
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    .test-box {
+      margin-top: 20px;
+      border-radius: var(--radius-xl);
+      padding: 22px;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(124, 58, 237, 0.14);
+    }
+
+    .test-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .test-header h4 {
+      font-size: 20px;
+      letter-spacing: -0.03em;
+    }
+
+    .mini-badge {
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(124, 58, 237, 0.08);
+      color: var(--primary-dark);
+      font-weight: 900;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .question {
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(248, 250, 252, 0.84);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      margin-bottom: 14px;
+    }
+
+    .question p {
+      line-height: 1.6;
+      font-weight: 850;
+      margin-bottom: 12px;
+    }
+
+    .options {
+      display: grid;
+      gap: 9px;
+    }
+
+    .option {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(124, 58, 237, 0.12);
+      background: rgba(255, 255, 255, 0.72);
+      cursor: pointer;
+      transition: 0.2s ease;
+      color: #374151;
+      line-height: 1.5;
+      font-weight: 650;
+    }
+
+    .option:hover {
+      border-color: rgba(124, 58, 237, 0.34);
+      transform: translateY(-1px);
+    }
+
+    .option input {
+      margin-top: 4px;
+      accent-color: var(--primary);
+    }
+
+    .check-btn {
+      margin-top: 14px;
+      border: 0;
+      cursor: pointer;
+      border-radius: 999px;
+      padding: 13px 18px;
+      color: white;
+      background: linear-gradient(135deg, var(--primary), var(--pink));
+      font-weight: 950;
+      box-shadow: 0 14px 30px rgba(124, 58, 237, 0.2);
+    }
+
+    .result-box {
+      display: none;
+      margin-top: 16px;
+      border-radius: 20px;
+      padding: 18px;
+      background: rgba(240, 253, 244, 0.78);
+      border: 1px solid rgba(22, 163, 74, 0.18);
+    }
+
+    .result-box.show {
+      display: block;
+    }
+
+    .result-box h5 {
+      color: #166534;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    .result-box p,
+    .result-box li {
+      color: #14532d;
+      line-height: 1.65;
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    .result-box ol {
+      padding-left: 20px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .lang-content {
+      display: none;
+    }
+
+    body.lang-kk .lang-content[data-lang="kk"] {
+      display: block;
+    }
+
+    body.lang-ru .lang-content[data-lang="ru"] {
+      display: block;
+    }
+
+    .inline-lang {
+      display: none;
+    }
+
+    body.lang-kk .inline-lang[data-lang="kk"] {
+      display: inline;
+    }
+
+    body.lang-ru .inline-lang[data-lang="ru"] {
+      display: inline;
+    }
+
+    .block-lang {
+      display: none;
+    }
+
+    body.lang-kk .block-lang[data-lang="kk"] {
+      display: block;
+    }
+
+    body.lang-ru .block-lang[data-lang="ru"] {
+      display: block;
+    }
+
+    .footer-space {
+      height: 40px;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .grammar-hero,
+      .lesson-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .rules-track {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        padding-bottom: 4px;
+      }
+
+      .rules-track::-webkit-scrollbar {
+        display: none;
+      }
+
+      .rule-card {
+        flex: 0 0 82%;
+        scroll-snap-align: start;
+      }
+
+      .subunit-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 680px) {
+      .page-shell,
+      .topbar-inner,
+      .nav-scroll {
+        width: min(100% - 22px, var(--max));
+      }
+
+      .topbar-inner {
+        min-height: auto;
+        padding: 12px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .brand {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .top-actions {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .ghost-link {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 28px;
+      }
+
+      .hero-card,
+      .content-card,
+      .grammar-title-card,
+      .grammar-info-card {
+        padding: 24px;
+        border-radius: 24px;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .hero-lead {
+        font-size: 16px;
+      }
+
+      .section-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .rule-card {
+        flex-basis: 88%;
+      }
+
+      .subunit-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .subunit-body {
+        padding: 18px;
+      }
+
+      .subunit-header {
+        padding: 20px;
+      }
+
+      .test-header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body class="lang-kk">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#top" aria-label="Go to top">
+        <div class="brand-logo">GE</div>
+        <div>
+          <div class="brand-title">General English</div>
+          <div class="brand-subtitle">
+            <span class="inline-lang" data-lang="kk">Магистратураға дайындық</span>
+            <span class="inline-lang" data-lang="ru">Подготовка к магистратуре</span>
+          </div>
+        </div>
+      </a>
+
+      <div class="top-actions">
+        <div class="language-switch" aria-label="Language switcher">
+          <button class="lang-btn active" type="button" data-set-lang="kk">Қазақша</button>
+          <button class="lang-btn" type="button" data-set-lang="ru">Русский</button>
+        </div>
+
+        <a class="ghost-link" href="#rules-map">
+          <span>Grammar Map</span>
+          <span>↓</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="page-shell hero-grid">
+        <div class="hero-card">
+          <div class="eyebrow">
+            <span>Part 1</span>
+            <span>•</span>
+            <span>Noun · Article · Adjective · Pronoun</span>
+          </div>
+
+          <h1>
+            General English <br />
+            <span class="gradient-text">Grammar Trainer</span>
+          </h1>
+
+          <div class="lang-content" data-lang="kk">
+            <p class="hero-lead">
+              Бұл сайт магистратураға түсу емтиханындағы лексика-грамматикалық бөлімге дайындалуға арналған.
+              Бірінші бөлімде төрт негізгі тақырып қарастырылады: зат есім, артикль, сын есім және есімдік.
+              Әр тақырыпта ереже, мысал, белгіленген сөздер, жиі қателер және тест тапсырмалары болады.
+            </p>
+          </div>
+
+          <div class="lang-content" data-lang="ru">
+            <p class="hero-lead">
+              Этот сайт создан для подготовки к лексико-грамматической части экзамена в магистратуру.
+              В первой части изучаются четыре основные темы: существительное, артикль, прилагательное и местоимение.
+              В каждом разделе будут правила, примеры, выделенные слова, частые ошибки и тестовые задания.
+            </p>
+          </div>
+
+          <div class="hero-buttons">
+            <a class="primary-btn" href="#rules-map">
+              <span class="inline-lang" data-lang="kk">Бастау</span>
+              <span class="inline-lang" data-lang="ru">Начать</span>
+              <span>→</span>
+            </a>
+
+            <a class="secondary-btn" href="#noun">
+              <span>Noun</span>
+              <span>↓</span>
+            </a>
+          </div>
+        </div>
+
+        <aside class="stats-panel">
+          <div class="stat-card">
+            <div class="stat-number">4</div>
+            <div class="stat-label">
+              <span class="inline-lang" data-lang="kk">бір сайттағы негізгі grammar rules</span>
+              <span class="inline-lang" data-lang="ru">основных grammar rules на этом сайте</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-number">A1–B1</div>
+            <div class="stat-label">
+              <span class="inline-lang" data-lang="kk">ресми спецификациядағы деңгейлерге сәйкес</span>
+              <span class="inline-lang" data-lang="ru">по уровням из официальной спецификации</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-number">5×</div>
+            <div class="stat-label">
+              <span class="inline-lang" data-lang="kk">әр sub-unit соңында жеке тесттер</span>
+              <span class="inline-lang" data-lang="ru">отдельные тесты после каждого sub-unit</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="rules-map">
+      <div class="page-shell">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">
+              <span class="inline-lang" data-lang="kk">Сайт картасы</span>
+              <span class="inline-lang" data-lang="ru">Карта сайта</span>
+            </div>
+
+            <h2 class="section-title">
+              <span class="inline-lang" data-lang="kk">Бұл сайтта өтетін 4 ереже</span>
+              <span class="inline-lang" data-lang="ru">4 правила на этом сайте</span>
+            </h2>
+
+            <p class="section-desc">
+              <span class="inline-lang" data-lang="kk">
+                Карточканы басқанда, сайт бірден сол бөлімге түседі. Телефонда карточкаларды оңға-солға сырғытып көруге болады.
+              </span>
+              <span class="inline-lang" data-lang="ru">
+                Нажмите на карточку, и сайт плавно перейдёт к нужному разделу. На телефоне карточки можно листать свайпом.
+              </span>
+            </p>
+          </div>
+        </div>
+
+        <div class="rules-track-wrap">
+          <div class="rules-track">
+            <a class="rule-card" href="#noun">
+              <div class="rule-icon">N</div>
+              <h3>Noun</h3>
+              <div class="rule-mini">
+                <span class="inline-lang" data-lang="kk">Зат есім</span>
+                <span class="inline-lang" data-lang="ru">Существительное</span>
+              </div>
+              <p>
+                <span class="inline-lang" data-lang="kk">
+                  Адамды, затты, орынды, ойды немесе сезімді білдіретін сөздер.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  Слова, которые называют человека, предмет, место, идею или чувство.
+                </span>
+              </p>
+              <div class="rule-meta">
+                <span class="pill">A1</span>
+                <span class="pill">5 sub-units</span>
+                <span class="pill">Tests</span>
+              </div>
+            </a>
+
+            <a class="rule-card" href="#article">
+              <div class="rule-icon">A</div>
+              <h3>Article</h3>
+              <div class="rule-mini">
+                <span class="inline-lang" data-lang="kk">Артикль</span>
+                <span class="inline-lang" data-lang="ru">Артикль</span>
+              </div>
+              <p>
+                <span class="inline-lang" data-lang="kk">
+                  A, an, the және артикль қолданылмайтын жағдайлар.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  Использование a, an, the и случаи, когда артикль не нужен.
+                </span>
+              </p>
+              <div class="rule-meta">
+                <span class="pill">B1</span>
+                <span class="pill">6 sub-units</span>
+                <span class="pill">Tests</span>
+              </div>
+            </a>
+
+            <a class="rule-card" href="#adjective">
+              <div class="rule-icon">Adj</div>
+              <h3>Adjective</h3>
+              <div class="rule-mini">
+                <span class="inline-lang" data-lang="kk">Сын есім</span>
+                <span class="inline-lang" data-lang="ru">Прилагательное</span>
+              </div>
+              <p>
+                <span class="inline-lang" data-lang="kk">
+                  Заттың сапасын, белгісін, түрін және салыстыру дәрежесін көрсетеді.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  Показывает качество, признак, вид предмета и степени сравнения.
+                </span>
+              </p>
+              <div class="rule-meta">
+                <span class="pill">A1–B1</span>
+                <span class="pill">5 sub-units</span>
+                <span class="pill">Tests</span>
+              </div>
+            </a>
+
+            <a class="rule-card" href="#pronoun">
+              <div class="rule-icon">P</div>
+              <h3>Pronoun</h3>
+              <div class="rule-mini">
+                <span class="inline-lang" data-lang="kk">Есімдік</span>
+                <span class="inline-lang" data-lang="ru">Местоимение</span>
+              </div>
+              <p>
+                <span class="inline-lang" data-lang="kk">
+                  Зат есімнің орнына қолданылып, адамды, затты немесе ұғымды алмастырады.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  Заменяет существительное и указывает на человека, предмет или понятие.
+                </span>
+              </p>
+              <div class="rule-meta">
+                <span class="pill">A1–A2</span>
+                <span class="pill">6 sub-units</span>
+                <span class="pill">Tests</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="sticky-nav" aria-label="Grammar navigation">
+      <div class="nav-scroll">
+        <a class="nav-item" href="#rules-map">
+          <span class="nav-main">Overview</span>
+          <span class="nav-sub">
+            <span class="inline-lang" data-lang="kk">Жалпы карта</span>
+            <span class="inline-lang" data-lang="ru">Общая карта</span>
+          </span>
+        </a>
+
+        <a class="nav-item" href="#noun">
+          <span class="nav-main">Noun</span>
+          <span class="nav-sub">
+            <span class="inline-lang" data-lang="kk">Зат есім</span>
+            <span class="inline-lang" data-lang="ru">Существительное</span>
+          </span>
+        </a>
+
+        <a class="nav-item" href="#article">
+          <span class="nav-main">Article</span>
+          <span class="nav-sub">
+            <span class="inline-lang" data-lang="kk">Артикль</span>
+            <span class="inline-lang" data-lang="ru">Артикль</span>
+          </span>
+        </a>
+
+        <a class="nav-item" href="#adjective">
+          <span class="nav-main">Adjective</span>
+          <span class="nav-sub">
+            <span class="inline-lang" data-lang="kk">Сын есім</span>
+            <span class="inline-lang" data-lang="ru">Прилагательное</span>
+          </span>
+        </a>
+
+        <a class="nav-item" href="#pronoun">
+          <span class="nav-main">Pronoun</span>
+          <span class="nav-sub">
+            <span class="inline-lang" data-lang="kk">Есімдік</span>
+            <span class="inline-lang" data-lang="ru">Местоимение</span>
+          </span>
+        </a>
+
+        <a class="nav-item" href="#final-test">
+          <span class="nav-main">Final Test</span>
+          <span class="nav-sub">
+            <span class="inline-lang" data-lang="kk">Қорытынды тест</span>
+            <span class="inline-lang" data-lang="ru">Итоговый тест</span>
+          </span>
+        </a>
+      </div>
+    </nav>
+    <section class="grammar-section" id="noun">
+      <div class="page-shell">
+        <div class="grammar-hero">
+          <div class="grammar-title-card">
+            <div class="section-kicker">Rule 1 · A1</div>
+            <h2>Noun</h2>
+            <div class="translation">
+              <span class="inline-lang" data-lang="kk">Зат есім</span>
+              <span class="inline-lang" data-lang="ru">Существительное</span>
+            </div>
+          </div>
+
+          <div class="grammar-info-card">
+            <div class="lang-content" data-lang="kk">
+              <p>
+                Бұл бөлімде зат есім толық қарастырылады. Зат есім адамды, затты, орынды,
+                жануарды, ойды немесе сезімді білдіреді. Емтиханда зат есімнің жекеше және
+                көпше түрі, саналатын және саналмайтын түрі, тәуелдік формасы және сөйлемдегі
+                қызметі жиі тексеріледі.
+              </p>
+            </div>
+
+            <div class="lang-content" data-lang="ru">
+              <p>
+                В этом разделе подробно изучается существительное. Существительное называет
+                человека, предмет, место, животное, идею или чувство. На экзамене часто проверяются
+                единственное и множественное число, исчисляемые и неисчисляемые существительные,
+                притяжательная форма и роль существительного в предложении.
+              </p>
+            </div>
+
+            <div class="subunit-grid">
+              <a class="subunit-chip" href="#noun-overview">
+                <strong>What is a noun?</strong>
+                <span>
+                  <span class="inline-lang" data-lang="kk">Зат есім деген не?</span>
+                  <span class="inline-lang" data-lang="ru">Что такое существительное?</span>
+                </span>
+              </a>
+
+              <a class="subunit-chip" href="#noun-singular-plural">
+                <strong>Singular & Plural</strong>
+                <span>
+                  <span class="inline-lang" data-lang="kk">Жекеше және көпше түр</span>
+                  <span class="inline-lang" data-lang="ru">Единственное и множественное число</span>
+                </span>
+              </a>
+
+              <a class="subunit-chip" href="#noun-countable">
+                <strong>Countable & Uncountable</strong>
+                <span>
+                  <span class="inline-lang" data-lang="kk">Саналатын және саналмайтын</span>
+                  <span class="inline-lang" data-lang="ru">Исчисляемые и неисчисляемые</span>
+                </span>
+              </a>
+
+              <a class="subunit-chip" href="#noun-possessive">
+                <strong>Possessive Case</strong>
+                <span>
+                  <span class="inline-lang" data-lang="kk">Тәуелдік форма</span>
+                  <span class="inline-lang" data-lang="ru">Притяжательная форма</span>
+                </span>
+              </a>
+
+              <a class="subunit-chip" href="#noun-functions">
+                <strong>Functions in a Sentence</strong>
+                <span>
+                  <span class="inline-lang" data-lang="kk">Сөйлемдегі қызметі</span>
+                  <span class="inline-lang" data-lang="ru">Роль в предложении</span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <article class="subunit" id="noun-overview">
+          <div class="subunit-header">
+            <div class="subunit-label">Noun · Sub-unit 1</div>
+            <h3>What is a noun?</h3>
+            <div class="subunit-translation">
+              <span class="inline-lang" data-lang="kk">Зат есім деген не?</span>
+              <span class="inline-lang" data-lang="ru">Что такое существительное?</span>
+            </div>
+          </div>
+
+          <div class="subunit-body">
+            <div class="lesson-layout">
+              <div class="lesson-box">
+                <h4>English rule</h4>
+                <p>
+                  A noun is a word that names a person, place, thing, animal, idea, feeling, or activity.
+                  Nouns can be singular or plural, countable or uncountable, and they can have different
+                  functions in a sentence.
+                </p>
+              </div>
+
+              <div class="lesson-box">
+                <h4>
+                  <span class="inline-lang" data-lang="kk">Түсіндіру</span>
+                  <span class="inline-lang" data-lang="ru">Объяснение</span>
+                </h4>
+
+                <div class="lang-content" data-lang="kk">
+                  <p>
+                    Зат есім — адамды, орынды, затты, жануарды, ойды, сезімді немесе әрекетті атайтын сөз.
+                    Мысалы: <b>student — студент</b>, <b>city — қала</b>, <b>book — кітап</b>,
+                    <b>happiness — бақыт</b>. Сөйлемде зат есім көбіне кім? не? деген сұрақтарға жауап береді.
+                  </p>
+                </div>
+
+                <div class="lang-content" data-lang="ru">
+                  <p>
+                    Существительное — это слово, которое называет человека, место, предмет, животное,
+                    идею, чувство или действие. Например: <b>student — студент</b>, <b>city — город</b>,
+                    <b>book — книга</b>, <b>happiness — счастье</b>. В предложении существительное часто
+                    отвечает на вопросы кто? что?
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="formula-box">
+              Noun = person / place / thing / animal / idea / feeling / activity
+            </div>
+
+            <div class="example-box">
+              <p class="example-sentence">
+                The <span class="mark noun">teacher</span> gave the <span class="mark noun">student</span> a <span class="mark noun">book</span>.
+              </p>
+              <p class="example-note">
+                <span class="inline-lang" data-lang="kk">
+                  Белгіленген сөздер зат есім болып тұр: teacher — мұғалім, student — студент, book — кітап.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  Выделенные слова являются существительными: teacher — учитель, student — студент, book — книга.
+                </span>
+              </p>
+            </div>
+
+            <div class="example-box">
+              <p class="example-sentence">
+                <span class="mark noun">Friendship</span> is important in every <span class="mark noun">family</span>.
+              </p>
+              <p class="example-note">
+                <span class="inline-lang" data-lang="kk">
+                  Friendship — достық, family — отбасы. Біріншісі ойды білдіреді, екіншісі адамдар тобын білдіреді.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  Friendship — дружба, family — семья. Первое слово обозначает идею, второе — группу людей.
+                </span>
+              </p>
+            </div>
+
+            <div class="mistake-box">
+              <h4>
+                <span class="inline-lang" data-lang="kk">Жиі қате</span>
+                <span class="inline-lang" data-lang="ru">Частая ошибка</span>
+              </h4>
+              <p>
+                <span class="inline-lang" data-lang="kk">
+                  Кейде оқушылар зат есімді тек көзге көрінетін зат деп ойлайды. Бірақ сезім, ой, қасиет атаулары да зат есім болады:
+                  love — махаббат, knowledge — білім, hope — үміт.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  Иногда ученики думают, что существительное — это только видимый предмет. Но чувства, идеи и качества тоже могут быть
+                  существительными: love — любовь, knowledge — знание, hope — надежда.
+                </span>
+              </p>
+            </div>
+
+            <div class="test-box" data-test="noun-overview-test">
+              <div class="test-header">
+                <h4>Mini test · What is a noun?</h4>
+                <span class="mini-badge">5 questions</span>
+              </div>
+
+              <div class="question" data-answer="b">
+                <p>1. Choose the noun in the sentence: “The doctor works in a hospital.”</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="noun-overview-1" value="a"> works</label>
+                  <label class="option"><input type="radio" name="noun-overview-1" value="b"> doctor</label>
+                  <label class="option"><input type="radio" name="noun-overview-1" value="c"> in</label>
+                  <label class="option"><input type="radio" name="noun-overview-1" value="d"> a</label>
+                  <label class="option"><input type="radio" name="noun-overview-1" value="e"> the</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="d">
+                <p>2. Which word names an idea?</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="noun-overview-2" value="a"> quickly</label>
+                  <label class="option"><input type="radio" name="noun-overview-2" value="b"> beautiful</label>
+                  <label class="option"><input type="radio" name="noun-overview-2" value="c"> write</label>
+                  <label class="option"><input type="radio" name="noun-overview-2" value="d"> freedom</label>
+                  <label class="option"><input type="radio" name="noun-overview-2" value="e"> very</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="a">
+                <p>3. Which group contains only nouns?</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="noun-overview-3" value="a"> city, teacher, knowledge</label>
+                  <label class="option"><input type="radio" name="noun-overview-3" value="b"> run, beautiful, slowly</label>
+                  <label class="option"><input type="radio" name="noun-overview-3" value="c"> in, on, under</label>
+                  <label class="option"><input type="radio" name="noun-overview-3" value="d"> happy, tall, modern</label>
+                  <label class="option"><input type="radio" name="noun-overview-3" value="e"> speaks, writes, reads</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="c">
+                <p>4. Choose the noun that names a feeling.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="noun-overview-4" value="a"> table</label>
+                  <label class="option"><input type="radio" name="noun-overview-4" value="b"> London</label>
+                  <label class="option"><input type="radio" name="noun-overview-4" value="c"> happiness</label>
+                  <label class="option"><input type="radio" name="noun-overview-4" value="d"> river</label>
+                  <label class="option"><input type="radio" name="noun-overview-4" value="e"> notebook</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="e">
+                <p>5. Choose the noun in the sentence: “Science helps people understand nature.”</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="noun-overview-5" value="a"> helps</label>
+                  <label class="option"><input type="radio" name="noun-overview-5" value="b"> understand</label>
+                  <label class="option"><input type="radio" name="noun-overview-5" value="c"> quickly</label>
+                  <label class="option"><input type="radio" name="noun-overview-5" value="d"> helps people</label>
+                  <label class="option"><input type="radio" name="noun-overview-5" value="e"> science</label>
+                </div>
+              </div>
+
+              <button class="check-btn" type="button" data-check="noun-overview-test">
+                <span class="inline-lang" data-lang="kk">Жауаптарды тексеру</span>
+                <span class="inline-lang" data-lang="ru">Проверить ответы</span>
+              </button>
+
+              <div class="result-box" data-result="noun-overview-test">
+                <h5>
+                  <span class="inline-lang" data-lang="kk">Түсіндірме</span>
+                  <span class="inline-lang" data-lang="ru">Объяснение</span>
+                </h5>
+
+                <div class="lang-content" data-lang="kk">
+                  <ol>
+                    <li><b>doctor</b> — адамды білдіреді, сондықтан зат есім.</li>
+                    <li><b>freedom</b> — еркіндік деген ойды білдіреді.</li>
+                    <li><b>city, teacher, knowledge</b> — үшеуі де зат есім.</li>
+                    <li><b>happiness</b> — бақыт деген сезімді білдіреді.</li>
+                    <li><b>science</b> — ғылым атауы, сондықтан зат есім.</li>
+                  </ol>
+                </div>
+
+                <div class="lang-content" data-lang="ru">
+                  <ol>
+                    <li><b>doctor</b> — обозначает человека, поэтому это существительное.</li>
+                    <li><b>freedom</b> — обозначает идею: свободу.</li>
+                    <li><b>city, teacher, knowledge</b> — все три слова являются существительными.</li>
+                    <li><b>happiness</b> — обозначает чувство: счастье.</li>
+                    <li><b>science</b> — название области знания, поэтому это существительное.</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="subunit" id="noun-singular-plural">
+          <div class="subunit-header">
+            <div class="subunit-label">Noun · Sub-unit 2</div>
+            <h3>Singular & Plural</h3>
+            <div class="subunit-translation">
+              <span class="inline-lang" data-lang="kk">Жекеше және көпше түр</span>
+              <span class="inline-lang" data-lang="ru">Единственное и множественное число</span>
+            </div>
+          </div>
+
+          <div class="subunit-body">
+            <div class="lesson-layout">
+              <div class="lesson-box">
+                <h4>English rule</h4>
+                <p>
+                  A singular noun names one person, thing, place, or idea. A plural noun names more than one.
+                  Most plural nouns are formed by adding -s or -es, but some nouns have irregular plural forms.
+                </p>
+              </div>
+
+              <div class="lesson-box">
+                <h4>
+                  <span class="inline-lang" data-lang="kk">Түсіндіру</span>
+                  <span class="inline-lang" data-lang="ru">Объяснение</span>
+                </h4>
+
+                <div class="lang-content" data-lang="kk">
+                  <p>
+                    Жекеше түр бір ғана адамды немесе затты білдіреді. Көпше түр екі немесе одан көп адамды,
+                    затты, орынды білдіреді. Көп жағдайда сөзге <b>-s</b> немесе <b>-es</b> жалғанады:
+                    book — books, class — classes. Бірақ кейбір сөздер өзгеше өзгереді: child — children.
+                  </p>
+                </div>
+
+                <div class="lang-content" data-lang="ru">
+                  <p>
+                    Единственное число обозначает одного человека или один предмет. Множественное число обозначает
+                    два и более. Чаще всего добавляется <b>-s</b> или <b>-es</b>: book — books, class — classes.
+                    Но некоторые слова меняются по-особому: child — children.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="formula-box">
+              one book → two books · one box → two boxes · one city → two cities · one child → two children
+            </div>
+
+            <div class="lesson-layout">
+              <div class="lesson-box">
+                <h4>
+                  <span class="inline-lang" data-lang="kk">Негізгі көпше түр ережелері</span>
+                  <span class="inline-lang" data-lang="ru">Основные правила множественного числа</span>
+                </h4>
+                <ul>
+                  <li><b>-s:</b> book → books, student → students</li>
+                  <li><b>-es:</b> box → boxes, watch → watches, dish → dishes</li>
+                  <li><b>consonant + y:</b> city → cities, baby → babies</li>
+                  <li><b>vowel + y:</b> boy → boys, key → keys</li>
+                  <li><b>-f / -fe:</b> knife → knives, wife → wives</li>
+                  <li><b>irregular:</b> man → men, woman → women, child → children</li>
+                  <li><b>same form:</b> sheep → sheep, fish → fish</li>
+                </ul>
+              </div>
+
+              <div class="lesson-box">
+                <h4>
+                  <span class="inline-lang" data-lang="kk">Емтиханда қалай кездеседі?</span>
+                  <span class="inline-lang" data-lang="ru">Как встречается на экзамене?</span>
+                </h4>
+                <div class="lang-content" data-lang="kk">
+                  <p>
+                    Тестте көбіне бос орынға дұрыс көпше түрді қою керек болады. Әсіресе
+                    <b>-y</b>, <b>-f</b>, <b>-es</b> және дұрыс емес көпше түрлер жиі шатастырады.
+                  </p>
+                </div>
+                <div class="lang-content" data-lang="ru">
+                  <p>
+                    В тесте часто нужно выбрать правильную форму множественного числа. Особенно часто путают
+                    слова на <b>-y</b>, <b>-f</b>, <b>-es</b> и неправильные формы множественного числа.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="example-box">
+              <p class="example-sentence">
+                The <span class="mark noun">student</span> has three <span class="mark plural">books</span>.
+              </p>
+              <p class="example-note">
+                <span class="inline-lang" data-lang="kk">
+                  student — жекеше зат есім, books — көпше зат есім. Book сөзіне -s жалғанған.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  student — существительное в единственном числе, books — во множественном. К слову book добавлено -s.
+                </span>
+              </p>
+            </div>
+
+            <div class="example-box">
+              <p class="example-sentence">
+                Two <span class="mark plural">children</span> are playing in the garden.
+              </p>
+              <p class="example-note">
+                <span class="inline-lang" data-lang="kk">
+                  children — child сөзінің дұрыс емес көпше түрі. Childs деп айту қате.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  children — неправильная форма множественного числа от child. Форма childs неверная.
+                </span>
+              </p>
+            </div>
+
+            <div class="mistake-box">
+              <h4>
+                <span class="inline-lang" data-lang="kk">Жиі қате</span>
+                <span class="inline-lang" data-lang="ru">Частая ошибка</span>
+              </h4>
+              <p>
+                <span class="inline-lang" data-lang="kk">
+                  “One childs” немесе “two citys” деп жазуға болмайды. Дұрысы: one child, two children; one city, two cities.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  Нельзя писать “one childs” или “two citys”. Правильно: one child, two children; one city, two cities.
+                </span>
+              </p>
+            </div>
+
+            <div class="test-box" data-test="noun-singular-plural-test">
+              <div class="test-header">
+                <h4>Mini test · Singular & Plural</h4>
+                <span class="mini-badge">5 questions</span>
+              </div>
+
+              <div class="question" data-answer="c">
+                <p>1. Choose the correct plural form of “box”.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="noun-sp-1" value="a"> boxs</label>
+                  <label class="option"><input type="radio" name="noun-sp-1" value="b"> boxies</label>
+                  <label class="option"><input type="radio" name="noun-sp-1" value="c"> boxes</label>
+                  <label class="option"><input type="radio" name="noun-sp-1" value="d"> boxen</label>
+                  <label class="option"><input type="radio" name="noun-sp-1" value="e"> box</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="d">
+                <p>2. Choose the correct plural form of “city”.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="noun-sp-2" value="a"> citys</label>
+                  <label class="option"><input type="radio" name="noun-sp-2" value="b"> cityes</label>
+                  <label class="option"><input type="radio" name="noun-sp-2" value="c"> citties</label>
+                  <label class="option"><input type="radio" name="noun-sp-2" value="d"> cities</label>
+                  <label class="option"><input type="radio" name="noun-sp-2" value="e"> city</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="a">
+                <p>3. Choose the correct sentence.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="noun-sp-3" value="a"> The children are in the classroom.</label>
+                  <label class="option"><input type="radio" name="noun-sp-3" value="b"> The childs are in the classroom.</label>
+                  <label class="option"><input type="radio" name="noun-sp-3" value="c"> The childes are in the classroom.</label>
+                  <label class="option"><input type="radio" name="noun-sp-3" value="d"> The childrens are in the classroom.</label>
+                  <label class="option"><input type="radio" name="noun-sp-3" value="e"> The child are in the classroom.</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="e">
+                <p>4. Choose the correct plural form of “knife”.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="noun-sp-4" value="a"> knifes</label>
+                  <label class="option"><input type="radio" name="noun-sp-4" value="b"> knifees</label>
+                  <label class="option"><input type="radio" name="noun-sp-4" value="c"> knifies</label>
+                  <label class="option"><input type="radio" name="noun-sp-4" value="d"> knife</label>
+                  <label class="option"><input type="radio" name="noun-sp-4" value="e"> knives</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="b">
+                <p>5. Choose the correct plural form of “sheep”.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="noun-sp-5" value="a"> sheeps</label>
+                  <label class="option"><input type="radio" name="noun-sp-5" value="b"> sheep</label>
+                  <label class="option"><input type="radio" name="noun-sp-5" value="c"> sheepes</label>
+                  <label class="option"><input type="radio" name="noun-sp-5" value="d"> sheepies</label>
+                  <label class="option"><input type="radio" name="noun-sp-5" value="e"> sheepen</label>
+                </div>
+              </div>
+
+              <button class="check-btn" type="button" data-check="noun-singular-plural-test">
+                <span class="inline-lang" data-lang="kk">Жауаптарды тексеру</span>
+                <span class="inline-lang" data-lang="ru">Проверить ответы</span>
+              </button>
+
+              <div class="result-box" data-result="noun-singular-plural-test">
+                <h5>
+                  <span class="inline-lang" data-lang="kk">Түсіндірме</span>
+                  <span class="inline-lang" data-lang="ru">Объяснение</span>
+                </h5>
+
+                <div class="lang-content" data-lang="kk">
+                  <ol>
+                    <li><b>box → boxes</b>, себебі сөз -x әрпіне аяқталады, сондықтан -es жалғанады.</li>
+                    <li><b>city → cities</b>, себебі дауыссыз дыбыстан кейін y келсе, y түсіп, -ies жалғанады.</li>
+                    <li><b>children</b> — child сөзінің дұрыс емес көпше түрі.</li>
+                    <li><b>knife → knives</b>, себебі -fe көбіне -ves болып өзгереді.</li>
+                    <li><b>sheep</b> жекеше де, көпше де бірдей жазылады.</li>
+                  </ol>
+                </div>
+
+                <div class="lang-content" data-lang="ru">
+                  <ol>
+                    <li><b>box → boxes</b>, потому что слово заканчивается на -x, поэтому добавляется -es.</li>
+                    <li><b>city → cities</b>, потому что после согласной буквы y меняется на -ies.</li>
+                    <li><b>children</b> — неправильная форма множественного числа от child.</li>
+                    <li><b>knife → knives</b>, потому что -fe часто меняется на -ves.</li>
+                    <li><b>sheep</b> имеет одинаковую форму в единственном и множественном числе.</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="subunit" id="noun-countable">
+          <div class="subunit-header">
+            <div class="subunit-label">Noun · Sub-unit 3</div>
+            <h3>Countable & Uncountable Nouns</h3>
+            <div class="subunit-translation">
+              <span class="inline-lang" data-lang="kk">Саналатын және саналмайтын зат есімдер</span>
+              <span class="inline-lang" data-lang="ru">Исчисляемые и неисчисляемые существительные</span>
+            </div>
+          </div>
+
+          <div class="subunit-body">
+            <div class="lesson-layout">
+              <div class="lesson-box">
+                <h4>English rule</h4>
+                <p>
+                  Countable nouns can be counted and have singular and plural forms. Uncountable nouns cannot
+                  usually be counted as separate items and do not normally take a plural form.
+                </p>
+              </div>
+
+              <div class="lesson-box">
+                <h4>
+                  <span class="inline-lang" data-lang="kk">Түсіндіру</span>
+                  <span class="inline-lang" data-lang="ru">Объяснение</span>
+                </h4>
+
+                <div class="lang-content" data-lang="kk">
+                  <p>
+                    Саналатын зат есімдерді бір-бірлеп санауға болады: one apple, two apples.
+                    Саналмайтын зат есімдерді әдетте жеке-жеке санамаймыз: water — су, information — ақпарат,
+                    advice — кеңес. Мұндай сөздермен <b>a/an</b> қолданылмайды және көбіне көпше түр жасалмайды.
+                  </p>
+                </div>
+
+                <div class="lang-content" data-lang="ru">
+                  <p>
+                    Исчисляемые существительные можно посчитать по отдельности: one apple, two apples.
+                    Неисчисляемые существительные обычно нельзя считать как отдельные предметы:
+                    water — вода, information — информация, advice — совет. С такими словами не используется
+                    <b>a/an</b> и обычно не образуется множественное число.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="formula-box">
+              countable: one apple → two apples · uncountable: water, information, advice, furniture, homework
+            </div>
+
+            <div class="lesson-layout">
+              <div class="lesson-box">
+                <h4>
+                  <span class="inline-lang" data-lang="kk">Саналатын зат есімдер</span>
+                  <span class="inline-lang" data-lang="ru">Исчисляемые существительные</span>
+                </h4>
+                <ul>
+                  <li>book → books</li>
+                  <li>student → students</li>
+                  <li>question → questions</li>
+                  <li>house → houses</li>
+                  <li>idea → ideas</li>
+                </ul>
+              </div>
+
+              <div class="lesson-box">
+                <h4>
+                  <span class="inline-lang" data-lang="kk">Саналмайтын зат есімдер</span>
+                  <span class="inline-lang" data-lang="ru">Неисчисляемые существительные</span>
+                </h4>
+                <ul>
+                  <li>water — су / вода</li>
+                  <li>milk — сүт / молоко</li>
+                  <li>information — ақпарат / информация</li>
+                  <li>advice — кеңес / совет</li>
+                  <li>furniture — жиһаз / мебель</li>
+                  <li>homework — үй жұмысы / домашнее задание</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="example-box">
+              <p class="example-sentence">
+                I need two <span class="mark countable">chairs</span> and some <span class="mark uncountable">water</span>.
+              </p>
+              <p class="example-note">
+                <span class="inline-lang" data-lang="kk">
+                  chairs — саналатын зат есім, себебі оны санауға болады. water — саналмайтын зат есім.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  chairs — исчисляемое существительное, потому что его можно посчитать. water — неисчисляемое.
+                </span>
+              </p>
+            </div>
+
+            <div class="example-box">
+              <p class="example-sentence">
+                She gave me a piece of <span class="mark uncountable">advice</span>.
+              </p>
+              <p class="example-note">
+                <span class="inline-lang" data-lang="kk">
+                  advice — саналмайтын зат есім. Сондықтан “an advice” емес, “a piece of advice” деп айтамыз.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  advice — неисчисляемое существительное. Поэтому правильно “a piece of advice”, а не “an advice”.
+                </span>
+              </p>
+            </div>
+
+            <div class="mistake-box">
+              <h4>
+                <span class="inline-lang" data-lang="kk">Жиі қате</span>
+                <span class="inline-lang" data-lang="ru">Частая ошибка</span>
+              </h4>
+              <p>
+                <span class="inline-lang" data-lang="kk">
+                  “Informations”, “advices”, “furnitures”, “homeworks” деп жазу қате. Дұрысы:
+                  information, advice, furniture, homework.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  Нельзя писать “informations”, “advices”, “furnitures”, “homeworks”. Правильно:
+                  information, advice, furniture, homework.
+                </span>
+              </p>
+            </div>
+
+            <div class="test-box" data-test="noun-countable-test">
+              <div class="test-header">
+                <h4>Mini test · Countable & Uncountable</h4>
+                <span class="mini-badge">5 questions</span>
+              </div>
+
+              <div class="question" data-answer="b">
+                <p>1. Choose the uncountable noun.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="noun-count-1" value="a"> apple</label>
+                  <label class="option"><input type="radio" name="noun-count-1" value="b"> water</label>
+                  <label class="option"><input type="radio" name="noun-count-1" value="c"> chair</label>
+                  <label class="option"><input type="radio" name="noun-count-1" value="d"> student</label>
+                  <label class="option"><input type="radio" name="noun-count-1" value="e"> question</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="d">
+                <p>2. Choose the correct phrase.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="noun-count-2" value="a"> an information</label>
+                  <label class="option"><input type="radio" name="noun-count-2" value="b"> many information</label>
+                  <label class="option"><input type="radio" name="noun-count-2" value="c"> informations</label>
+                  <label class="option"><input type="radio" name="noun-count-2" value="d"> some information</label>
+                  <label class="option"><input type="radio" name="noun-count-2" value="e"> a informations</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="a">
+                <p>3. Choose the correct sentence.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="noun-count-3" value="a"> I have a lot of homework.</label>
+                  <label class="option"><input type="radio" name="noun-count-3" value="b"> I have many homeworks.</label>
+                  <label class="option"><input type="radio" name="noun-count-3" value="c"> I have a homework.</label>
+                  <label class="option"><input type="radio" name="noun-count-3" value="d"> I have two homeworks.</label>
+                  <label class="option"><input type="radio" name="noun-count-3" value="e"> I have an homework.</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="e">
+                <p>4. Choose the countable noun.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="noun-count-4" value="a"> milk</label>
+                  <label class="option"><input type="radio" name="noun-count-4" value="b"> advice</label>
+                  <label class="option"><input type="radio" name="noun-count-4" value="c"> furniture</label>
+                  <label class="option"><input type="radio" name="noun-count-4" value="d"> money</label>
+                  <label class="option"><input type="radio" name="noun-count-4" value="e"> notebook</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="c">
+                <p>5. Choose the correct phrase.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="noun-count-5" value="a"> an advice</label>
+                  <label class="option"><input type="radio" name="noun-count-5" value="b"> advices</label>
+                  <label class="option"><input type="radio" name="noun-count-5" value="c"> a piece of advice</label>
+                  <label class="option"><input type="radio" name="noun-count-5" value="d"> many advice</label>
+                  <label class="option"><input type="radio" name="noun-count-5" value="e"> two advices</label>
+                </div>
+              </div>
+
+              <button class="check-btn" type="button" data-check="noun-countable-test">
+                <span class="inline-lang" data-lang="kk">Жауаптарды тексеру</span>
+                <span class="inline-lang" data-lang="ru">Проверить ответы</span>
+              </button>
+
+              <div class="result-box" data-result="noun-countable-test">
+                <h5>
+                  <span class="inline-lang" data-lang="kk">Түсіндірме</span>
+                  <span class="inline-lang" data-lang="ru">Объяснение</span>
+                </h5>
+
+                <div class="lang-content" data-lang="kk">
+                  <ol>
+                    <li><b>water</b> — саналмайтын зат есім.</li>
+                    <li><b>some information</b> дұрыс, себебі information көпше түрге айналмайды.</li>
+                    <li><b>a lot of homework</b> дұрыс, homework саналмайтын зат есім.</li>
+                    <li><b>notebook</b> — саналатын зат есім: one notebook, two notebooks.</li>
+                    <li><b>a piece of advice</b> дұрыс тіркес, себебі advice саналмайды.</li>
+                  </ol>
+                </div>
+
+                <div class="lang-content" data-lang="ru">
+                  <ol>
+                    <li><b>water</b> — неисчисляемое существительное.</li>
+                    <li><b>some information</b> правильно, потому что information не имеет обычной формы множественного числа.</li>
+                    <li><b>a lot of homework</b> правильно, потому что homework неисчисляемое.</li>
+                    <li><b>notebook</b> — исчисляемое существительное: one notebook, two notebooks.</li>
+                    <li><b>a piece of advice</b> правильное выражение, потому что advice неисчисляемое.</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="subunit" id="noun-possessive">
+          <div class="subunit-header">
+            <div class="subunit-label">Noun · Sub-unit 4</div>
+            <h3>Possessive Case</h3>
+            <div class="subunit-translation">
+              <span class="inline-lang" data-lang="kk">Тәуелдік форма</span>
+              <span class="inline-lang" data-lang="ru">Притяжательная форма</span>
+            </div>
+          </div>
+
+          <div class="subunit-body">
+            <div class="lesson-layout">
+              <div class="lesson-box">
+                <h4>English rule</h4>
+                <p>
+                  The possessive case shows that something belongs to a person, animal, group, or organization.
+                  It is often formed with ’s or with an apostrophe after a plural noun.
+                </p>
+              </div>
+
+              <div class="lesson-box">
+                <h4>
+                  <span class="inline-lang" data-lang="kk">Түсіндіру</span>
+                  <span class="inline-lang" data-lang="ru">Объяснение</span>
+                </h4>
+
+                <div class="lang-content" data-lang="kk">
+                  <p>
+                    Тәуелдік форма бір нәрсенің кімге немесе неге тиесілі екенін көрсетеді.
+                    Мысалы: <b>the student’s book</b> — студенттің кітабы.
+                    Егер сөз көпше түрде <b>-s</b> әрпіне аяқталса, тек апостроф қойылады:
+                    <b>the students’ books</b> — студенттердің кітаптары.
+                  </p>
+                </div>
+
+                <div class="lang-content" data-lang="ru">
+                  <p>
+                    Притяжательная форма показывает, кому или чему принадлежит предмет.
+                    Например: <b>the student’s book</b> — книга студента.
+                    Если слово во множественном числе уже заканчивается на <b>-s</b>, ставится только апостроф:
+                    <b>the students’ books</b> — книги студентов.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="formula-box">
+              one person: student’s book · plural with -s: students’ books · irregular plural: children’s toys
+            </div>
+
+            <div class="lesson-layout">
+              <div class="lesson-box">
+                <h4>
+                  <span class="inline-lang" data-lang="kk">Қолдану түрлері</span>
+                  <span class="inline-lang" data-lang="ru">Виды употребления</span>
+                </h4>
+                <ul>
+                  <li><b>Anna’s bag</b> — Аннаның сөмкесі / сумка Анны</li>
+                  <li><b>my brother’s car</b> — ағамның көлігі / машина брата</li>
+                  <li><b>the teachers’ room</b> — мұғалімдердің бөлмесі / комната учителей</li>
+                  <li><b>the children’s toys</b> — балалардың ойыншықтары / игрушки детей</li>
+                  <li><b>the company’s office</b> — компанияның кеңсесі / офис компании</li>
+                </ul>
+              </div>
+
+              <div class="lesson-box">
+                <h4>
+                  <span class="inline-lang" data-lang="kk">Қашан of қолдануға болады?</span>
+                  <span class="inline-lang" data-lang="ru">Когда можно использовать of?</span>
+                </h4>
+                <div class="lang-content" data-lang="kk">
+                  <p>
+                    Заттарға қатысты көбіне <b>of</b> қолданылады: the roof of the house — үйдің шатыры.
+                    Бірақ адамдарға қатысты <b>’s</b> жиі қолданылады: the girl’s name — қыздың аты.
+                  </p>
+                </div>
+                <div class="lang-content" data-lang="ru">
+                  <p>
+                    С предметами часто используется <b>of</b>: the roof of the house — крыша дома.
+                    С людьми часто используется <b>’s</b>: the girl’s name — имя девочки.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="example-box">
+              <p class="example-sentence">
+                This is <span class="mark possessive">Maria’s</span> notebook.
+              </p>
+              <p class="example-note">
+                <span class="inline-lang" data-lang="kk">
+                  Maria’s — Марияның деген мағына береді. Дәптердің кімге тиесілі екенін көрсетеді.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  Maria’s означает “Марии”. Форма показывает, кому принадлежит тетрадь.
+                </span>
+              </p>
+            </div>
+
+            <div class="example-box">
+              <p class="example-sentence">
+                The <span class="mark possessive">students’</span> projects were excellent.
+              </p>
+              <p class="example-note">
+                <span class="inline-lang" data-lang="kk">
+                  students’ — студенттердің деген мағына. Students сөзі көпше түрде -s әрпіне аяқталғандықтан, тек апостроф қойылады.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  students’ означает “студентов”. Так как students уже заканчивается на -s, ставится только апостроф.
+                </span>
+              </p>
+            </div>
+
+            <div class="mistake-box">
+              <h4>
+                <span class="inline-lang" data-lang="kk">Жиі қате</span>
+                <span class="inline-lang" data-lang="ru">Частая ошибка</span>
+              </h4>
+              <p>
+                <span class="inline-lang" data-lang="kk">
+                  “The students’s books” деп жазу қате. Егер сөз көпше түрде -s әрпіне аяқталса, дұрыс форма:
+                  <b>the students’ books</b>.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  “The students’s books” — ошибка. Если слово во множественном числе заканчивается на -s, правильно:
+                  <b>the students’ books</b>.
+                </span>
+              </p>
+            </div>
+
+            <div class="test-box" data-test="noun-possessive-test">
+              <div class="test-header">
+                <h4>Mini test · Possessive Case</h4>
+                <span class="mini-badge">5 questions</span>
+              </div>
+
+              <div class="question" data-answer="a">
+                <p>1. Choose the correct phrase.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="noun-pos-1" value="a"> the teacher’s book</label>
+                  <label class="option"><input type="radio" name="noun-pos-1" value="b"> the teachers book</label>
+                  <label class="option"><input type="radio" name="noun-pos-1" value="c"> the teacher book’s</label>
+                  <label class="option"><input type="radio" name="noun-pos-1" value="d"> the teachers’s book</label>
+                  <label class="option"><input type="radio" name="noun-pos-1" value="e"> the book teacher’s</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="d">
+                <p>2. Choose the correct phrase: “the books of the students”.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="noun-pos-2" value="a"> the student’s books</label>
+                  <label class="option"><input type="radio" name="noun-pos-2" value="b"> the students books</label>
+                  <label class="option"><input type="radio" name="noun-pos-2" value="c"> the students’s books</label>
+                  <label class="option"><input type="radio" name="noun-pos-2" value="d"> the students’ books</label>
+                  <label class="option"><input type="radio" name="noun-pos-2" value="e"> the book’s students</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="c">
+                <p>3. Choose the correct phrase.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="noun-pos-3" value="a"> childrens toys</label>
+                  <label class="option"><input type="radio" name="noun-pos-3" value="b"> children toys’s</label>
+                  <label class="option"><input type="radio" name="noun-pos-3" value="c"> children’s toys</label>
+                  <label class="option"><input type="radio" name="noun-pos-3" value="d"> childrens’ toys</label>
+                  <label class="option"><input type="radio" name="noun-pos-3" value="e"> children’ toys</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="e">
+                <p>4. Choose the correct sentence.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="noun-pos-4" value="a"> This is my sisters bag.</label>
+                  <label class="option"><input type="radio" name="noun-pos-4" value="b"> This is my sister bag’s.</label>
+                  <label class="option"><input type="radio" name="noun-pos-4" value="c"> This is my sister’ bag.</label>
+                  <label class="option"><input type="radio" name="noun-pos-4" value="d"> This is my sisters’s bag.</label>
+                  <label class="option"><input type="radio" name="noun-pos-4" value="e"> This is my sister’s bag.</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="b">
+                <p>5. Choose the phrase that is usually better for a thing.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="noun-pos-5" value="a"> the table’s leg</label>
+                  <label class="option"><input type="radio" name="noun-pos-5" value="b"> the leg of the table</label>
+                  <label class="option"><input type="radio" name="noun-pos-5" value="c"> the tables leg’s</label>
+                  <label class="option"><input type="radio" name="noun-pos-5" value="d"> the table leg of</label>
+                  <label class="option"><input type="radio" name="noun-pos-5" value="e"> the table’ leg</label>
+                </div>
+              </div>
+
+              <button class="check-btn" type="button" data-check="noun-possessive-test">
+                <span class="inline-lang" data-lang="kk">Жауаптарды тексеру</span>
+                <span class="inline-lang" data-lang="ru">Проверить ответы</span>
+              </button>
+
+              <div class="result-box" data-result="noun-possessive-test">
+                <h5>
+                  <span class="inline-lang" data-lang="kk">Түсіндірме</span>
+                  <span class="inline-lang" data-lang="ru">Объяснение</span>
+                </h5>
+
+                <div class="lang-content" data-lang="kk">
+                  <ol>
+                    <li><b>the teacher’s book</b> — бір мұғалімнің кітабы.</li>
+                    <li><b>the students’ books</b> — students көпше түрде -s әрпіне аяқталады, сондықтан тек апостроф қойылады.</li>
+                    <li><b>children’s toys</b> дұрыс, себебі children — дұрыс емес көпше түр және -s әрпіне аяқталмайды.</li>
+                    <li><b>my sister’s bag</b> — бір әпкенің немесе қарындастың сөмкесі.</li>
+                    <li><b>the leg of the table</b> затқа қатысты табиғи форма.</li>
+                  </ol>
+                </div>
+
+                <div class="lang-content" data-lang="ru">
+                  <ol>
+                    <li><b>the teacher’s book</b> — книга одного учителя.</li>
+                    <li><b>the students’ books</b> — students заканчивается на -s, поэтому ставится только апостроф.</li>
+                    <li><b>children’s toys</b> правильно, потому что children не заканчивается на -s.</li>
+                    <li><b>my sister’s bag</b> — сумка одной сестры.</li>
+                    <li><b>the leg of the table</b> — более естественная форма для предмета.</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="subunit" id="noun-functions">
+          <div class="subunit-header">
+            <div class="subunit-label">Noun · Sub-unit 5</div>
+            <h3>Functions in a Sentence</h3>
+            <div class="subunit-translation">
+              <span class="inline-lang" data-lang="kk">Зат есімнің сөйлемдегі қызметі</span>
+              <span class="inline-lang" data-lang="ru">Роль существительного в предложении</span>
+            </div>
+          </div>
+
+          <div class="subunit-body">
+            <div class="lesson-layout">
+              <div class="lesson-box">
+                <h4>English rule</h4>
+                <p>
+                  A noun can function as a subject, object, complement, object of a preposition, or noun modifier
+                  in a sentence. Its function depends on its position and meaning in the sentence.
+                </p>
+              </div>
+
+              <div class="lesson-box">
+                <h4>
+                  <span class="inline-lang" data-lang="kk">Түсіндіру</span>
+                  <span class="inline-lang" data-lang="ru">Объяснение</span>
+                </h4>
+
+                <div class="lang-content" data-lang="kk">
+                  <p>
+                    Зат есім сөйлемде әртүрлі қызмет атқара алады. Ол сөйлемнің иесі болуы мүмкін,
+                    әрекет бағытталған сөз болуы мүмкін, шылаудан кейін келуі мүмкін немесе басқа зат есімді сипаттай алады.
+                    Емтиханда көбіне сөйлемдегі зат есімді және оның орнын тану керек болады.
+                  </p>
+                </div>
+
+                <div class="lang-content" data-lang="ru">
+                  <p>
+                    Существительное может выполнять разные роли в предложении. Оно может быть главным действующим лицом,
+                    объектом действия, словом после предлога или словом, которое уточняет другое существительное.
+                    На экзамене часто нужно определить существительное и его роль в предложении.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="lesson-layout">
+              <div class="lesson-box">
+                <h4>
+                  <span class="inline-lang" data-lang="kk">Негізгі қызметтері</span>
+                  <span class="inline-lang" data-lang="ru">Основные функции</span>
+                </h4>
+                <ul>
+                  <li><b>Subject</b> — бастауыш / подлежащее: The student reads.</li>
+                  <li><b>Object</b> — толықтауыш / дополнение: I met a teacher.</li>
+                  <li><b>After preposition</b> — шылаудан кейін / после предлога: in the room.</li>
+                  <li><b>Complement</b> — толықтырушы бөлік / именная часть: She is a doctor.</li>
+                  <li><b>Noun modifier</b> — анықтаушы зат есім / существительное-определение: school bag.</li>
+                </ul>
+              </div>
+
+              <div class="lesson-box">
+                <h4>
+                  <span class="inline-lang" data-lang="kk">Неге бұл маңызды?</span>
+                  <span class="inline-lang" data-lang="ru">Почему это важно?</span>
+                </h4>
+                <div class="lang-content" data-lang="kk">
+                  <p>
+                    Егер зат есімнің сөйлемдегі орнын түсінсеңіз, тестте сөз табын, дұрыс форманы және сөйлем мағынасын
+                    тезірек анықтайсыз. Бұл әсіресе бос орынға сөз қою тапсырмаларында көмектеседі.
+                  </p>
+                </div>
+                <div class="lang-content" data-lang="ru">
+                  <p>
+                    Если понимать роль существительного в предложении, легче определить часть речи, правильную форму
+                    и общий смысл предложения. Это особенно помогает в заданиях с пропусками.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="example-box">
+              <p class="example-sentence">
+                <span class="mark noun">Students</span> study grammar every day.
+              </p>
+              <p class="example-note">
+                <span class="inline-lang" data-lang="kk">
+                  Students — сөйлемнің бастауышы. Яғни әрекетті кім істеп тұр? Студенттер.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  Students — подлежащее. Кто выполняет действие? Студенты.
+                </span>
+              </p>
+            </div>
+
+            <div class="example-box">
+              <p class="example-sentence">
+                The teacher explained the <span class="mark noun">rule</span>.
+              </p>
+              <p class="example-note">
+                <span class="inline-lang" data-lang="kk">
+                  rule — әрекет бағытталған сөз. Мұғалім нені түсіндірді? Ережені.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  rule — объект действия. Что объяснил учитель? Правило.
+                </span>
+              </p>
+            </div>
+
+            <div class="example-box">
+              <p class="example-sentence">
+                She put the keys on the <span class="mark noun">table</span>.
+              </p>
+              <p class="example-note">
+                <span class="inline-lang" data-lang="kk">
+                  table — шылаудан кейін тұр. On — үстінде деген мағына береді.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  table стоит после предлога on. On означает “на”.
+                </span>
+              </p>
+            </div>
+
+            <div class="mistake-box">
+              <h4>
+                <span class="inline-lang" data-lang="kk">Жиі қате</span>
+                <span class="inline-lang" data-lang="ru">Частая ошибка</span>
+              </h4>
+              <p>
+                <span class="inline-lang" data-lang="kk">
+                  Кейде оқушылар сөйлемдегі бірінші сөзді автоматты түрде зат есім деп ойлайды. Бірақ бірінші сөз етістік,
+                  сын есім немесе басқа сөз табы болуы мүмкін. Мағынасына және қызметіне қарау керек.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  Иногда ученики думают, что первое слово в предложении всегда существительное. Но первым словом может быть
+                  глагол, прилагательное или другая часть речи. Нужно смотреть на смысл и роль слова.
+                </span>
+              </p>
+            </div>
+
+            <div class="test-box" data-test="noun-functions-test">
+              <div class="test-header">
+                <h4>Mini test · Functions in a Sentence</h4>
+                <span class="mini-badge">5 questions</span>
+              </div>
+
+              <div class="question" data-answer="a">
+                <p>1. Identify the subject noun: “The students passed the exam.”</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="noun-func-1" value="a"> students</label>
+                  <label class="option"><input type="radio" name="noun-func-1" value="b"> passed</label>
+                  <label class="option"><input type="radio" name="noun-func-1" value="c"> the</label>
+                  <label class="option"><input type="radio" name="noun-func-1" value="d"> exam</label>
+                  <label class="option"><input type="radio" name="noun-func-1" value="e"> passed the</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="d">
+                <p>2. Identify the object noun: “She bought a dictionary.”</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="noun-func-2" value="a"> she</label>
+                  <label class="option"><input type="radio" name="noun-func-2" value="b"> bought</label>
+                  <label class="option"><input type="radio" name="noun-func-2" value="c"> a</label>
+                  <label class="option"><input type="radio" name="noun-func-2" value="d"> dictionary</label>
+                  <label class="option"><input type="radio" name="noun-func-2" value="e"> bought a</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="c">
+                <p>3. Choose the noun after the preposition: “They live in a village.”</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="noun-func-3" value="a"> they</label>
+                  <label class="option"><input type="radio" name="noun-func-3" value="b"> live</label>
+                  <label class="option"><input type="radio" name="noun-func-3" value="c"> village</label>
+                  <label class="option"><input type="radio" name="noun-func-3" value="d"> in</label>
+                  <label class="option"><input type="radio" name="noun-func-3" value="e"> a</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="e">
+                <p>4. Choose the complement noun: “My father is a doctor.”</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="noun-func-4" value="a"> my</label>
+                  <label class="option"><input type="radio" name="noun-func-4" value="b"> father</label>
+                  <label class="option"><input type="radio" name="noun-func-4" value="c"> is</label>
+                  <label class="option"><input type="radio" name="noun-func-4" value="d"> a</label>
+                  <label class="option"><input type="radio" name="noun-func-4" value="e"> doctor</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="b">
+                <p>5. Choose the noun modifier in the phrase “school uniform”.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="noun-func-5" value="a"> uniform</label>
+                  <label class="option"><input type="radio" name="noun-func-5" value="b"> school</label>
+                  <label class="option"><input type="radio" name="noun-func-5" value="c"> school uniform</label>
+                  <label class="option"><input type="radio" name="noun-func-5" value="d"> form</label>
+                  <label class="option"><input type="radio" name="noun-func-5" value="e"> uniforms</label>
+                </div>
+              </div>
+
+              <button class="check-btn" type="button" data-check="noun-functions-test">
+                <span class="inline-lang" data-lang="kk">Жауаптарды тексеру</span>
+                <span class="inline-lang" data-lang="ru">Проверить ответы</span>
+              </button>
+
+              <div class="result-box" data-result="noun-functions-test">
+                <h5>
+                  <span class="inline-lang" data-lang="kk">Түсіндірме</span>
+                  <span class="inline-lang" data-lang="ru">Объяснение</span>
+                </h5>
+
+                <div class="lang-content" data-lang="kk">
+                  <ol>
+                    <li><b>students</b> — бастауыш, әрекетті істеп тұрған сөз.</li>
+                    <li><b>dictionary</b> — толықтауыш, сатып алынған зат.</li>
+                    <li><b>village</b> — in шылауынан кейін тұрған зат есім.</li>
+                    <li><b>doctor</b> — сөйлемде father сөзін толықтырып тұр.</li>
+                    <li><b>school</b> — uniform сөзін анықтап тұр, яғни қандай форма екенін көрсетеді.</li>
+                  </ol>
+                </div>
+
+                <div class="lang-content" data-lang="ru">
+                  <ol>
+                    <li><b>students</b> — подлежащее, слово, которое выполняет действие.</li>
+                    <li><b>dictionary</b> — дополнение, предмет, который купили.</li>
+                    <li><b>village</b> — существительное после предлога in.</li>
+                    <li><b>doctor</b> — дополняет значение слова father.</li>
+                    <li><b>school</b> — уточняет слово uniform, показывает тип формы.</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="grammar-section" id="article">
+      <div class="page-shell">
+        <div class="grammar-hero">
+          <div class="grammar-title-card">
+            <div class="section-kicker">Rule 2 · B1</div>
+            <h2>Article</h2>
+            <div class="translation">
+              <span class="inline-lang" data-lang="kk">Артикль</span>
+              <span class="inline-lang" data-lang="ru">Артикль</span>
+            </div>
+          </div>
+
+          <div class="grammar-info-card">
+            <div class="lang-content" data-lang="kk">
+              <p>
+                Бұл бөлімде ағылшын тіліндегі артикльдер қарастырылады. Артикль — зат есімнің алдында
+                қолданылатын кішкентай сөз. Ол заттың нақты ма, жалпы ма, бірінші рет айтылып тұр ма,
+                әлде бұрын белгілі ме екенін көрсетеді. Емтиханда көбіне <b>a</b>, <b>an</b>, <b>the</b>
+                және артикль қолданылмайтын жағдайлар тексеріледі.
+              </p>
+            </div>
+
+            <div class="lang-content" data-lang="ru">
+              <p>
+                В этом разделе изучаются английские артикли. Артикль — это маленькое слово перед существительным.
+                Он показывает, является ли предмет конкретным или общим, упоминается впервые или уже известен.
+                На экзамене часто проверяются <b>a</b>, <b>an</b>, <b>the</b> и случаи, когда артикль не используется.
+              </p>
+            </div>
+
+            <div class="subunit-grid">
+              <a class="subunit-chip" href="#article-overview">
+                <strong>What is an article?</strong>
+                <span>
+                  <span class="inline-lang" data-lang="kk">Артикль деген не?</span>
+                  <span class="inline-lang" data-lang="ru">Что такое артикль?</span>
+                </span>
+              </a>
+
+              <a class="subunit-chip" href="#article-indefinite">
+                <strong>A / An</strong>
+                <span>
+                  <span class="inline-lang" data-lang="kk">Белгісіз артикль</span>
+                  <span class="inline-lang" data-lang="ru">Неопределённый артикль</span>
+                </span>
+              </a>
+
+              <a class="subunit-chip" href="#article-definite">
+                <strong>The</strong>
+                <span>
+                  <span class="inline-lang" data-lang="kk">Белгілі артикль</span>
+                  <span class="inline-lang" data-lang="ru">Определённый артикль</span>
+                </span>
+              </a>
+
+              <a class="subunit-chip" href="#article-zero">
+                <strong>Zero Article</strong>
+                <span>
+                  <span class="inline-lang" data-lang="kk">Артикль қолданылмайтын жағдай</span>
+                  <span class="inline-lang" data-lang="ru">Нулевой артикль</span>
+                </span>
+              </a>
+
+              <a class="subunit-chip" href="#article-geography">
+                <strong>Geographical Names</strong>
+                <span>
+                  <span class="inline-lang" data-lang="kk">Географиялық атаулар</span>
+                  <span class="inline-lang" data-lang="ru">Географические названия</span>
+                </span>
+              </a>
+
+              <a class="subunit-chip" href="#article-names">
+                <strong>Proper & Personal Names</strong>
+                <span>
+                  <span class="inline-lang" data-lang="kk">Жалқы және адам аттары</span>
+                  <span class="inline-lang" data-lang="ru">Собственные и личные имена</span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <article class="subunit" id="article-overview">
+          <div class="subunit-header">
+            <div class="subunit-label">Article · Sub-unit 1</div>
+            <h3>What is an article?</h3>
+            <div class="subunit-translation">
+              <span class="inline-lang" data-lang="kk">Артикль деген не?</span>
+              <span class="inline-lang" data-lang="ru">Что такое артикль?</span>
+            </div>
+          </div>
+
+          <div class="subunit-body">
+            <div class="lesson-layout">
+              <div class="lesson-box">
+                <h4>English rule</h4>
+                <p>
+                  An article is a word used before a noun. English has two main types of articles:
+                  the indefinite article <b>a/an</b> and the definite article <b>the</b>. Sometimes no article is used.
+                </p>
+              </div>
+
+              <div class="lesson-box">
+                <h4>
+                  <span class="inline-lang" data-lang="kk">Түсіндіру</span>
+                  <span class="inline-lang" data-lang="ru">Объяснение</span>
+                </h4>
+
+                <div class="lang-content" data-lang="kk">
+                  <p>
+                    Артикль — зат есімнің алдында тұратын көмекші сөз. Қазақ тілінде дәл осындай жеке артикль жоқ,
+                    сондықтан бұл тақырып жиі қиын көрінеді. Бірақ негізгі ойы қарапайым:
+                    <b>a/an</b> — зат алғаш рет немесе жалпы айтылғанда, <b>the</b> — нақты, белгілі зат туралы айтқанда қолданылады.
+                  </p>
+                </div>
+
+                <div class="lang-content" data-lang="ru">
+                  <p>
+                    Артикль — служебное слово перед существительным. В русском языке такой отдельной формы нет,
+                    поэтому тема часто кажется сложной. Но главная идея простая:
+                    <b>a/an</b> используется, когда предмет упоминается впервые или говорится в общем,
+                    <b>the</b> — когда предмет конкретный или уже известный.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="formula-box">
+              a / an = one, not specific · the = specific, known · zero article = no article
+            </div>
+
+            <div class="example-box">
+              <p class="example-sentence">
+                I saw <span class="mark article">a</span> dog. <span class="mark article">The</span> dog was very friendly.
+              </p>
+              <p class="example-note">
+                <span class="inline-lang" data-lang="kk">
+                  Бірінші сөйлемде dog алғаш рет айтылды, сондықтан a қолданылды. Екінші сөйлемде сол ит туралы қайта айтылып тұр, сондықтан the қолданылды.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  В первом предложении dog упоминается впервые, поэтому используется a. Во втором предложении речь идёт о той же собаке, поэтому используется the.
+                </span>
+              </p>
+            </div>
+
+            <div class="example-box">
+              <p class="example-sentence">
+                <span class="mark noun">Students</span> need <span class="mark noun">practice</span>.
+              </p>
+              <p class="example-note">
+                <span class="inline-lang" data-lang="kk">
+                  Бұл жерде students жалпы топ ретінде айтылып тұр, ал practice — жаттығу деген жалпы ұғым. Сондықтан артикль қолданылмаған.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  Здесь students говорится как общая группа, а practice — общее понятие “практика”. Поэтому артикль не используется.
+                </span>
+              </p>
+            </div>
+
+            <div class="mistake-box">
+              <h4>
+                <span class="inline-lang" data-lang="kk">Жиі қате</span>
+                <span class="inline-lang" data-lang="ru">Частая ошибка</span>
+              </h4>
+              <p>
+                <span class="inline-lang" data-lang="kk">
+                  Оқушылар көбіне әр зат есімнің алдына артикль қою керек деп ойлайды. Бірақ көпше зат есім жалпы мағынада келсе немесе саналмайтын зат есім жалпы айтылса, артикль жиі қолданылмайды.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  Ученики часто думают, что перед каждым существительным нужен артикль. Но если множественное число используется в общем значении или неисчисляемое существительное говорится в общем смысле, артикль часто не нужен.
+                </span>
+              </p>
+            </div>
+
+            <div class="test-box" data-test="article-overview-test">
+              <div class="test-header">
+                <h4>Mini test · Article Overview</h4>
+                <span class="mini-badge">5 questions</span>
+              </div>
+
+              <div class="question" data-answer="c">
+                <p>1. Choose the correct article: “I bought ___ book yesterday.”</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="art-over-1" value="a"> the</label>
+                  <label class="option"><input type="radio" name="art-over-1" value="b"> zero article</label>
+                  <label class="option"><input type="radio" name="art-over-1" value="c"> a</label>
+                  <label class="option"><input type="radio" name="art-over-1" value="d"> an</label>
+                  <label class="option"><input type="radio" name="art-over-1" value="e"> these</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="a">
+                <p>2. Choose the correct article: “___ book I bought yesterday is very useful.”</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="art-over-2" value="a"> The</label>
+                  <label class="option"><input type="radio" name="art-over-2" value="b"> A</label>
+                  <label class="option"><input type="radio" name="art-over-2" value="c"> An</label>
+                  <label class="option"><input type="radio" name="art-over-2" value="d"> Zero article</label>
+                  <label class="option"><input type="radio" name="art-over-2" value="e"> Some</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="d">
+                <p>3. Choose the sentence with correct general meaning.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="art-over-3" value="a"> The students need the practice.</label>
+                  <label class="option"><input type="radio" name="art-over-3" value="b"> A students need a practice.</label>
+                  <label class="option"><input type="radio" name="art-over-3" value="c"> An students need practice.</label>
+                  <label class="option"><input type="radio" name="art-over-3" value="d"> Students need practice.</label>
+                  <label class="option"><input type="radio" name="art-over-3" value="e"> Student need the practice.</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="b">
+                <p>4. Which article is used for a specific known noun?</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="art-over-4" value="a"> a</label>
+                  <label class="option"><input type="radio" name="art-over-4" value="b"> the</label>
+                  <label class="option"><input type="radio" name="art-over-4" value="c"> an</label>
+                  <label class="option"><input type="radio" name="art-over-4" value="d"> some</label>
+                  <label class="option"><input type="radio" name="art-over-4" value="e"> any</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="e">
+                <p>5. Choose the correct sentence.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="art-over-5" value="a"> I saw dog. The dog was black.</label>
+                  <label class="option"><input type="radio" name="art-over-5" value="b"> I saw an dog. A dog was black.</label>
+                  <label class="option"><input type="radio" name="art-over-5" value="c"> I saw the dog. A dog was black.</label>
+                  <label class="option"><input type="radio" name="art-over-5" value="d"> I saw a dog. Dog was black.</label>
+                  <label class="option"><input type="radio" name="art-over-5" value="e"> I saw a dog. The dog was black.</label>
+                </div>
+              </div>
+
+              <button class="check-btn" type="button" data-check="article-overview-test">
+                <span class="inline-lang" data-lang="kk">Жауаптарды тексеру</span>
+                <span class="inline-lang" data-lang="ru">Проверить ответы</span>
+              </button>
+
+              <div class="result-box" data-result="article-overview-test">
+                <h5>
+                  <span class="inline-lang" data-lang="kk">Түсіндірме</span>
+                  <span class="inline-lang" data-lang="ru">Объяснение</span>
+                </h5>
+
+                <div class="lang-content" data-lang="kk">
+                  <ol>
+                    <li><b>a book</b> — кітап алғаш рет айтылып тұр.</li>
+                    <li><b>The book</b> — кеше сатып алынған нақты кітап туралы айтылып тұр.</li>
+                    <li><b>Students need practice</b> — жалпы мағына, сондықтан артикль қажет емес.</li>
+                    <li><b>the</b> нақты, белгілі зат есіммен қолданылады.</li>
+                    <li>Алдымен <b>a dog</b>, кейін сол итке қайта оралғанда <b>the dog</b> қолданылады.</li>
+                  </ol>
+                </div>
+
+                <div class="lang-content" data-lang="ru">
+                  <ol>
+                    <li><b>a book</b> — книга упоминается впервые.</li>
+                    <li><b>The book</b> — речь идёт о конкретной книге, купленной вчера.</li>
+                    <li><b>Students need practice</b> — общее значение, артикль не нужен.</li>
+                    <li><b>the</b> используется с конкретным, известным существительным.</li>
+                    <li>Сначала <b>a dog</b>, потом при повторном упоминании — <b>the dog</b>.</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="subunit" id="article-indefinite">
+          <div class="subunit-header">
+            <div class="subunit-label">Article · Sub-unit 2</div>
+            <h3>A / An</h3>
+            <div class="subunit-translation">
+              <span class="inline-lang" data-lang="kk">Белгісіз артикль</span>
+              <span class="inline-lang" data-lang="ru">Неопределённый артикль</span>
+            </div>
+          </div>
+
+          <div class="subunit-body">
+            <div class="lesson-layout">
+              <div class="lesson-box">
+                <h4>English rule</h4>
+                <p>
+                  A and an are used before singular countable nouns when we talk about one person or thing
+                  that is not specific. Use <b>a</b> before a consonant sound and <b>an</b> before a vowel sound.
+                </p>
+              </div>
+
+              <div class="lesson-box">
+                <h4>
+                  <span class="inline-lang" data-lang="kk">Түсіндіру</span>
+                  <span class="inline-lang" data-lang="ru">Объяснение</span>
+                </h4>
+
+                <div class="lang-content" data-lang="kk">
+                  <p>
+                    <b>A</b> және <b>an</b> бір ғана саналатын зат есімнің алдында қолданылады.
+                    Зат нақты емес, жалпы айтылып тұр. <b>A</b> дауыссыз дыбыстан басталатын сөздің алдында,
+                    <b>an</b> дауысты дыбыстан басталатын сөздің алдында қолданылады.
+                  </p>
+                </div>
+
+                <div class="lang-content" data-lang="ru">
+                  <p>
+                    <b>A</b> и <b>an</b> используются перед одним исчисляемым существительным.
+                    Предмет не конкретный, а говорится в общем. <b>A</b> ставится перед согласным звуком,
+                    <b>an</b> — перед гласным звуком.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="formula-box">
+              a + consonant sound: a book, a university · an + vowel sound: an apple, an hour
+            </div>
+
+            <div class="example-box">
+              <p class="example-sentence">
+                She is <span class="mark article">a</span> doctor.
+              </p>
+              <p class="example-note">
+                <span class="inline-lang" data-lang="kk">
+                  doctor — бір мамандық атауы, дауыссыз дыбыстан басталады. Сондықтан a қолданылады.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  doctor — название профессии, начинается с согласного звука. Поэтому используется a.
+                </span>
+              </p>
+            </div>
+
+            <div class="example-box">
+              <p class="example-sentence">
+                I have <span class="mark article">an</span> idea.
+              </p>
+              <p class="example-note">
+                <span class="inline-lang" data-lang="kk">
+                  idea — дауысты дыбыстан басталады, сондықтан an қолданылады.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  idea начинается с гласного звука, поэтому используется an.
+                </span>
+              </p>
+            </div>
+
+            <div class="mistake-box">
+              <h4>
+                <span class="inline-lang" data-lang="kk">Жиі қате</span>
+                <span class="inline-lang" data-lang="ru">Частая ошибка</span>
+              </h4>
+              <p>
+                <span class="inline-lang" data-lang="kk">
+                  Ережеде әріпке емес, дыбысқа қараймыз. <b>an hour</b> дұрыс, себебі hour сөзінде h айтылмайды.
+                  <b>a university</b> дұрыс, себебі university “ю” дыбысымен басталады.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  Важно смотреть не на букву, а на звук. <b>an hour</b> правильно, потому что h не произносится.
+                  <b>a university</b> правильно, потому что university начинается со звука “ю”.
+                </span>
+              </p>
+            </div>
+
+            <div class="test-box" data-test="article-indefinite-test">
+              <div class="test-header">
+                <h4>Mini test · A / An</h4>
+                <span class="mini-badge">5 questions</span>
+              </div>
+
+              <div class="question" data-answer="b">
+                <p>1. Choose the correct article: “She has ___ apple.”</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="art-ind-1" value="a"> a</label>
+                  <label class="option"><input type="radio" name="art-ind-1" value="b"> an</label>
+                  <label class="option"><input type="radio" name="art-ind-1" value="c"> the</label>
+                  <label class="option"><input type="radio" name="art-ind-1" value="d"> zero article</label>
+                  <label class="option"><input type="radio" name="art-ind-1" value="e"> any</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="a">
+                <p>2. Choose the correct article: “He is ___ university student.”</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="art-ind-2" value="a"> a</label>
+                  <label class="option"><input type="radio" name="art-ind-2" value="b"> an</label>
+                  <label class="option"><input type="radio" name="art-ind-2" value="c"> the</label>
+                  <label class="option"><input type="radio" name="art-ind-2" value="d"> zero article</label>
+                  <label class="option"><input type="radio" name="art-ind-2" value="e"> some</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="d">
+                <p>3. Choose the correct phrase.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="art-ind-3" value="a"> a hour</label>
+                  <label class="option"><input type="radio" name="art-ind-3" value="b"> the hour first time</label>
+                  <label class="option"><input type="radio" name="art-ind-3" value="c"> zero hour</label>
+                  <label class="option"><input type="radio" name="art-ind-3" value="d"> an hour</label>
+                  <label class="option"><input type="radio" name="art-ind-3" value="e"> a honest man</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="e">
+                <p>4. Choose the correct sentence.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="art-ind-4" value="a"> I saw an cat.</label>
+                  <label class="option"><input type="radio" name="art-ind-4" value="b"> I saw cat.</label>
+                  <label class="option"><input type="radio" name="art-ind-4" value="c"> I saw the cat first time.</label>
+                  <label class="option"><input type="radio" name="art-ind-4" value="d"> I saw a apple.</label>
+                  <label class="option"><input type="radio" name="art-ind-4" value="e"> I saw a cat.</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="c">
+                <p>5. Choose the correct article: “It was ___ interesting lecture.”</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="art-ind-5" value="a"> a</label>
+                  <label class="option"><input type="radio" name="art-ind-5" value="b"> the</label>
+                  <label class="option"><input type="radio" name="art-ind-5" value="c"> an</label>
+                  <label class="option"><input type="radio" name="art-ind-5" value="d"> zero article</label>
+                  <label class="option"><input type="radio" name="art-ind-5" value="e"> any</label>
+                </div>
+              </div>
+
+              <button class="check-btn" type="button" data-check="article-indefinite-test">
+                <span class="inline-lang" data-lang="kk">Жауаптарды тексеру</span>
+                <span class="inline-lang" data-lang="ru">Проверить ответы</span>
+              </button>
+
+              <div class="result-box" data-result="article-indefinite-test">
+                <h5>
+                  <span class="inline-lang" data-lang="kk">Түсіндірме</span>
+                  <span class="inline-lang" data-lang="ru">Объяснение</span>
+                </h5>
+
+                <div class="lang-content" data-lang="kk">
+                  <ol>
+                    <li><b>an apple</b> — apple дауысты дыбыстан басталады.</li>
+                    <li><b>a university student</b> — university “ю” дыбысымен басталады.</li>
+                    <li><b>an hour</b> — hour сөзінде h айтылмайды.</li>
+                    <li><b>a cat</b> — cat алғаш рет айтылған, дауыссыз дыбыстан басталады.</li>
+                    <li><b>an interesting lecture</b> — interesting дауысты дыбыстан басталады.</li>
+                  </ol>
+                </div>
+
+                <div class="lang-content" data-lang="ru">
+                  <ol>
+                    <li><b>an apple</b> — apple начинается с гласного звука.</li>
+                    <li><b>a university student</b> — university начинается со звука “ю”.</li>
+                    <li><b>an hour</b> — в слове hour буква h не произносится.</li>
+                    <li><b>a cat</b> — cat упоминается впервые и начинается с согласного звука.</li>
+                    <li><b>an interesting lecture</b> — interesting начинается с гласного звука.</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="subunit" id="article-definite">
+          <div class="subunit-header">
+            <div class="subunit-label">Article · Sub-unit 3</div>
+            <h3>The</h3>
+            <div class="subunit-translation">
+              <span class="inline-lang" data-lang="kk">Белгілі артикль</span>
+              <span class="inline-lang" data-lang="ru">Определённый артикль</span>
+            </div>
+          </div>
+
+          <div class="subunit-body">
+            <div class="lesson-layout">
+              <div class="lesson-box">
+                <h4>English rule</h4>
+                <p>
+                  The is used when we talk about a specific person, thing, place, or idea. It is also used
+                  when the listener or reader knows which noun we mean.
+                </p>
+              </div>
+
+              <div class="lesson-box">
+                <h4>
+                  <span class="inline-lang" data-lang="kk">Түсіндіру</span>
+                  <span class="inline-lang" data-lang="ru">Объяснение</span>
+                </h4>
+
+                <div class="lang-content" data-lang="kk">
+                  <p>
+                    <b>The</b> нақты, белгілі зат есімнің алдында қолданылады. Егер сөйлеуші де, тыңдаушы да
+                    қай зат туралы айтылып тұрғанын түсінсе, <b>the</b> қолданылады. Сондай-ақ бірегей заттармен:
+                    the sun — күн, the moon — ай, the world — әлем.
+                  </p>
+                </div>
+
+                <div class="lang-content" data-lang="ru">
+                  <p>
+                    <b>The</b> используется перед конкретным, известным существительным. Если говорящий и слушающий
+                    понимают, о каком предмете идёт речь, используется <b>the</b>. Также с уникальными объектами:
+                    the sun — солнце, the moon — луна, the world — мир.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="formula-box">
+              the = specific / already mentioned / unique / known from context
+            </div>
+
+            <div class="example-box">
+              <p class="example-sentence">
+                Please close <span class="mark article">the</span> door.
+              </p>
+              <p class="example-note">
+                <span class="inline-lang" data-lang="kk">
+                  Қай есік туралы айтылып тұрғаны белгілі. Сондықтан the қолданылады.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  Понятно, о какой двери идёт речь. Поэтому используется the.
+                </span>
+              </p>
+            </div>
+
+            <div class="example-box">
+              <p class="example-sentence">
+                <span class="mark article">The</span> sun rises in the east.
+              </p>
+              <p class="example-note">
+                <span class="inline-lang" data-lang="kk">
+                  Sun — бірегей зат, яғни әлемде біз айтып тұрған бір күн. Сондықтан the қолданылады.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  Sun — уникальный объект, поэтому используется the.
+                </span>
+              </p>
+            </div>
+
+            <div class="mistake-box">
+              <h4>
+                <span class="inline-lang" data-lang="kk">Жиі қате</span>
+                <span class="inline-lang" data-lang="ru">Частая ошибка</span>
+              </h4>
+              <p>
+                <span class="inline-lang" data-lang="kk">
+                  “I like the music” әрқашан дұрыс емес. Егер жалпы музыка ұнайды десек: <b>I like music</b>.
+                  Егер нақты бір музыка туралы айтсақ: <b>I like the music in this film</b>.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  “I like the music” не всегда правильно. Если музыка нравится вообще: <b>I like music</b>.
+                  Если речь о конкретной музыке: <b>I like the music in this film</b>.
+                </span>
+              </p>
+            </div>
+
+            <div class="test-box" data-test="article-definite-test">
+              <div class="test-header">
+                <h4>Mini test · The</h4>
+                <span class="mini-badge">5 questions</span>
+              </div>
+
+              <div class="question" data-answer="a">
+                <p>1. Choose the correct article: “___ sun is shining.”</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="art-def-1" value="a"> The</label>
+                  <label class="option"><input type="radio" name="art-def-1" value="b"> A</label>
+                  <label class="option"><input type="radio" name="art-def-1" value="c"> An</label>
+                  <label class="option"><input type="radio" name="art-def-1" value="d"> Zero article</label>
+                  <label class="option"><input type="radio" name="art-def-1" value="e"> Some</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="d">
+                <p>2. Choose the correct sentence.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="art-def-2" value="a"> Please open a window in this room, the one near you.</label>
+                  <label class="option"><input type="radio" name="art-def-2" value="b"> Please open an window.</label>
+                  <label class="option"><input type="radio" name="art-def-2" value="c"> Please open window.</label>
+                  <label class="option"><input type="radio" name="art-def-2" value="d"> Please open the window.</label>
+                  <label class="option"><input type="radio" name="art-def-2" value="e"> Please open some window.</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="b">
+                <p>3. Choose the correct article: “I saw a film yesterday. ___ film was interesting.”</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="art-def-3" value="a"> A</label>
+                  <label class="option"><input type="radio" name="art-def-3" value="b"> The</label>
+                  <label class="option"><input type="radio" name="art-def-3" value="c"> An</label>
+                  <label class="option"><input type="radio" name="art-def-3" value="d"> Zero article</label>
+                  <label class="option"><input type="radio" name="art-def-3" value="e"> Any</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="e">
+                <p>4. Choose the sentence with a general meaning.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="art-def-4" value="a"> I like the music.</label>
+                  <label class="option"><input type="radio" name="art-def-4" value="b"> I like a music.</label>
+                  <label class="option"><input type="radio" name="art-def-4" value="c"> I like an music.</label>
+                  <label class="option"><input type="radio" name="art-def-4" value="d"> I like musics.</label>
+                  <label class="option"><input type="radio" name="art-def-4" value="e"> I like music.</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="c">
+                <p>5. Choose the correct article: “Look at ___ moon!”</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="art-def-5" value="a"> a</label>
+                  <label class="option"><input type="radio" name="art-def-5" value="b"> an</label>
+                  <label class="option"><input type="radio" name="art-def-5" value="c"> the</label>
+                  <label class="option"><input type="radio" name="art-def-5" value="d"> zero article</label>
+                  <label class="option"><input type="radio" name="art-def-5" value="e"> some</label>
+                </div>
+              </div>
+
+              <button class="check-btn" type="button" data-check="article-definite-test">
+                <span class="inline-lang" data-lang="kk">Жауаптарды тексеру</span>
+                <span class="inline-lang" data-lang="ru">Проверить ответы</span>
+              </button>
+
+              <div class="result-box" data-result="article-definite-test">
+                <h5>
+                  <span class="inline-lang" data-lang="kk">Түсіндірме</span>
+                  <span class="inline-lang" data-lang="ru">Объяснение</span>
+                </h5>
+
+                <div class="lang-content" data-lang="kk">
+                  <ol>
+                    <li><b>The sun</b> — күн бірегей зат ретінде айтылады.</li>
+                    <li><b>the window</b> — нақты, белгілі терезе туралы айтылып тұр.</li>
+                    <li>Film екінші рет айтылғандықтан, <b>the film</b> болады.</li>
+                    <li><b>I like music</b> — жалпы музыка ұнайды деген мағына.</li>
+                    <li><b>the moon</b> — ай бірегей зат ретінде қолданылады.</li>
+                  </ol>
+                </div>
+
+                <div class="lang-content" data-lang="ru">
+                  <ol>
+                    <li><b>The sun</b> — солнце считается уникальным объектом.</li>
+                    <li><b>the window</b> — речь о конкретном, известном окне.</li>
+                    <li>Film упоминается второй раз, поэтому <b>the film</b>.</li>
+                    <li><b>I like music</b> — музыка нравится в общем.</li>
+                    <li><b>the moon</b> — луна используется как уникальный объект.</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="subunit" id="article-zero">
+          <div class="subunit-header">
+            <div class="subunit-label">Article · Sub-unit 4</div>
+            <h3>Zero Article</h3>
+            <div class="subunit-translation">
+              <span class="inline-lang" data-lang="kk">Артикль қолданылмайтын жағдайлар</span>
+              <span class="inline-lang" data-lang="ru">Случаи без артикля</span>
+            </div>
+          </div>
+
+          <div class="subunit-body">
+            <div class="lesson-layout">
+              <div class="lesson-box">
+                <h4>English rule</h4>
+                <p>
+                  No article is used with plural countable nouns and uncountable nouns when they have a general meaning.
+                  No article is also used with many proper names, meals, languages, school subjects, and some institutions
+                  when used for their main purpose.
+                </p>
+              </div>
+
+              <div class="lesson-box">
+                <h4>
+                  <span class="inline-lang" data-lang="kk">Түсіндіру</span>
+                  <span class="inline-lang" data-lang="ru">Объяснение</span>
+                </h4>
+
+                <div class="lang-content" data-lang="kk">
+                  <p>
+                    Артикль әрқашан керек емес. Егер көпше зат есім жалпы мағынада айтылса, артикль қойылмайды:
+                    <b>Books are useful</b>. Егер саналмайтын зат есім жалпы мағынада айтылса, артикль қойылмайды:
+                    <b>Water is important</b>. Тілдер мен оқу пәндерімен де көбіне артикль қолданылмайды:
+                    English, history, mathematics.
+                  </p>
+                </div>
+
+                <div class="lang-content" data-lang="ru">
+                  <p>
+                    Артикль нужен не всегда. Если существительное во множественном числе используется в общем значении,
+                    артикль не ставится: <b>Books are useful</b>. Если неисчисляемое существительное используется в общем
+                    значении, артикль тоже не нужен: <b>Water is important</b>. С языками и учебными предметами артикль
+                    обычно не используется: English, history, mathematics.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="formula-box">
+              general plural: Students learn · general uncountable: Water is important · languages: English · subjects: history
+            </div>
+
+            <div class="example-box">
+              <p class="example-sentence">
+                <span class="mark noun">Children</span> learn quickly.
+              </p>
+              <p class="example-note">
+                <span class="inline-lang" data-lang="kk">
+                  Children жалпы мағынада айтылып тұр. Сондықтан артикль жоқ.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  Children используется в общем значении. Поэтому артикля нет.
+                </span>
+              </p>
+            </div>
+
+            <div class="example-box">
+              <p class="example-sentence">
+                She studies <span class="mark noun">English</span> and <span class="mark noun">history</span>.
+              </p>
+              <p class="example-note">
+                <span class="inline-lang" data-lang="kk">
+                  English — тіл атауы, history — пән атауы. Әдетте бұлармен артикль қолданылмайды.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  English — название языка, history — название предмета. Обычно с ними артикль не используется.
+                </span>
+              </p>
+            </div>
+
+            <div class="mistake-box">
+              <h4>
+                <span class="inline-lang" data-lang="kk">Жиі қате</span>
+                <span class="inline-lang" data-lang="ru">Частая ошибка</span>
+              </h4>
+              <p>
+                <span class="inline-lang" data-lang="kk">
+                  “The English is difficult” деп жазуға болмайды, егер тіл туралы жалпы айтсақ. Дұрысы:
+                  <b>English is difficult</b>.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  Нельзя писать “The English is difficult”, если речь о языке в общем. Правильно:
+                  <b>English is difficult</b>.
+                </span>
+              </p>
+            </div>
+
+            <div class="test-box" data-test="article-zero-test">
+              <div class="test-header">
+                <h4>Mini test · Zero Article</h4>
+                <span class="mini-badge">5 questions</span>
+              </div>
+
+              <div class="question" data-answer="a">
+                <p>1. Choose the correct sentence.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="art-zero-1" value="a"> Water is necessary for life.</label>
+                  <label class="option"><input type="radio" name="art-zero-1" value="b"> The water is necessary for life.</label>
+                  <label class="option"><input type="radio" name="art-zero-1" value="c"> A water is necessary for life.</label>
+                  <label class="option"><input type="radio" name="art-zero-1" value="d"> An water is necessary for life.</label>
+                  <label class="option"><input type="radio" name="art-zero-1" value="e"> Waters are necessary for life.</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="c">
+                <p>2. Choose the correct sentence.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="art-zero-2" value="a"> The English is useful.</label>
+                  <label class="option"><input type="radio" name="art-zero-2" value="b"> A English is useful.</label>
+                  <label class="option"><input type="radio" name="art-zero-2" value="c"> English is useful.</label>
+                  <label class="option"><input type="radio" name="art-zero-2" value="d"> An English is useful.</label>
+                  <label class="option"><input type="radio" name="art-zero-2" value="e"> Englishes are useful.</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="e">
+                <p>3. Choose the correct sentence with a general plural noun.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="art-zero-3" value="a"> The books are useful in general.</label>
+                  <label class="option"><input type="radio" name="art-zero-3" value="b"> A books are useful.</label>
+                  <label class="option"><input type="radio" name="art-zero-3" value="c"> An books are useful.</label>
+                  <label class="option"><input type="radio" name="art-zero-3" value="d"> Book are useful.</label>
+                  <label class="option"><input type="radio" name="art-zero-3" value="e"> Books are useful.</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="b">
+                <p>4. Choose the correct article: “She studies ___ mathematics.”</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="art-zero-4" value="a"> the</label>
+                  <label class="option"><input type="radio" name="art-zero-4" value="b"> zero article</label>
+                  <label class="option"><input type="radio" name="art-zero-4" value="c"> a</label>
+                  <label class="option"><input type="radio" name="art-zero-4" value="d"> an</label>
+                  <label class="option"><input type="radio" name="art-zero-4" value="e"> some</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="d">
+                <p>5. Choose the correct sentence.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="art-zero-5" value="a"> The breakfast is at 8 every day.</label>
+                  <label class="option"><input type="radio" name="art-zero-5" value="b"> A breakfast is at 8 every day.</label>
+                  <label class="option"><input type="radio" name="art-zero-5" value="c"> An breakfast is at 8 every day.</label>
+                  <label class="option"><input type="radio" name="art-zero-5" value="d"> Breakfast is at 8 every day.</label>
+                  <label class="option"><input type="radio" name="art-zero-5" value="e"> Breakfasts is at 8 every day.</label>
+                </div>
+              </div>
+
+              <button class="check-btn" type="button" data-check="article-zero-test">
+                <span class="inline-lang" data-lang="kk">Жауаптарды тексеру</span>
+                <span class="inline-lang" data-lang="ru">Проверить ответы</span>
+              </button>
+
+              <div class="result-box" data-result="article-zero-test">
+                <h5>
+                  <span class="inline-lang" data-lang="kk">Түсіндірме</span>
+                  <span class="inline-lang" data-lang="ru">Объяснение</span>
+                </h5>
+
+                <div class="lang-content" data-lang="kk">
+                  <ol>
+                    <li><b>Water</b> жалпы мағынада тұрған саналмайтын зат есім.</li>
+                    <li><b>English</b> тіл атауы, артикль қолданылмайды.</li>
+                    <li><b>Books</b> жалпы көпше мағынада тұр.</li>
+                    <li><b>mathematics</b> пән атауы, артикль қажет емес.</li>
+                    <li><b>Breakfast</b> күнделікті ас атауы ретінде жалпы айтылып тұр.</li>
+                  </ol>
+                </div>
+
+                <div class="lang-content" data-lang="ru">
+                  <ol>
+                    <li><b>Water</b> — неисчисляемое существительное в общем значении.</li>
+                    <li><b>English</b> — название языка, артикль не нужен.</li>
+                    <li><b>Books</b> — общее значение во множественном числе.</li>
+                    <li><b>mathematics</b> — название предмета, артикль не нужен.</li>
+                    <li><b>Breakfast</b> используется как обычное название приёма пищи.</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="subunit" id="article-geography">
+          <div class="subunit-header">
+            <div class="subunit-label">Article · Sub-unit 5</div>
+            <h3>Articles with Geographical Names</h3>
+            <div class="subunit-translation">
+              <span class="inline-lang" data-lang="kk">Географиялық атаулармен артикль</span>
+              <span class="inline-lang" data-lang="ru">Артикли с географическими названиями</span>
+            </div>
+          </div>
+
+          <div class="subunit-body">
+            <div class="lesson-layout">
+              <div class="lesson-box">
+                <h4>English rule</h4>
+                <p>
+                  Many geographical names are used without an article, especially most countries, cities, continents,
+                  and single lakes. The is used with rivers, seas, oceans, mountain ranges, deserts, groups of islands,
+                  and some country names.
+                </p>
+              </div>
+
+              <div class="lesson-box">
+                <h4>
+                  <span class="inline-lang" data-lang="kk">Түсіндіру</span>
+                  <span class="inline-lang" data-lang="ru">Объяснение</span>
+                </h4>
+
+                <div class="lang-content" data-lang="kk">
+                  <p>
+                    Көп елдер, қалалар және құрлықтар артикльсіз қолданылады: Kazakhstan, London, Asia.
+                    Бірақ өзендер, теңіздер, мұхиттар, тау жоталары, шөлдер және аралдар тобы көбіне
+                    <b>the</b> артиклімен қолданылады: the Thames, the Caspian Sea, the Pacific Ocean, the Alps.
+                  </p>
+                </div>
+
+                <div class="lang-content" data-lang="ru">
+                  <p>
+                    Большинство стран, городов и континентов используются без артикля: Kazakhstan, London, Asia.
+                    Но реки, моря, океаны, горные цепи, пустыни и группы островов часто используются с
+                    <b>the</b>: the Thames, the Caspian Sea, the Pacific Ocean, the Alps.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="formula-box">
+              no article: Kazakhstan, London, Asia · the: the Thames, the Pacific Ocean, the Alps, the Sahara
+            </div>
+
+            <div class="lesson-layout">
+              <div class="lesson-box">
+                <h4>
+                  <span class="inline-lang" data-lang="kk">Артикльсіз</span>
+                  <span class="inline-lang" data-lang="ru">Без артикля</span>
+                </h4>
+                <ul>
+                  <li>Kazakhstan, Italy, Canada</li>
+                  <li>London, Almaty, Rome</li>
+                  <li>Asia, Europe, Africa</li>
+                  <li>Lake Balkhash, Lake Baikal</li>
+                </ul>
+              </div>
+
+              <div class="lesson-box">
+                <h4>
+                  <span class="inline-lang" data-lang="kk">The артиклімен</span>
+                  <span class="inline-lang" data-lang="ru">С артиклем the</span>
+                </h4>
+                <ul>
+                  <li>the Thames, the Nile</li>
+                  <li>the Caspian Sea, the Black Sea</li>
+                  <li>the Pacific Ocean, the Atlantic Ocean</li>
+                  <li>the Alps, the Himalayas</li>
+                  <li>the Sahara, the Gobi Desert</li>
+                  <li>the United States, the United Kingdom</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="example-box">
+              <p class="example-sentence">
+                <span class="mark noun">Kazakhstan</span> is located in <span class="mark noun">Asia</span>.
+              </p>
+              <p class="example-note">
+                <span class="inline-lang" data-lang="kk">
+                  Kazakhstan және Asia артикльсіз қолданылады, себебі ел және құрлық атауы.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  Kazakhstan и Asia используются без артикля, потому что это страна и континент.
+                </span>
+              </p>
+            </div>
+
+            <div class="example-box">
+              <p class="example-sentence">
+                <span class="mark article">The</span> Nile is one of the longest rivers in the world.
+              </p>
+              <p class="example-note">
+                <span class="inline-lang" data-lang="kk">
+                  Өзен атауларымен the қолданылады: the Nile.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  С названиями рек используется the: the Nile.
+                </span>
+              </p>
+            </div>
+
+            <div class="mistake-box">
+              <h4>
+                <span class="inline-lang" data-lang="kk">Жиі қате</span>
+                <span class="inline-lang" data-lang="ru">Частая ошибка</span>
+              </h4>
+              <p>
+                <span class="inline-lang" data-lang="kk">
+                  “The Kazakhstan” деп жазуға болмайды. Дұрысы: <b>Kazakhstan</b>. Бірақ
+                  <b>the United Kingdom</b> және <b>the United States</b> деп жазылады.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  Нельзя писать “The Kazakhstan”. Правильно: <b>Kazakhstan</b>. Но пишется
+                  <b>the United Kingdom</b> и <b>the United States</b>.
+                </span>
+              </p>
+            </div>
+
+            <div class="test-box" data-test="article-geography-test">
+              <div class="test-header">
+                <h4>Mini test · Geographical Names</h4>
+                <span class="mini-badge">5 questions</span>
+              </div>
+
+              <div class="question" data-answer="c">
+                <p>1. Choose the correct sentence.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="art-geo-1" value="a"> The Kazakhstan is in Asia.</label>
+                  <label class="option"><input type="radio" name="art-geo-1" value="b"> A Kazakhstan is in Asia.</label>
+                  <label class="option"><input type="radio" name="art-geo-1" value="c"> Kazakhstan is in Asia.</label>
+                  <label class="option"><input type="radio" name="art-geo-1" value="d"> Kazakhstan is in the Asia.</label>
+                  <label class="option"><input type="radio" name="art-geo-1" value="e"> An Kazakhstan is in Asia.</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="a">
+                <p>2. Choose the correct article: “___ Pacific Ocean is very large.”</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="art-geo-2" value="a"> The</label>
+                  <label class="option"><input type="radio" name="art-geo-2" value="b"> A</label>
+                  <label class="option"><input type="radio" name="art-geo-2" value="c"> An</label>
+                  <label class="option"><input type="radio" name="art-geo-2" value="d"> Zero article</label>
+                  <label class="option"><input type="radio" name="art-geo-2" value="e"> Some</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="d">
+                <p>3. Choose the correct phrase.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="art-geo-3" value="a"> Alps</label>
+                  <label class="option"><input type="radio" name="art-geo-3" value="b"> a Alps</label>
+                  <label class="option"><input type="radio" name="art-geo-3" value="c"> an Alps</label>
+                  <label class="option"><input type="radio" name="art-geo-3" value="d"> the Alps</label>
+                  <label class="option"><input type="radio" name="art-geo-3" value="e"> some Alps</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="b">
+                <p>4. Choose the correct article: “She lives in ___ Rome.”</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="art-geo-4" value="a"> the</label>
+                  <label class="option"><input type="radio" name="art-geo-4" value="b"> zero article</label>
+                  <label class="option"><input type="radio" name="art-geo-4" value="c"> a</label>
+                  <label class="option"><input type="radio" name="art-geo-4" value="d"> an</label>
+                  <label class="option"><input type="radio" name="art-geo-4" value="e"> some</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="e">
+                <p>5. Choose the correct phrase.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="art-geo-5" value="a"> United States</label>
+                  <label class="option"><input type="radio" name="art-geo-5" value="b"> a United States</label>
+                  <label class="option"><input type="radio" name="art-geo-5" value="c"> an United States</label>
+                  <label class="option"><input type="radio" name="art-geo-5" value="d"> some United States</label>
+                  <label class="option"><input type="radio" name="art-geo-5" value="e"> the United States</label>
+                </div>
+              </div>
+
+              <button class="check-btn" type="button" data-check="article-geography-test">
+                <span class="inline-lang" data-lang="kk">Жауаптарды тексеру</span>
+                <span class="inline-lang" data-lang="ru">Проверить ответы</span>
+              </button>
+
+              <div class="result-box" data-result="article-geography-test">
+                <h5>
+                  <span class="inline-lang" data-lang="kk">Түсіндірме</span>
+                  <span class="inline-lang" data-lang="ru">Объяснение</span>
+                </h5>
+
+                <div class="lang-content" data-lang="kk">
+                  <ol>
+                    <li><b>Kazakhstan</b> ел атауы, артикльсіз қолданылады.</li>
+                    <li><b>the Pacific Ocean</b> — мұхит атауларымен the қолданылады.</li>
+                    <li><b>the Alps</b> — тау жоталары the артиклімен қолданылады.</li>
+                    <li><b>Rome</b> қала атауы, артикльсіз қолданылады.</li>
+                    <li><b>the United States</b> — ерекше ел атауы, the артиклімен қолданылады.</li>
+                  </ol>
+                </div>
+
+                <div class="lang-content" data-lang="ru">
+                  <ol>
+                    <li><b>Kazakhstan</b> — название страны, используется без артикля.</li>
+                    <li><b>the Pacific Ocean</b> — с названиями океанов используется the.</li>
+                    <li><b>the Alps</b> — горные цепи используются с the.</li>
+                    <li><b>Rome</b> — название города, артикль не нужен.</li>
+                    <li><b>the United States</b> — особое название страны, используется с the.</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="subunit" id="article-names">
+          <div class="subunit-header">
+            <div class="subunit-label">Article · Sub-unit 6</div>
+            <h3>Articles with Proper and Personal Names</h3>
+            <div class="subunit-translation">
+              <span class="inline-lang" data-lang="kk">Жалқы және адам аттарымен артикль</span>
+              <span class="inline-lang" data-lang="ru">Артикли с собственными и личными именами</span>
+            </div>
+          </div>
+
+          <div class="subunit-body">
+            <div class="lesson-layout">
+              <div class="lesson-box">
+                <h4>English rule</h4>
+                <p>
+                  Personal names and most proper names are usually used without an article. The can be used with family
+                  names in plural form, names with titles of buildings, newspapers, hotels, ships, and some organizations.
+                </p>
+              </div>
+
+              <div class="lesson-box">
+                <h4>
+                  <span class="inline-lang" data-lang="kk">Түсіндіру</span>
+                  <span class="inline-lang" data-lang="ru">Объяснение</span>
+                </h4>
+
+                <div class="lang-content" data-lang="kk">
+                  <p>
+                    Адам аттары әдетте артикльсіз қолданылады: Anna, John, Nazerke. Бірақ отбасы фамилиясы көпше түрде
+                    айтылса, <b>the</b> қолданылады: the Smiths — Смиттер отбасы. Қонақүй, газет, театр, музей,
+                    ұйым атауларында да кейде <b>the</b> болады: the Hilton, the Times, the British Museum.
+                  </p>
+                </div>
+
+                <div class="lang-content" data-lang="ru">
+                  <p>
+                    Личные имена обычно используются без артикля: Anna, John, Nazerke. Но если фамилия семьи стоит
+                    во множественном числе, используется <b>the</b>: the Smiths — семья Смитов. В названиях отелей,
+                    газет, театров, музеев и организаций тоже иногда используется <b>the</b>: the Hilton, the Times,
+                    the British Museum.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="formula-box">
+              no article: Anna, John, Professor Brown · the + family name plural: the Smiths · the + some institutions: the British Museum
+            </div>
+
+            <div class="example-box">
+              <p class="example-sentence">
+                <span class="mark noun">Anna</span> studies English.
+              </p>
+              <p class="example-note">
+                <span class="inline-lang" data-lang="kk">
+                  Anna — адам аты, сондықтан артикль қолданылмайды.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  Anna — личное имя, поэтому артикль не используется.
+                </span>
+              </p>
+            </div>
+
+            <div class="example-box">
+              <p class="example-sentence">
+                <span class="mark article">The</span> Smiths live next door.
+              </p>
+              <p class="example-note">
+                <span class="inline-lang" data-lang="kk">
+                  The Smiths — Смиттер отбасы деген мағына. Фамилия көпше түрде отбасын білдіріп тұр.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  The Smiths означает “семья Смитов”. Фамилия во множественном числе обозначает семью.
+                </span>
+              </p>
+            </div>
+
+            <div class="mistake-box">
+              <h4>
+                <span class="inline-lang" data-lang="kk">Жиі қате</span>
+                <span class="inline-lang" data-lang="ru">Частая ошибка</span>
+              </h4>
+              <p>
+                <span class="inline-lang" data-lang="kk">
+                  “The Anna is my friend” деп айту қате. Адам аты жеке қолданылса, артикль қойылмайды:
+                  <b>Anna is my friend</b>.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  “The Anna is my friend” — ошибка. Если личное имя используется отдельно, артикль не ставится:
+                  <b>Anna is my friend</b>.
+                </span>
+              </p>
+            </div>
+
+            <div class="test-box" data-test="article-names-test">
+              <div class="test-header">
+                <h4>Mini test · Proper & Personal Names</h4>
+                <span class="mini-badge">5 questions</span>
+              </div>
+
+              <div class="question" data-answer="b">
+                <p>1. Choose the correct sentence.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="art-name-1" value="a"> The Anna is a student.</label>
+                  <label class="option"><input type="radio" name="art-name-1" value="b"> Anna is a student.</label>
+                  <label class="option"><input type="radio" name="art-name-1" value="c"> A Anna is a student.</label>
+                  <label class="option"><input type="radio" name="art-name-1" value="d"> An Anna is a student.</label>
+                  <label class="option"><input type="radio" name="art-name-1" value="e"> Some Anna is a student.</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="e">
+                <p>2. Choose the correct phrase for a family.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="art-name-2" value="a"> Smiths</label>
+                  <label class="option"><input type="radio" name="art-name-2" value="b"> a Smiths</label>
+                  <label class="option"><input type="radio" name="art-name-2" value="c"> an Smiths</label>
+                  <label class="option"><input type="radio" name="art-name-2" value="d"> Smith</label>
+                  <label class="option"><input type="radio" name="art-name-2" value="e"> the Smiths</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="a">
+                <p>3. Choose the correct sentence.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="art-name-3" value="a"> Professor Brown gave a lecture.</label>
+                  <label class="option"><input type="radio" name="art-name-3" value="b"> The Professor Brown gave a lecture.</label>
+                  <label class="option"><input type="radio" name="art-name-3" value="c"> A Professor Brown gave a lecture.</label>
+                  <label class="option"><input type="radio" name="art-name-3" value="d"> An Professor Brown gave a lecture.</label>
+                  <label class="option"><input type="radio" name="art-name-3" value="e"> Some Professor Brown gave a lecture.</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="d">
+                <p>4. Choose the correct phrase.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="art-name-4" value="a"> British Museum</label>
+                  <label class="option"><input type="radio" name="art-name-4" value="b"> a British Museum</label>
+                  <label class="option"><input type="radio" name="art-name-4" value="c"> an British Museum</label>
+                  <label class="option"><input type="radio" name="art-name-4" value="d"> the British Museum</label>
+                  <label class="option"><input type="radio" name="art-name-4" value="e"> some British Museum</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="c">
+                <p>5. Choose the correct sentence.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="art-name-5" value="a"> The John is my brother.</label>
+                  <label class="option"><input type="radio" name="art-name-5" value="b"> A John is my brother.</label>
+                  <label class="option"><input type="radio" name="art-name-5" value="c"> John is my brother.</label>
+                  <label class="option"><input type="radio" name="art-name-5" value="d"> An John is my brother.</label>
+                  <label class="option"><input type="radio" name="art-name-5" value="e"> Some John is my brother.</label>
+                </div>
+              </div>
+
+              <button class="check-btn" type="button" data-check="article-names-test">
+                <span class="inline-lang" data-lang="kk">Жауаптарды тексеру</span>
+                <span class="inline-lang" data-lang="ru">Проверить ответы</span>
+              </button>
+
+              <div class="result-box" data-result="article-names-test">
+                <h5>
+                  <span class="inline-lang" data-lang="kk">Түсіндірме</span>
+                  <span class="inline-lang" data-lang="ru">Объяснение</span>
+                </h5>
+
+                <div class="lang-content" data-lang="kk">
+                  <ol>
+                    <li><b>Anna</b> адам аты, артикльсіз қолданылады.</li>
+                    <li><b>the Smiths</b> — Смиттер отбасы деген мағына.</li>
+                    <li><b>Professor Brown</b> атақ пен фамилия бірге келсе, әдетте артикль қойылмайды.</li>
+                    <li><b>the British Museum</b> — музей атауы, the артиклімен қолданылады.</li>
+                    <li><b>John</b> адам аты, сондықтан артикль қажет емес.</li>
+                  </ol>
+                </div>
+
+                <div class="lang-content" data-lang="ru">
+                  <ol>
+                    <li><b>Anna</b> — личное имя, артикль не используется.</li>
+                    <li><b>the Smiths</b> — семья Смитов.</li>
+                    <li><b>Professor Brown</b> — титул и фамилия обычно используются без артикля.</li>
+                    <li><b>the British Museum</b> — название музея, используется с the.</li>
+                    <li><b>John</b> — личное имя, артикль не нужен.</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
