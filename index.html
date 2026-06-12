@@ -89,14 +89,13 @@
       margin: 0 auto;
     }
 
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      backdrop-filter: blur(18px);
-      background: rgba(255, 255, 255, 0.72);
-      border-bottom: 1px solid rgba(124, 58, 237, 0.12);
-    }
+  .topbar {
+  position: relative;
+  z-index: 1000;
+  backdrop-filter: blur(18px);
+  background: rgba(255, 255, 255, 0.72);
+  border-bottom: 1px solid rgba(124, 58, 237, 0.12);
+}
 
     .topbar-inner {
       width: min(var(--max), calc(100% - 32px));
@@ -472,17 +471,15 @@
       font-size: 12px;
     }
 
-    .sticky-nav {
-      position: sticky;
-      top: 74px;
-      z-index: 900;
-      padding: 10px 0;
-      backdrop-filter: blur(18px);
-      background: rgba(255, 247, 251, 0.76);
-      border-top: 1px solid rgba(124, 58, 237, 0.08);
-      border-bottom: 1px solid rgba(124, 58, 237, 0.1);
-    }
-
+ .sticky-nav {
+  position: relative;
+  z-index: 900;
+  padding: 10px 0;
+  backdrop-filter: blur(18px);
+  background: rgba(255, 247, 251, 0.76);
+  border-top: 1px solid rgba(124, 58, 237, 0.08);
+  border-bottom: 1px solid rgba(124, 58, 237, 0.1);
+}
     .nav-scroll {
       width: min(var(--max), calc(100% - 32px));
       margin: 0 auto;
@@ -6468,58 +6465,59 @@
       </div>
     </div>
   </footer>
+<script>
+  function switchLanguage(lang) {
+    document.body.classList.remove("lang-kk", "lang-ru");
+    document.body.classList.add("lang-" + lang);
 
-  <script>
-    const langButtons = document.querySelectorAll("[data-set-lang]");
-    const body = document.body;
+    document.querySelectorAll(".lang-btn").forEach(function(btn) {
+      btn.classList.remove("active");
+    });
 
-    function setLanguage(lang) {
-      body.classList.remove("lang-kk", "lang-ru");
-      body.classList.add("lang-" + lang);
+    document.querySelectorAll('[data-set-lang="' + lang + '"]').forEach(function(btn) {
+      btn.classList.add("active");
+    });
 
-      langButtons.forEach((button) => {
-        button.classList.toggle("active", button.dataset.setLang === lang);
-      });
-
+    try {
       localStorage.setItem("geGrammarLang", lang);
-    }
+    } catch (e) {}
+  }
 
-    langButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        setLanguage(button.dataset.setLang);
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll("[data-set-lang]").forEach(function(button) {
+      button.addEventListener("click", function() {
+        const lang = button.getAttribute("data-set-lang");
+        switchLanguage(lang);
       });
     });
 
-    const savedLang = localStorage.getItem("geGrammarLang");
-    if (savedLang === "kk" || savedLang === "ru") {
-      setLanguage(savedLang);
-    } else {
-      setLanguage("kk");
+    let savedLang = "kk";
+    try {
+      savedLang = localStorage.getItem("geGrammarLang") || "kk";
+    } catch (e) {}
+
+    if (savedLang !== "kk" && savedLang !== "ru") {
+      savedLang = "kk";
     }
 
-    function addFormulaNotes() {
-      const formulaBoxes = document.querySelectorAll(".formula-box");
+    switchLanguage(savedLang);
 
-      formulaBoxes.forEach((box) => {
-        const next = box.nextElementSibling;
-        if (next && next.classList && next.classList.contains("formula-note")) return;
+    document.querySelectorAll(".formula-box").forEach(function(box) {
+      const next = box.nextElementSibling;
+      if (next && next.classList && next.classList.contains("formula-note")) return;
 
-        const note = document.createElement("div");
-        note.className = "formula-note";
-        note.innerHTML = `
-          <span class="inline-lang" data-lang="kk">
-            Бұл қысқа ағылшынша үлгі ережені тез есте сақтауға арналған. Мұндағы arrows немесе symbols сөздің қалай өзгеретінін көрсетеді.
-          </span>
-          <span class="inline-lang" data-lang="ru">
-            Это короткая английская схема для быстрого запоминания правила. Arrows или symbols показывают, как меняется слово или структура.
-          </span>
-        `;
+      const note = document.createElement("div");
+      note.className = "formula-note";
+      note.innerHTML =
+        '<span class="inline-lang" data-lang="kk">' +
+        'Бұл қысқа ағылшынша үлгі ережені тез есте сақтауға арналған. Мұндағы arrows немесе symbols сөздің қалай өзгеретінін көрсетеді.' +
+        '</span>' +
+        '<span class="inline-lang" data-lang="ru">' +
+        'Это короткая английская схема для быстрого запоминания правила. Arrows или symbols показывают, как меняется слово или структура.' +
+        '</span>';
 
-        box.insertAdjacentElement("afterend", note);
-      });
-    }
-
-    addFormulaNotes();
+      box.insertAdjacentElement("afterend", note);
+    });
 
     const extraStyle = document.createElement("style");
     extraStyle.textContent = `
@@ -6559,19 +6557,19 @@
     document.head.appendChild(extraStyle);
 
     function checkTest(testId) {
-      const testBox = document.querySelector(`[data-test="${testId}"]`);
-      const resultBox = document.querySelector(`[data-result="${testId}"]`);
+      const testBox = document.querySelector('[data-test="' + testId + '"]');
+      const resultBox = document.querySelector('[data-result="' + testId + '"]');
 
       if (!testBox || !resultBox) return;
 
       const questions = testBox.querySelectorAll(".question");
       let score = 0;
 
-      questions.forEach((question) => {
-        const correctAnswer = question.dataset.answer;
-        const selected = question.querySelector("input[type='radio']:checked");
+      questions.forEach(function(question) {
+        const correctAnswer = question.getAttribute("data-answer");
+        const selected = question.querySelector('input[type="radio"]:checked');
 
-        question.querySelectorAll(".option").forEach((option) => {
+        question.querySelectorAll(".option").forEach(function(option) {
           option.classList.remove("correct", "wrong");
 
           const input = option.querySelector("input");
@@ -6596,23 +6594,26 @@
 
       const scoreLine = document.createElement("div");
       scoreLine.className = "score-line";
-      scoreLine.innerHTML = `
-        <span class="inline-lang" data-lang="kk">Нәтиже: ${score} / ${questions.length}</span>
-        <span class="inline-lang" data-lang="ru">Результат: ${score} / ${questions.length}</span>
-      `;
+      scoreLine.innerHTML =
+        '<span class="inline-lang" data-lang="kk">Нәтиже: ' + score + ' / ' + questions.length + '</span>' +
+        '<span class="inline-lang" data-lang="ru">Результат: ' + score + ' / ' + questions.length + '</span>';
 
       resultBox.prepend(scoreLine);
       resultBox.classList.add("show");
+
+      const currentLang = document.body.classList.contains("lang-ru") ? "ru" : "kk";
+      switchLanguage(currentLang);
     }
 
-    document.querySelectorAll("[data-check]").forEach((button) => {
-      button.addEventListener("click", () => {
-        checkTest(button.dataset.check);
+    document.querySelectorAll("[data-check]").forEach(function(button) {
+      button.addEventListener("click", function() {
+        const testId = button.getAttribute("data-check");
+        checkTest(testId);
       });
     });
 
-    document.querySelectorAll('a[href^="#"]').forEach((link) => {
-      link.addEventListener("click", (event) => {
+    document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+      link.addEventListener("click", function(event) {
         const targetId = link.getAttribute("href");
         const target = document.querySelector(targetId);
 
@@ -6625,6 +6626,7 @@
         });
       });
     });
-  </script>
+  });
+</script>
 </body>
 </html>
