@@ -964,6 +964,30 @@
       height: 36px;
     }
 
+    .back-to-top {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 999;
+      width: 46px;
+      height: 46px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: linear-gradient(135deg, var(--primary), var(--pink));
+      box-shadow: 0 14px 30px rgba(124, 58, 237, 0.28);
+      font-weight: 950;
+      font-size: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      transition: 0.22s ease;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-3px);
+    }
+
+
     @media (max-width: 980px) {
       .hero-grid,
       .grammar-hero,
@@ -1238,7 +1262,7 @@
               </p>
               <div class="rule-meta">
                 <span class="pill">A1</span>
-                <span class="pill">5 sub-units</span>
+                <span class="pill">7 sub-units</span>
                 <span class="pill">Tests</span>
               </div>
             </a>
@@ -1260,7 +1284,7 @@
               </p>
               <div class="rule-meta">
                 <span class="pill">B1</span>
-                <span class="pill">6 sub-units</span>
+                <span class="pill">8 sub-units</span>
                 <span class="pill">Tests</span>
               </div>
             </a>
@@ -1282,7 +1306,7 @@
               </p>
               <div class="rule-meta">
                 <span class="pill">A1–B1</span>
-                <span class="pill">5 sub-units</span>
+                <span class="pill">6 sub-units</span>
                 <span class="pill">Tests</span>
               </div>
             </a>
@@ -1433,6 +1457,14 @@
                 <span>
                   <span class="inline-lang" data-lang="kk">Сөйлемдегі қызметі</span>
                   <span class="inline-lang" data-lang="ru">Роль в предложении</span>
+                </span>
+              </a>
+
+              <a class="subunit-chip" href="#noun-irregular-common">
+                <strong>Irregular Plurals & Mistakes</strong>
+                <span>
+                  <span class="inline-lang" data-lang="kk">Ерекше көпше түр және жиі қателер</span>
+                  <span class="inline-lang" data-lang="ru">Исключения и частые ошибки</span>
                 </span>
               </a>
             </div>
@@ -2577,6 +2609,90 @@
               </div>
             </div>
           </div>
+
+
+        <article class="subunit" id="noun-irregular-common">
+          <div class="subunit-header">
+            <div class="subunit-label">Noun · Sub-unit 6</div>
+            <h3>Irregular Plurals & Common Mistakes</h3>
+            <div class="subunit-translation">
+              <span class="inline-lang" data-lang="kk">Ерекше көпше түр және жиі қателер</span>
+              <span class="inline-lang" data-lang="ru">Исключения и частые ошибки</span>
+            </div>
+          </div>
+          <div class="subunit-body">
+            <div class="lesson-layout">
+              <div class="lesson-box">
+                <h4>English rule</h4>
+                <p>
+                  Some nouns do not form the plural with simple <b>-s</b>. Some change the whole word,
+                  some keep the same form, and some uncountable nouns are not used in the plural.
+                </p>
+              </div>
+              <div class="lesson-box">
+                <h4><span class="inline-lang" data-lang="kk">Түсіндіру</span><span class="inline-lang" data-lang="ru">Объяснение</span></h4>
+                <div class="lang-content" data-lang="kk">
+                  <p>
+                    Кейбір зат есімдер көпше түрде жай ғана <b>-s</b> алмайды. Олар толық өзгереді немесе мүлде көпше формаға айналмайды.
+                    Емтиханда әсіресе <b>child — children</b>, <b>man — men</b>, <b>woman — women</b>, <b>person — people</b>,
+                    <b>diary — diaries</b>, <b>box — boxes</b> сияқты формалар жиі кездеседі.
+                  </p>
+                </div>
+                <div class="lang-content" data-lang="ru">
+                  <p>
+                    Некоторые существительные не образуют множественное число простым добавлением <b>-s</b>.
+                    Они могут полностью изменяться или не иметь множественной формы. На экзамене часто встречаются:
+                    <b>child — children</b>, <b>man — men</b>, <b>woman — women</b>, <b>person — people</b>,
+                    <b>diary — diaries</b>, <b>box — boxes</b>.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="formula-box">
+              <div class="formula-main">child → children · man → men · woman → women · person → people · diary → diaries · box → boxes</div>
+              <div class="formula-translation">
+                <span class="inline-lang" data-lang="kk"><span class="label">Аударма:</span> child — бала, children — балалар; man — ер адам, men — ер адамдар; diary — күнделік, diaries — күнделіктер.</span>
+                <span class="inline-lang" data-lang="ru"><span class="label">Перевод:</span> child — ребёнок, children — дети; man — мужчина, men — мужчины; diary — дневник, diaries — дневники.</span>
+              </div>
+            </div>
+            <div class="lesson-layout">
+              <div class="lesson-box">
+                <h4><span class="inline-lang" data-lang="kk">Саналмайтын зат есімдер</span><span class="inline-lang" data-lang="ru">Неисчисляемые существительные</span></h4>
+                <ul>
+                  <li><b>information</b> — ақпарат / информация: <b>some information</b>, not <b>informations</b></li>
+                  <li><b>advice</b> — кеңес / совет: <b>a piece of advice</b>, not <b>an advice</b></li>
+                  <li><b>knowledge</b> — білім / знание: usually singular</li>
+                  <li><b>news</b> — жаңалық / новости: looks plural, but takes singular verb: <b>The news is important.</b></li>
+                </ul>
+              </div>
+              <div class="lesson-box">
+                <h4><span class="inline-lang" data-lang="kk">Жинақтық зат есімдер</span><span class="inline-lang" data-lang="ru">Собирательные существительные</span></h4>
+                <ul>
+                  <li><b>family</b> — отбасы / семья</li>
+                  <li><b>team</b> — команда / команда</li>
+                  <li><b>police</b> — полиция / полиция: often plural meaning: <b>The police are here.</b></li>
+                  <li><b>people</b> — адамдар / люди: plural meaning</li>
+                </ul>
+              </div>
+            </div>
+            <div class="mistake-box">
+              <h4><span class="inline-lang" data-lang="kk">Жиі қате</span><span class="inline-lang" data-lang="ru">Частая ошибка</span></h4>
+              <p>
+                <span class="inline-lang" data-lang="kk"><b>Informations</b>, <b>advices</b>, <b>childs</b>, <b>diarys</b> — қате. Дұрысы: <b>information</b>, <b>advice</b>, <b>children</b>, <b>diaries</b>.</span>
+                <span class="inline-lang" data-lang="ru"><b>Informations</b>, <b>advices</b>, <b>childs</b>, <b>diarys</b> — неправильно. Правильно: <b>information</b>, <b>advice</b>, <b>children</b>, <b>diaries</b>.</span>
+              </p>
+            </div>
+            <div class="test-box" data-test="noun-irregular-common-test">
+              <div class="test-header"><h4>Mini test · Irregular Plurals & Mistakes</h4><span class="mini-badge">5 questions</span></div>
+              <div class="question" data-answer="c"><p>1. Choose the correct plural form of “child”.</p><div class="options"><label class="option"><input type="radio" name="noun-ir-1" value="a"> childs</label><label class="option"><input type="radio" name="noun-ir-1" value="b"> childes</label><label class="option"><input type="radio" name="noun-ir-1" value="c"> children</label><label class="option"><input type="radio" name="noun-ir-1" value="d"> childrens</label><label class="option"><input type="radio" name="noun-ir-1" value="e"> childies</label></div></div>
+              <div class="question" data-answer="b"><p>2. Choose the correct sentence.</p><div class="options"><label class="option"><input type="radio" name="noun-ir-2" value="a"> I need an advice.</label><label class="option"><input type="radio" name="noun-ir-2" value="b"> I need some advice.</label><label class="option"><input type="radio" name="noun-ir-2" value="c"> I need advices.</label><label class="option"><input type="radio" name="noun-ir-2" value="d"> I need many advice.</label><label class="option"><input type="radio" name="noun-ir-2" value="e"> I need a advices.</label></div></div>
+              <div class="question" data-answer="e"><p>3. Choose the correct plural form of “diary”.</p><div class="options"><label class="option"><input type="radio" name="noun-ir-3" value="a"> diarys</label><label class="option"><input type="radio" name="noun-ir-3" value="b"> diaryes</label><label class="option"><input type="radio" name="noun-ir-3" value="c"> diares</label><label class="option"><input type="radio" name="noun-ir-3" value="d"> diarieses</label><label class="option"><input type="radio" name="noun-ir-3" value="e"> diaries</label></div></div>
+              <div class="question" data-answer="a"><p>4. Choose the correct sentence.</p><div class="options"><label class="option"><input type="radio" name="noun-ir-4" value="a"> The news is important.</label><label class="option"><input type="radio" name="noun-ir-4" value="b"> The news are important.</label><label class="option"><input type="radio" name="noun-ir-4" value="c"> A news is important.</label><label class="option"><input type="radio" name="noun-ir-4" value="d"> Many news are important.</label><label class="option"><input type="radio" name="noun-ir-4" value="e"> These news is important.</label></div></div>
+              <div class="question" data-answer="d"><p>5. Choose the correct plural form of “person”.</p><div class="options"><label class="option"><input type="radio" name="noun-ir-5" value="a"> persons only</label><label class="option"><input type="radio" name="noun-ir-5" value="b"> personies</label><label class="option"><input type="radio" name="noun-ir-5" value="c"> personed</label><label class="option"><input type="radio" name="noun-ir-5" value="d"> people</label><label class="option"><input type="radio" name="noun-ir-5" value="e"> peoples</label></div></div>
+              <button class="check-btn" type="button" data-check="noun-irregular-common-test"><span class="inline-lang" data-lang="kk">Жауаптарды тексеру</span><span class="inline-lang" data-lang="ru">Проверить ответы</span></button>
+              <div class="result-box" data-result="noun-irregular-common-test"><h5><span class="inline-lang" data-lang="kk">Түсіндірме</span><span class="inline-lang" data-lang="ru">Объяснение</span></h5><div class="lang-content" data-lang="kk"><ol><li><b>children</b> — child сөзінің ерекше көпше түрі.</li><li><b>some advice</b> дұрыс, себебі advice саналмайды.</li><li><b>diary → diaries</b>: consonant + y болса, y → ies.</li><li><b>The news is</b> дұрыс, news сырттай көпше сияқты көрінсе де, жекеше етістікпен келеді.</li><li><b>people</b> — person сөзінің жиі қолданылатын көпше формасы.</li></ol></div><div class="lang-content" data-lang="ru"><ol><li><b>children</b> — неправильная форма множественного числа от child.</li><li><b>some advice</b> правильно, потому что advice неисчисляемое.</li><li><b>diary → diaries</b>: согласная + y меняется на ies.</li><li><b>The news is</b> правильно: news выглядит как множественное, но требует единственного числа.</li><li><b>people</b> — обычная форма множественного числа от person.</li></ol></div></div>
+            </div>
+          </div>
         </article>
       </div>
     </section>
@@ -2656,6 +2772,14 @@
                 <span>
                   <span class="inline-lang" data-lang="kk">Жалқы және адам аттары</span>
                   <span class="inline-lang" data-lang="ru">Собственные и личные имена</span>
+                </span>
+              </a>
+
+              <a class="subunit-chip" href="#article-special-the">
+                <strong>Special Uses of The</strong>
+                <span>
+                  <span class="inline-lang" data-lang="kk">The артиклінің ерекше қолданысы</span>
+                  <span class="inline-lang" data-lang="ru">Особые случаи употребления the</span>
                 </span>
               </a>
             </div>
@@ -3089,8 +3213,9 @@
                     Әлем бағыттары аймақ ретінде айтылғанда да the қолданылады: the north, the south, the east, the west.
 
 Мысал:
-Shymkent is in the south of Kz.
+Shymkent is in the south of Kazakhstan.
 Шымкент Қазақстанның оңтүстігінде орналасқан.
+Шымкент находится на юге Казахстана.
                   </p>
                 </div>
 
@@ -3102,7 +3227,7 @@ Shymkent is in the south of Kz.
                     Со сторонами света the тоже используется, когда они обозначают регион или часть страны: the north, the south, the east, the west.
 
 Пример:
-Shymkent is in the south of Kz
+Shymkent is in the south of Kazakhstan.
                     Шымкент находится на юге Казахстана.
                   </p>
                 </div>
@@ -3885,281 +4010,179 @@ Shymkent is in the south of Kz
             </div>
           </div>
         </article>
+
+        <article class="subunit" id="article-special-the">
+          <div class="subunit-header">
+            <div class="subunit-label">Article · Sub-unit 7</div>
+            <h3>Special Uses of The</h3>
+            <div class="subunit-translation"><span class="inline-lang" data-lang="kk">The артиклінің ерекше қолданысы</span><span class="inline-lang" data-lang="ru">Особые случаи употребления the</span></div>
+          </div>
+          <div class="subunit-body">
+            <div class="lesson-layout">
+              <div class="lesson-box"><h4>English rule</h4><p><b>The</b> is used not only with a known noun, but also with unique things, ordinal numbers, superlatives, and directions when they mean regions.</p></div>
+              <div class="lesson-box"><h4><span class="inline-lang" data-lang="kk">Түсіндіру</span><span class="inline-lang" data-lang="ru">Объяснение</span></h4><div class="lang-content" data-lang="kk"><p><b>The</b> тек бұрын белгілі затпен ғана емес, бірегей заттармен, реттік сан есімдермен, ең жоғары дәрежемен және аймақ ретінде айтылған бағыттармен қолданылады. Бұл ережелер тестте өте жиі кездеседі.</p></div><div class="lang-content" data-lang="ru"><p><b>The</b> используется не только с уже известным предметом, но и с уникальными объектами, порядковыми числительными, превосходной степенью и сторонами света, если они обозначают регион.</p></div></div>
+            </div>
+            <div class="formula-box"><div class="formula-main">the sun · the moon · the first · the best · the north · the south · the USA · the UK</div><div class="formula-translation"><span class="inline-lang" data-lang="kk"><span class="label">Аударма:</span> the sun — күн, the moon — ай, the first — бірінші, the best — ең жақсы, the north — солтүстік, the south — оңтүстік.</span><span class="inline-lang" data-lang="ru"><span class="label">Перевод:</span> the sun — солнце, the moon — луна, the first — первый, the best — лучший, the north — север, the south — юг.</span></div></div>
+            <div class="lesson-layout"><div class="lesson-box"><h4><span class="inline-lang" data-lang="kk">The қолданылатын негізгі жағдайлар</span><span class="inline-lang" data-lang="ru">Основные случаи с the</span></h4><ul><li><b>Unique things:</b> the sun, the moon, the sky, the world</li><li><b>Ordinal numbers:</b> the first lesson, the second question</li><li><b>Superlatives:</b> the best answer, the most important rule</li><li><b>Directions as regions:</b> in the north of Italy, in the south of Kazakhstan</li><li><b>Some countries:</b> the USA, the UK, the Netherlands</li></ul></div><div class="lesson-box"><h4><span class="inline-lang" data-lang="kk">The қолданылмайтын жерлер</span><span class="inline-lang" data-lang="ru">Где the не нужен</span></h4><ul><li><b>Kazakhstan</b> — Қазақстан / Казахстан</li><li><b>Italy</b> — Италия / Италия</li><li><b>Holland</b> — Голландия / Голландия</li><li><b>South Korea</b> — Оңтүстік Корея / Южная Корея</li><li><b>North America</b> — Солтүстік Америка / Северная Америка</li></ul></div></div>
+            <div class="example-box"><p class="example-sentence">Shymkent is in <span class="mark article">the south</span> of Kazakhstan.</p><p class="example-note"><span class="inline-lang" data-lang="kk">the south — аймақ, Қазақстанның оңтүстік бөлігі. Аударма: Шымкент Қазақстанның оңтүстігінде орналасқан.</span><span class="inline-lang" data-lang="ru">the south — регион, южная часть Казахстана. Перевод: Шымкент находится на юге Казахстана.</span></p></div>
+            <div class="example-box"><p class="example-sentence">This is <span class="mark article">the most difficult</span> question in the test.</p><p class="example-note"><span class="inline-lang" data-lang="kk">the most difficult — ең қиын. Ең жоғары дәрежеде the қолданылады.</span><span class="inline-lang" data-lang="ru">the most difficult — самый трудный. С превосходной степенью используется the.</span></p></div>
+            <div class="mistake-box"><h4><span class="inline-lang" data-lang="kk">Жиі қате</span><span class="inline-lang" data-lang="ru">Частая ошибка</span></h4><p><span class="inline-lang" data-lang="kk"><b>in south of Kazakhstan</b> — қате. Дұрысы: <b>in the south of Kazakhstan</b>. Бірақ <b>South Korea</b> атау болғандықтан the керек емес.</span><span class="inline-lang" data-lang="ru"><b>in south of Kazakhstan</b> — ошибка. Правильно: <b>in the south of Kazakhstan</b>. Но <b>South Korea</b> — часть названия, поэтому the не нужен.</span></p></div>
+            <div class="test-box" data-test="article-special-the-test"><div class="test-header"><h4>Mini test · Special Uses of The</h4><span class="mini-badge">5 questions</span></div>
+              <div class="question" data-answer="b"><p>1. Choose the correct sentence.</p><div class="options"><label class="option"><input type="radio" name="art-sp-1" value="a"> Sun rises in east.</label><label class="option"><input type="radio" name="art-sp-1" value="b"> The sun rises in the east.</label><label class="option"><input type="radio" name="art-sp-1" value="c"> A sun rises in an east.</label><label class="option"><input type="radio" name="art-sp-1" value="d"> The sun rises in east.</label><label class="option"><input type="radio" name="art-sp-1" value="e"> Sun rises in the east.</label></div></div>
+              <div class="question" data-answer="e"><p>2. Choose the correct phrase.</p><div class="options"><label class="option"><input type="radio" name="art-sp-2" value="a"> best answer</label><label class="option"><input type="radio" name="art-sp-2" value="b"> a best answer</label><label class="option"><input type="radio" name="art-sp-2" value="c"> an best answer</label><label class="option"><input type="radio" name="art-sp-2" value="d"> bestest answer</label><label class="option"><input type="radio" name="art-sp-2" value="e"> the best answer</label></div></div>
+              <div class="question" data-answer="a"><p>3. Choose the correct sentence.</p><div class="options"><label class="option"><input type="radio" name="art-sp-3" value="a"> Shymkent is in the south of Kazakhstan.</label><label class="option"><input type="radio" name="art-sp-3" value="b"> Shymkent is in south of Kazakhstan.</label><label class="option"><input type="radio" name="art-sp-3" value="c"> Shymkent is in a south of Kazakhstan.</label><label class="option"><input type="radio" name="art-sp-3" value="d"> Shymkent is in an south of Kazakhstan.</label><label class="option"><input type="radio" name="art-sp-3" value="e"> Shymkent is in the Kazakhstan south.</label></div></div>
+              <div class="question" data-answer="d"><p>4. Choose the correct country name.</p><div class="options"><label class="option"><input type="radio" name="art-sp-4" value="a"> the Kazakhstan</label><label class="option"><input type="radio" name="art-sp-4" value="b"> a Kazakhstan</label><label class="option"><input type="radio" name="art-sp-4" value="c"> an Kazakhstan</label><label class="option"><input type="radio" name="art-sp-4" value="d"> Kazakhstan</label><label class="option"><input type="radio" name="art-sp-4" value="e"> Kazakhstan the</label></div></div>
+              <div class="question" data-answer="c"><p>5. Choose the correct phrase.</p><div class="options"><label class="option"><input type="radio" name="art-sp-5" value="a"> first lesson</label><label class="option"><input type="radio" name="art-sp-5" value="b"> a first lesson</label><label class="option"><input type="radio" name="art-sp-5" value="c"> the first lesson</label><label class="option"><input type="radio" name="art-sp-5" value="d"> an first lesson</label><label class="option"><input type="radio" name="art-sp-5" value="e"> first the lesson</label></div></div>
+              <button class="check-btn" type="button" data-check="article-special-the-test"><span class="inline-lang" data-lang="kk">Жауаптарды тексеру</span><span class="inline-lang" data-lang="ru">Проверить ответы</span></button>
+              <div class="result-box" data-result="article-special-the-test"><h5><span class="inline-lang" data-lang="kk">Түсіндірме</span><span class="inline-lang" data-lang="ru">Объяснение</span></h5><div class="lang-content" data-lang="kk"><ol><li><b>The sun</b> бірегей зат, <b>the east</b> бағыт ретінде қолданылады.</li><li>Ең жоғары дәрежеде <b>the best</b> болады.</li><li>Аймақ ретінде <b>in the south of</b> қолданылады.</li><li>Көп ел атауларымен артикль қолданылмайды: Kazakhstan.</li><li>Реттік сан есімнің алдында <b>the</b>: the first.</li></ol></div><div class="lang-content" data-lang="ru"><ol><li><b>The sun</b> — уникальный объект, <b>the east</b> — направление.</li><li>С превосходной степенью используется <b>the best</b>.</li><li>Регион выражается как <b>in the south of</b>.</li><li>С большинством стран артикль не нужен: Kazakhstan.</li><li>Перед порядковыми числительными используется <b>the</b>: the first.</li></ol></div></div>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
+
 
     <section class="grammar-section" id="adjective">
       <div class="page-shell">
         <div class="grammar-hero">
-          <div class="grammar-title-card">
-            <div class="section-kicker">Rule 3 · A1–B1</div>
-            <h2>Adjective</h2>
-            <div class="translation">
-              <span class="inline-lang" data-lang="kk">Сын есім</span>
-              <span class="inline-lang" data-lang="ru">Прилагательное</span>
-            </div>
-          </div>
-
+          <div class="grammar-title-card"><div class="section-kicker">Rule 3 · A1–B1</div><h2>Adjective</h2><div class="translation"><span class="inline-lang" data-lang="kk">Сын есім</span><span class="inline-lang" data-lang="ru">Прилагательное</span></div></div>
           <div class="grammar-info-card">
-            <div class="lang-content" data-lang="kk">
-              <p>
-                Бұл бөлімде сын есім толық қарастырылады. Сын есім заттың сапасын, түрін, түсін,
-                көлемін, күйін немесе ерекшелігін білдіреді. Емтиханда сын есімнің зат есім алдындағы орны,
-                салыстыру дәрежелері және <b>-ing / -ed</b> формалары жиі тексеріледі.
-              </p>
-            </div>
-
-            <div class="lang-content" data-lang="ru">
-              <p>
-                В этом разделе подробно изучается прилагательное. Прилагательное описывает качество,
-                вид, цвет, размер, состояние или особенность предмета. На экзамене часто проверяются
-                место прилагательного перед существительным, степени сравнения и формы <b>-ing / -ed</b>.
-              </p>
-            </div>
-
+            <div class="lang-content" data-lang="kk"><p>Бұл бөлімде сын есім толық қарастырылады. Сын есім заттың сапасын, белгісін, түсін, көлемін, күйін немесе салыстыру дәрежесін көрсетеді. Әр жаңа сөздің аудармасы қазақша және орысша беріледі.</p></div>
+            <div class="lang-content" data-lang="ru"><p>В этом разделе подробно изучается прилагательное. Оно описывает качество, признак, цвет, размер, состояние или степень сравнения предмета. Переводы слов даются на казахском и русском языках.</p></div>
             <div class="subunit-grid">
-              <a class="subunit-chip" href="#adjective-overview">
-                <strong>What is an adjective?</strong>
-                <span>
-                  <span class="inline-lang" data-lang="kk">Сын есім деген не?</span>
-                  <span class="inline-lang" data-lang="ru">Что такое прилагательное?</span>
-                </span>
-              </a>
-
-              <a class="subunit-chip" href="#adjective-position">
-                <strong>Position of Adjectives</strong>
-                <span>
-                  <span class="inline-lang" data-lang="kk">Сын есімнің орны</span>
-                  <span class="inline-lang" data-lang="ru">Место прилагательного</span>
-                </span>
-              </a>
-
-              <a class="subunit-chip" href="#adjective-comparison">
-                <strong>Degrees of Comparison</strong>
-                <span>
-                  <span class="inline-lang" data-lang="kk">Салыстыру дәрежелері</span>
-                  <span class="inline-lang" data-lang="ru">Степени сравнения</span>
-                </span>
-              </a>
-
-              <a class="subunit-chip" href="#adjective-irregular">
-                <strong>Irregular Adjectives</strong>
-                <span>
-                  <span class="inline-lang" data-lang="kk">Ерекше өзгеретін сын есімдер</span>
-                  <span class="inline-lang" data-lang="ru">Исключения</span>
-                </span>
-              </a>
-
-              <a class="subunit-chip" href="#adjective-ing-ed">
-                <strong>-ing / -ed Adjectives</strong>
-                <span>
-                  <span class="inline-lang" data-lang="kk">-ing және -ed формалары</span>
-                  <span class="inline-lang" data-lang="ru">Формы -ing и -ed</span>
-                </span>
-              </a>
+              <a class="subunit-chip" href="#adjective-overview"><strong>What is an adjective?</strong><span><span class="inline-lang" data-lang="kk">Сын есім деген не?</span><span class="inline-lang" data-lang="ru">Что такое прилагательное?</span></span></a>
+              <a class="subunit-chip" href="#adjective-position"><strong>Position of Adjectives</strong><span><span class="inline-lang" data-lang="kk">Сын есімнің орны</span><span class="inline-lang" data-lang="ru">Место прилагательного</span></span></a>
+              <a class="subunit-chip" href="#adjective-comparison"><strong>Degrees of Comparison</strong><span><span class="inline-lang" data-lang="kk">Салыстыру дәрежелері</span><span class="inline-lang" data-lang="ru">Степени сравнения</span></span></a>
+              <a class="subunit-chip" href="#adjective-irregular"><strong>Irregular Adjectives</strong><span><span class="inline-lang" data-lang="kk">Ерекше өзгеретін сын есімдер</span><span class="inline-lang" data-lang="ru">Исключения</span></span></a>
+              <a class="subunit-chip" href="#adjective-ing-ed"><strong>-ing / -ed Adjectives</strong><span><span class="inline-lang" data-lang="kk">-ing және -ed формалары</span><span class="inline-lang" data-lang="ru">Формы -ing и -ed</span></span></a>
+              <a class="subunit-chip" href="#adjective-too-enough"><strong>Too / Enough / So / Such</strong><span><span class="inline-lang" data-lang="kk">Күшейткіш құрылымдар</span><span class="inline-lang" data-lang="ru">Усилительные конструкции</span></span></a>
             </div>
           </div>
         </div>
 
         <article class="subunit" id="adjective-overview">
-          <div class="subunit-header">
-            <div class="subunit-label">Adjective · Sub-unit 1</div>
-            <h3>What is an adjective?</h3>
-            <div class="subunit-translation">
-              <span class="inline-lang" data-lang="kk">Сын есім деген не?</span>
-              <span class="inline-lang" data-lang="ru">Что такое прилагательное?</span>
-            </div>
-          </div>
-
+          <div class="subunit-header"><div class="subunit-label">Adjective · Sub-unit 1</div><h3>What is an adjective?</h3><div class="subunit-translation"><span class="inline-lang" data-lang="kk">Сын есім деген не?</span><span class="inline-lang" data-lang="ru">Что такое прилагательное?</span></div></div>
           <div class="subunit-body">
-            <div class="lesson-layout">
-              <div class="lesson-box">
-                <h4>English rule</h4>
-                <p>
-                  An adjective is a word that describes a noun or pronoun. It gives more information about
-                  quality, size, age, colour, origin, material, feeling, or opinion.
-                </p>
-              </div>
-
-              <div class="lesson-box">
-                <h4>
-                  <span class="inline-lang" data-lang="kk">Түсіндіру</span>
-                  <span class="inline-lang" data-lang="ru">Объяснение</span>
-                </h4>
-
-                <div class="lang-content" data-lang="kk">
-                  <p>
-                    Сын есім зат есімді немесе есімдікті сипаттайды. Ол заттың қандай екенін көрсетеді:
-                    үлкен бе, кіші ме, жаңа ма, ескі ме, әдемі ме, қызық па. Мысалы:
-                    <b>beautiful — әдемі</b>, <b>large — үлкен</b>, <b>old — ескі</b>,
-                    <b>interesting — қызықты</b>.
-                  </p>
-                </div>
-
-                <div class="lang-content" data-lang="ru">
-                  <p>
-                    Прилагательное описывает существительное или местоимение. Оно показывает, какой предмет:
-                    большой или маленький, новый или старый, красивый или интересный. Например:
-                    <b>beautiful — красивый</b>, <b>large — большой</b>, <b>old — старый</b>,
-                    <b>interesting — интересный</b>.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="formula-box">
-              <div class="formula-main">adjective + noun = beautiful city · old book · difficult question · interesting lesson</div>
-              <div class="formula-translation">
-                <span class="inline-lang" data-lang="kk">
-                  <span class="label">Қазақша:</span> сын есім зат есімнің қандай екенін көрсетеді және көбіне зат есімнің алдында тұрады.
-                </span>
-                <span class="inline-lang" data-lang="ru">
-                  <span class="label">Русский:</span> прилагательное показывает, какой предмет, и чаще всего стоит перед существительным.
-                </span>
-              </div>
-            </div>
-
-            <div class="example-box">
-              <p class="example-sentence">
-                She bought a <span class="mark adjective">beautiful</span> dress.
-              </p>
-              <p class="example-note">
-                <span class="inline-lang" data-lang="kk">
-                  beautiful — көйлектің қандай екенін көрсетіп тұр. Сондықтан бұл сын есім.
-                </span>
-                <span class="inline-lang" data-lang="ru">
-                  beautiful показывает, какое платье. Поэтому это прилагательное.
-                </span>
-              </p>
-            </div>
-
-            <div class="example-box">
-              <p class="example-sentence">
-                This question is <span class="mark adjective">difficult</span>.
-              </p>
-              <p class="example-note">
-                <span class="inline-lang" data-lang="kk">
-                  difficult — сұрақтың сапасын білдіреді: қиын. Бұл жерде сын есім баяндауыштан кейін тұр.
-                </span>
-                <span class="inline-lang" data-lang="ru">
-                  difficult описывает качество вопроса: трудный. Здесь прилагательное стоит после глагола-связки.
-                </span>
-              </p>
-            </div>
-
-            <div class="mistake-box">
-              <h4>
-                <span class="inline-lang" data-lang="kk">Жиі қате</span>
-                <span class="inline-lang" data-lang="ru">Частая ошибка</span>
-              </h4>
-              <p>
-                <span class="inline-lang" data-lang="kk">
-                  Ағылшын тілінде сын есім көпше түрге айналмайды. “beautifuls dresses” деп айту қате.
-                  Дұрысы: <b>beautiful dresses</b>.
-                </span>
-                <span class="inline-lang" data-lang="ru">
-                  В английском языке прилагательное не получает форму множественного числа.
-                  Нельзя говорить “beautifuls dresses”. Правильно: <b>beautiful dresses</b>.
-                </span>
-              </p>
-            </div>
-
-            <div class="test-box" data-test="adjective-overview-test">
-              <div class="test-header">
-                <h4>Mini test · What is an adjective?</h4>
-                <span class="mini-badge">5 questions</span>
-              </div>
-
-              <div class="question" data-answer="b">
-                <p>1. Choose the adjective in the sentence: “The young teacher explained the rule clearly.”</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="adj-over-1" value="a"> teacher</label>
-                  <label class="option"><input type="radio" name="adj-over-1" value="b"> young</label>
-                  <label class="option"><input type="radio" name="adj-over-1" value="c"> explained</label>
-                  <label class="option"><input type="radio" name="adj-over-1" value="d"> rule</label>
-                  <label class="option"><input type="radio" name="adj-over-1" value="e"> clearly</label>
-                </div>
-              </div>
-
-              <div class="question" data-answer="d">
-                <p>2. Choose the word that can describe a noun.</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="adj-over-2" value="a"> slowly</label>
-                  <label class="option"><input type="radio" name="adj-over-2" value="b"> between</label>
-                  <label class="option"><input type="radio" name="adj-over-2" value="c"> writes</label>
-                  <label class="option"><input type="radio" name="adj-over-2" value="d"> modern</label>
-                  <label class="option"><input type="radio" name="adj-over-2" value="e"> happiness</label>
-                </div>
-              </div>
-
-              <div class="question" data-answer="a">
-                <p>3. Choose the correct phrase.</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="adj-over-3" value="a"> important information</label>
-                  <label class="option"><input type="radio" name="adj-over-3" value="b"> importantly information</label>
-                  <label class="option"><input type="radio" name="adj-over-3" value="c"> information importanten</label>
-                  <label class="option"><input type="radio" name="adj-over-3" value="d"> informations important</label>
-                  <label class="option"><input type="radio" name="adj-over-3" value="e"> important informations</label>
-                </div>
-              </div>
-
-              <div class="question" data-answer="e">
-                <p>4. Choose the correct sentence.</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="adj-over-4" value="a"> She has reds shoes.</label>
-                  <label class="option"><input type="radio" name="adj-over-4" value="b"> She has shoes red.</label>
-                  <label class="option"><input type="radio" name="adj-over-4" value="c"> She has red shoeses.</label>
-                  <label class="option"><input type="radio" name="adj-over-4" value="d"> She has redly shoes.</label>
-                  <label class="option"><input type="radio" name="adj-over-4" value="e"> She has red shoes.</label>
-                </div>
-              </div>
-
-              <div class="question" data-answer="c">
-                <p>5. Choose the adjective in the sentence: “The lecture was useful for students.”</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="adj-over-5" value="a"> lecture</label>
-                  <label class="option"><input type="radio" name="adj-over-5" value="b"> was</label>
-                  <label class="option"><input type="radio" name="adj-over-5" value="c"> useful</label>
-                  <label class="option"><input type="radio" name="adj-over-5" value="d"> students</label>
-                  <label class="option"><input type="radio" name="adj-over-5" value="e"> for</label>
-                </div>
-              </div>
-
-              <button class="check-btn" type="button" data-check="adjective-overview-test">
-                <span class="inline-lang" data-lang="kk">Жауаптарды тексеру</span>
-                <span class="inline-lang" data-lang="ru">Проверить ответы</span>
-              </button>
-
-              <div class="result-box" data-result="adjective-overview-test">
-                <h5>
-                  <span class="inline-lang" data-lang="kk">Түсіндірме</span>
-                  <span class="inline-lang" data-lang="ru">Объяснение</span>
-                </h5>
-
-                <div class="lang-content" data-lang="kk">
-                  <ol>
-                    <li><b>young</b> — teacher сөзін сипаттап тұр: қандай мұғалім?</li>
-                    <li><b>modern</b> — зат есімді сипаттай алады: modern city, modern method.</li>
-                    <li><b>important information</b> дұрыс, себебі сын есім зат есімнің алдында тұр.</li>
-                    <li><b>red shoes</b> дұрыс, сын есім көпше түрге өзгермейді.</li>
-                    <li><b>useful</b> — lecture сөзінің қандай екенін көрсетеді.</li>
-                  </ol>
-                </div>
-
-                <div class="lang-content" data-lang="ru">
-                  <ol>
-                    <li><b>young</b> описывает слово teacher: какой учитель?</li>
-                    <li><b>modern</b> может описывать существительное: modern city, modern method.</li>
-                    <li><b>important information</b> правильно, потому что прилагательное стоит перед существительным.</li>
-                    <li><b>red shoes</b> правильно, прилагательное не меняется во множественном числе.</li>
-                    <li><b>useful</b> показывает, какой была лекция.</li>
-                  </ol>
-                </div>
-              </div>
+            <div class="lesson-layout"><div class="lesson-box"><h4>English rule</h4><p>An adjective describes a noun or pronoun. It answers questions like: what kind? which one? how many? how much?</p></div><div class="lesson-box"><h4><span class="inline-lang" data-lang="kk">Түсіндіру</span><span class="inline-lang" data-lang="ru">Объяснение</span></h4><div class="lang-content" data-lang="kk"><p>Сын есім зат есімді немесе есімдікті сипаттайды. Ол “қандай?”, “қай?”, “қанша?” деген сұрақтарға жауап береді: <b>beautiful — әдемі</b>, <b>large — үлкен</b>, <b>important — маңызды</b>, <b>difficult — қиын</b>.</p></div><div class="lang-content" data-lang="ru"><p>Прилагательное описывает существительное или местоимение. Оно отвечает на вопросы “какой?”, “который?”, “сколько?”: <b>beautiful — красивый</b>, <b>large — большой</b>, <b>important — важный</b>, <b>difficult — трудный</b>.</p></div></div></div>
+            <div class="formula-box"><div class="formula-main">adjective + noun = beautiful city · difficult question · important rule</div><div class="formula-translation"><span class="inline-lang" data-lang="kk"><span class="label">Аударма:</span> beautiful — әдемі, city — қала, difficult — қиын, question — сұрақ, important — маңызды, rule — ереже.</span><span class="inline-lang" data-lang="ru"><span class="label">Перевод:</span> beautiful — красивый, city — город, difficult — трудный, question — вопрос, important — важный, rule — правило.</span></div></div>
+            
+            <div class="example-box"><p class="example-sentence">She bought a <span class="mark adjective">beautiful</span> dress.</p><p class="example-note"><span class="inline-lang" data-lang="kk">beautiful — көйлектің қандай екенін көрсетеді: әдемі.</span><span class="inline-lang" data-lang="ru">beautiful показывает, какое платье: красивое.</span></p></div>
+            <div class="example-box"><p class="example-sentence">This question is <span class="mark adjective">difficult</span>.</p><p class="example-note"><span class="inline-lang" data-lang="kk">difficult — сұрақтың сапасын білдіреді: қиын.</span><span class="inline-lang" data-lang="ru">difficult описывает качество вопроса: трудный.</span></p></div>
+            <div class="mistake-box"><h4><span class="inline-lang" data-lang="kk">Жиі қате</span><span class="inline-lang" data-lang="ru">Частая ошибка</span></h4><p><span class="inline-lang" data-lang="kk">Ағылшын тілінде сын есім көпше болмайды: <b>beautiful dresses</b>, not <b>beautifuls dresses</b>.</span><span class="inline-lang" data-lang="ru">В английском прилагательное не становится множественным: <b>beautiful dresses</b>, не <b>beautifuls dresses</b>.</span></p></div>
+            <div class="test-box" data-test="adjective-overview-test2"><div class="test-header"><h4>Mini test · What is an adjective?</h4><span class="mini-badge">5 questions</span></div>
+              <div class="question" data-answer="b"><p>1. Choose the adjective.</p><div class="options"><label class="option"><input type="radio" name="adjective-overview-test2-1" value="a"> teacher</label><label class="option"><input type="radio" name="adjective-overview-test2-1" value="b"> young</label><label class="option"><input type="radio" name="adjective-overview-test2-1" value="c"> explained</label><label class="option"><input type="radio" name="adjective-overview-test2-1" value="d"> rule</label><label class="option"><input type="radio" name="adjective-overview-test2-1" value="e"> clearly</label></div></div>
+              <div class="question" data-answer="d"><p>2. Choose the word that can describe a noun.</p><div class="options"><label class="option"><input type="radio" name="adjective-overview-test2-2" value="a"> slowly</label><label class="option"><input type="radio" name="adjective-overview-test2-2" value="b"> between</label><label class="option"><input type="radio" name="adjective-overview-test2-2" value="c"> writes</label><label class="option"><input type="radio" name="adjective-overview-test2-2" value="d"> modern</label><label class="option"><input type="radio" name="adjective-overview-test2-2" value="e"> happiness</label></div></div>
+              <div class="question" data-answer="a"><p>3. Choose the correct phrase.</p><div class="options"><label class="option"><input type="radio" name="adjective-overview-test2-3" value="a"> important information</label><label class="option"><input type="radio" name="adjective-overview-test2-3" value="b"> importantly information</label><label class="option"><input type="radio" name="adjective-overview-test2-3" value="c"> information importanten</label><label class="option"><input type="radio" name="adjective-overview-test2-3" value="d"> informations important</label><label class="option"><input type="radio" name="adjective-overview-test2-3" value="e"> important informations</label></div></div>
+              <div class="question" data-answer="e"><p>4. Choose the correct sentence.</p><div class="options"><label class="option"><input type="radio" name="adjective-overview-test2-4" value="a"> She has reds shoes.</label><label class="option"><input type="radio" name="adjective-overview-test2-4" value="b"> She has shoes red.</label><label class="option"><input type="radio" name="adjective-overview-test2-4" value="c"> She has red shoeses.</label><label class="option"><input type="radio" name="adjective-overview-test2-4" value="d"> She has redly shoes.</label><label class="option"><input type="radio" name="adjective-overview-test2-4" value="e"> She has red shoes.</label></div></div>
+              <div class="question" data-answer="c"><p>5. Choose the adjective: “The lecture was useful.”</p><div class="options"><label class="option"><input type="radio" name="adjective-overview-test2-5" value="a"> lecture</label><label class="option"><input type="radio" name="adjective-overview-test2-5" value="b"> was</label><label class="option"><input type="radio" name="adjective-overview-test2-5" value="c"> useful</label><label class="option"><input type="radio" name="adjective-overview-test2-5" value="d"> the</label><label class="option"><input type="radio" name="adjective-overview-test2-5" value="e"> very</label></div></div>
+              <button class="check-btn" type="button" data-check="adjective-overview-test2"><span class="inline-lang" data-lang="kk">Жауаптарды тексеру</span><span class="inline-lang" data-lang="ru">Проверить ответы</span></button>
+              <div class="result-box" data-result="adjective-overview-test2"><h5><span class="inline-lang" data-lang="kk">Түсіндірме</span><span class="inline-lang" data-lang="ru">Объяснение</span></h5><div class="lang-content" data-lang="kk"><ol><li><b>young</b> — сын есім, teacher сөзін сипаттайды.</li><li><b>modern</b> затты сипаттай алады.</li><li><b>important information</b> дұрыс, information саналмайды.</li><li>Сын есім өзгермейді: <b>red shoes</b>.</li><li><b>useful</b> — пайдалы деген сын есім.</li></ol></div><div class="lang-content" data-lang="ru"><ol><li><b>young</b> — adjective, it describes teacher.</li><li><b>modern</b> can describe a noun.</li><li><b>important information</b> is correct; information is uncountable.</li><li>Adjectives do not take plural: <b>red shoes</b>.</li><li><b>useful</b> is an adjective meaning полезный.</li></ol></div></div>
             </div>
           </div>
         </article>
-            <section class="grammar-section" id="pronoun">
+        <article class="subunit" id="adjective-position">
+          <div class="subunit-header"><div class="subunit-label">Adjective · Sub-unit 2</div><h3>Position of Adjectives</h3><div class="subunit-translation"><span class="inline-lang" data-lang="kk">Сын есімнің орны</span><span class="inline-lang" data-lang="ru">Место прилагательного</span></div></div>
+          <div class="subunit-body">
+            <div class="lesson-layout"><div class="lesson-box"><h4>English rule</h4><p>Adjectives usually come before a noun, but after linking verbs such as be, seem, look, feel, become.</p></div><div class="lesson-box"><h4><span class="inline-lang" data-lang="kk">Түсіндіру</span><span class="inline-lang" data-lang="ru">Объяснение</span></h4><div class="lang-content" data-lang="kk"><p>Сын есім көбіне зат есімнің алдында тұрады: <b>a nice room</b>. Бірақ <b>be, seem, look, feel, become</b> сияқты linking verb-тен кейін де келеді: <b>The room is nice</b>.</p></div><div class="lang-content" data-lang="ru"><p>Прилагательное обычно стоит перед существительным: <b>a nice room</b>. Но после глаголов-связок <b>be, seem, look, feel, become</b> оно стоит после глагола: <b>The room is nice</b>.</p></div></div></div>
+            <div class="formula-box"><div class="formula-main">adjective + noun · be/seem/look/feel/become + adjective</div><div class="formula-translation"><span class="inline-lang" data-lang="kk"><span class="label">Аударма:</span> nice — жақсы/әдемі, room — бөлме, seem — сияқты көріну, feel — сезіну, become — болу/айналу.</span><span class="inline-lang" data-lang="ru"><span class="label">Перевод:</span> nice — хороший/красивый, room — комната, seem — казаться, feel — чувствовать, become — становиться.</span></div></div>
+            
+            <div class="example-box"><p class="example-sentence">This is a <span class="mark adjective">nice</span> room.</p><p class="example-note"><span class="inline-lang" data-lang="kk">nice зат есімнің алдында тұр: nice room.</span><span class="inline-lang" data-lang="ru">nice стоит перед существительным: nice room.</span></p></div>
+            <div class="example-box"><p class="example-sentence">The room is <span class="mark adjective">nice</span>.</p><p class="example-note"><span class="inline-lang" data-lang="kk">nice be етістігінен кейін тұр.</span><span class="inline-lang" data-lang="ru">nice стоит после глагола be.</span></p></div>
+            <div class="mistake-box"><h4><span class="inline-lang" data-lang="kk">Жиі қате</span><span class="inline-lang" data-lang="ru">Частая ошибка</span></h4><p><span class="inline-lang" data-lang="kk">“Room nice” деп жазу қате. Дұрысы: <b>a nice room</b> немесе <b>The room is nice</b>.</span><span class="inline-lang" data-lang="ru">“Room nice” — ошибка. Правильно: <b>a nice room</b> или <b>The room is nice</b>.</span></p></div>
+            <div class="test-box" data-test="adjective-position-test"><div class="test-header"><h4>Mini test · Position of Adjectives</h4><span class="mini-badge">5 questions</span></div>
+              <div class="question" data-answer="b"><p>1. Choose the correct phrase.</p><div class="options"><label class="option"><input type="radio" name="adjective-position-test-1" value="a"> room nice</label><label class="option"><input type="radio" name="adjective-position-test-1" value="b"> nice room</label><label class="option"><input type="radio" name="adjective-position-test-1" value="c"> nicely room</label><label class="option"><input type="radio" name="adjective-position-test-1" value="d"> room nicely</label><label class="option"><input type="radio" name="adjective-position-test-1" value="e"> nice a room</label></div></div>
+              <div class="question" data-answer="b"><p>2. Choose the correct sentence.</p><div class="options"><label class="option"><input type="radio" name="adjective-position-test-2" value="a"> The film interesting.</label><label class="option"><input type="radio" name="adjective-position-test-2" value="b"> The film is interesting.</label><label class="option"><input type="radio" name="adjective-position-test-2" value="c"> The film is interestingly.</label><label class="option"><input type="radio" name="adjective-position-test-2" value="d"> The interesting is film.</label><label class="option"><input type="radio" name="adjective-position-test-2" value="e"> The film be interestingly.</label></div></div>
+              <div class="question" data-answer="a"><p>3. Choose the correct phrase.</p><div class="options"><label class="option"><input type="radio" name="adjective-position-test-3" value="a"> a difficult question</label><label class="option"><input type="radio" name="adjective-position-test-3" value="b"> a question difficult</label><label class="option"><input type="radio" name="adjective-position-test-3" value="c"> a difficultly question</label><label class="option"><input type="radio" name="adjective-position-test-3" value="d"> question a difficult</label><label class="option"><input type="radio" name="adjective-position-test-3" value="e"> a question difficultly</label></div></div>
+              <div class="question" data-answer="c"><p>4. After “look”, choose the correct form: She looks ___.</p><div class="options"><label class="option"><input type="radio" name="adjective-position-test-4" value="a"> happily</label><label class="option"><input type="radio" name="adjective-position-test-4" value="b"> happiness</label><label class="option"><input type="radio" name="adjective-position-test-4" value="c"> happy</label><label class="option"><input type="radio" name="adjective-position-test-4" value="d"> happierly</label><label class="option"><input type="radio" name="adjective-position-test-4" value="e"> happiestly</label></div></div>
+              <div class="question" data-answer="a"><p>5. Choose the correct sentence.</p><div class="options"><label class="option"><input type="radio" name="adjective-position-test-5" value="a"> This is an expensive car.</label><label class="option"><input type="radio" name="adjective-position-test-5" value="b"> This is a car expensive.</label><label class="option"><input type="radio" name="adjective-position-test-5" value="c"> This is expensive a car.</label><label class="option"><input type="radio" name="adjective-position-test-5" value="d"> This is expensively car.</label><label class="option"><input type="radio" name="adjective-position-test-5" value="e"> This car expensive is.</label></div></div>
+              <button class="check-btn" type="button" data-check="adjective-position-test"><span class="inline-lang" data-lang="kk">Жауаптарды тексеру</span><span class="inline-lang" data-lang="ru">Проверить ответы</span></button>
+              <div class="result-box" data-result="adjective-position-test"><h5><span class="inline-lang" data-lang="kk">Түсіндірме</span><span class="inline-lang" data-lang="ru">Объяснение</span></h5><div class="lang-content" data-lang="kk"><ol><li>Сын есім зат есімнің алдында: <b>nice room</b>.</li><li>Linking verb <b>is</b> керек: The film is interesting.</li><li><b>difficult question</b> дұрыс сөз тәртібі.</li><li>Look + adjective: <b>looks happy</b>.</li><li><b>an expensive car</b> дұрыс.</li></ol></div><div class="lang-content" data-lang="ru"><ol><li>Adjective comes before noun: <b>nice room</b>.</li><li>The linking verb <b>is</b> is needed.</li><li><b>difficult question</b> is the correct order.</li><li>Look + adjective: <b>looks happy</b>.</li><li><b>an expensive car</b> is correct.</li></ol></div></div>
+            </div>
+          </div>
+        </article>
+        <article class="subunit" id="adjective-comparison">
+          <div class="subunit-header"><div class="subunit-label">Adjective · Sub-unit 3</div><h3>Degrees of Comparison</h3><div class="subunit-translation"><span class="inline-lang" data-lang="kk">Салыстыру дәрежелері</span><span class="inline-lang" data-lang="ru">Степени сравнения</span></div></div>
+          <div class="subunit-body">
+            <div class="lesson-layout"><div class="lesson-box"><h4>English rule</h4><p>Adjectives have three degrees: positive, comparative, and superlative.</p></div><div class="lesson-box"><h4><span class="inline-lang" data-lang="kk">Түсіндіру</span><span class="inline-lang" data-lang="ru">Объяснение</span></h4><div class="lang-content" data-lang="kk"><p>Сын есімнің үш дәрежесі бар: жай шырай, салыстырмалы шырай, күшейтпелі/ең жоғары шырай. Қысқа сын есімдерге <b>-er / -est</b> қосылады: <b>small — smaller — the smallest</b>. Ұзын сын есімдермен <b>more / the most</b> қолданылады: <b>important — more important — the most important</b>.</p></div><div class="lang-content" data-lang="ru"><p>У прилагательных есть три степени: положительная, сравнительная и превосходная. Короткие прилагательные получают <b>-er / -est</b>: <b>small — smaller — the smallest</b>. С длинными используется <b>more / the most</b>: <b>important — more important — the most important</b>.</p></div></div></div>
+            <div class="formula-box"><div class="formula-main">small → smaller → the smallest · important → more important → the most important</div><div class="formula-translation"><span class="inline-lang" data-lang="kk"><span class="label">Аударма:</span> small — кішкентай, smaller — кішірек, the smallest — ең кішкентай; important — маңызды, more important — маңыздырақ, the most important — ең маңызды.</span><span class="inline-lang" data-lang="ru"><span class="label">Перевод:</span> small — маленький, smaller — меньше, the smallest — самый маленький; important — важный, more important — важнее, the most important — самый важный.</span></div></div>
+            
+            <div class="example-box"><p class="example-sentence">This task is <span class="mark adjective">easier</span> than the first one.</p><p class="example-note"><span class="inline-lang" data-lang="kk">easier — easy сөзінің салыстырмалы формасы.</span><span class="inline-lang" data-lang="ru">easier — сравнительная форма от easy.</span></p></div>
+            <div class="example-box"><p class="example-sentence">This is <span class="mark adjective">the most important</span> rule.</p><p class="example-note"><span class="inline-lang" data-lang="kk">the most important — ең маңызды.</span><span class="inline-lang" data-lang="ru">the most important — самый важный.</span></p></div>
+            <div class="mistake-box"><h4><span class="inline-lang" data-lang="kk">Жиі қате</span><span class="inline-lang" data-lang="ru">Частая ошибка</span></h4><p><span class="inline-lang" data-lang="kk">Салыстырмалыда <b>than</b> жиі келеді: <b>easier than</b>. Ең жоғары дәрежеде <b>the</b> керек: <b>the easiest</b>.</span><span class="inline-lang" data-lang="ru">В сравнительной степени часто есть <b>than</b>: <b>easier than</b>. В превосходной степени нужен <b>the</b>: <b>the easiest</b>.</span></p></div>
+            <div class="test-box" data-test="adjective-comparison-test"><div class="test-header"><h4>Mini test · Degrees of Comparison</h4><span class="mini-badge">5 questions</span></div>
+              <div class="question" data-answer="c"><p>1. Choose the correct comparative form: “easy”.</p><div class="options"><label class="option"><input type="radio" name="adjective-comparison-test-1" value="a"> easyer</label><label class="option"><input type="radio" name="adjective-comparison-test-1" value="b"> more easyer</label><label class="option"><input type="radio" name="adjective-comparison-test-1" value="c"> easier</label><label class="option"><input type="radio" name="adjective-comparison-test-1" value="d"> the easiest</label><label class="option"><input type="radio" name="adjective-comparison-test-1" value="e"> easilier</label></div></div>
+              <div class="question" data-answer="b"><p>2. Choose the correct superlative form.</p><div class="options"><label class="option"><input type="radio" name="adjective-comparison-test-2" value="a"> most important</label><label class="option"><input type="radio" name="adjective-comparison-test-2" value="b"> the most important</label><label class="option"><input type="radio" name="adjective-comparison-test-2" value="c"> more important</label><label class="option"><input type="radio" name="adjective-comparison-test-2" value="d"> importantest</label><label class="option"><input type="radio" name="adjective-comparison-test-2" value="e"> the more important</label></div></div>
+              <div class="question" data-answer="c"><p>3. Complete: This hotel is ___ than that one.</p><div class="options"><label class="option"><input type="radio" name="adjective-comparison-test-3" value="a"> modern</label><label class="option"><input type="radio" name="adjective-comparison-test-3" value="b"> the most modern</label><label class="option"><input type="radio" name="adjective-comparison-test-3" value="c"> more modern</label><label class="option"><input type="radio" name="adjective-comparison-test-3" value="d"> modernest</label><label class="option"><input type="radio" name="adjective-comparison-test-3" value="e"> most modern</label></div></div>
+              <div class="question" data-answer="a"><p>4. Choose the correct sentence.</p><div class="options"><label class="option"><input type="radio" name="adjective-comparison-test-4" value="a"> She is taller than me.</label><label class="option"><input type="radio" name="adjective-comparison-test-4" value="b"> She is the taller than me.</label><label class="option"><input type="radio" name="adjective-comparison-test-4" value="c"> She is more taller than me.</label><label class="option"><input type="radio" name="adjective-comparison-test-4" value="d"> She is tallest than me.</label><label class="option"><input type="radio" name="adjective-comparison-test-4" value="e"> She is tall than me.</label></div></div>
+              <div class="question" data-answer="c"><p>5. Choose the correct form: “the ___ team I have ever worked with”.</p><div class="options"><label class="option"><input type="radio" name="adjective-comparison-test-5" value="a"> friendly</label><label class="option"><input type="radio" name="adjective-comparison-test-5" value="b"> more friendly</label><label class="option"><input type="radio" name="adjective-comparison-test-5" value="c"> friendliest</label><label class="option"><input type="radio" name="adjective-comparison-test-5" value="d"> the friendliest</label><label class="option"><input type="radio" name="adjective-comparison-test-5" value="e"> most friendliest</label></div></div>
+              <button class="check-btn" type="button" data-check="adjective-comparison-test"><span class="inline-lang" data-lang="kk">Жауаптарды тексеру</span><span class="inline-lang" data-lang="ru">Проверить ответы</span></button>
+              <div class="result-box" data-result="adjective-comparison-test"><h5><span class="inline-lang" data-lang="kk">Түсіндірме</span><span class="inline-lang" data-lang="ru">Объяснение</span></h5><div class="lang-content" data-lang="kk"><ol><li>easy → easier.</li><li>Ең жоғары дәрежеде <b>the most important</b>.</li><li>than болса, салыстырмалы форма керек: more modern.</li><li><b>taller than</b> дұрыс.</li><li>the сөзі сөйлемде бар, сондықтан бос орынға <b>friendliest</b> келеді.</li></ol></div><div class="lang-content" data-lang="ru"><ol><li>easy → easier.</li><li>Superlative: <b>the most important</b>.</li><li>With than, use comparative: more modern.</li><li><b>taller than</b> is correct.</li><li>The sentence already has the, so the blank is <b>friendliest</b>.</li></ol></div></div>
+            </div>
+          </div>
+        </article>
+        <article class="subunit" id="adjective-irregular">
+          <div class="subunit-header"><div class="subunit-label">Adjective · Sub-unit 4</div><h3>Irregular Adjectives</h3><div class="subunit-translation"><span class="inline-lang" data-lang="kk">Ерекше өзгеретін сын есімдер</span><span class="inline-lang" data-lang="ru">Исключения</span></div></div>
+          <div class="subunit-body">
+            <div class="lesson-layout"><div class="lesson-box"><h4>English rule</h4><p>Some adjectives have irregular comparative and superlative forms.</p></div><div class="lesson-box"><h4><span class="inline-lang" data-lang="kk">Түсіндіру</span><span class="inline-lang" data-lang="ru">Объяснение</span></h4><div class="lang-content" data-lang="kk"><p>Кейбір сын есімдер ереже бойынша өзгермейді, оларды жаттау керек: <b>good — better — the best</b>, <b>bad — worse — the worst</b>, <b>far — farther/further — the farthest/furthest</b>.</p></div><div class="lang-content" data-lang="ru"><p>Некоторые прилагательные изменяются не по правилу, их нужно запомнить: <b>good — better — the best</b>, <b>bad — worse — the worst</b>, <b>far — farther/further — the farthest/furthest</b>.</p></div></div></div>
+            <div class="formula-box"><div class="formula-main">good → better → the best · bad → worse → the worst · far → further → the furthest</div><div class="formula-translation"><span class="inline-lang" data-lang="kk"><span class="label">Аударма:</span> good — жақсы, better — жақсырақ, the best — ең жақсы; bad — жаман, worse — жаманырақ, the worst — ең жаман; far — алыс, further — алысырақ.</span><span class="inline-lang" data-lang="ru"><span class="label">Перевод:</span> good — хороший, better — лучше, the best — лучший; bad — плохой, worse — хуже, the worst — худший; far — далёкий, further — дальше.</span></div></div>
+            
+            <div class="example-box"><p class="example-sentence">This answer is <span class="mark adjective">better</span> than mine.</p><p class="example-note"><span class="inline-lang" data-lang="kk">better — good сөзінің салыстырмалы формасы.</span><span class="inline-lang" data-lang="ru">better — сравнительная форма от good.</span></p></div>
+            <div class="example-box"><p class="example-sentence">This is <span class="mark adjective">the worst</span> mistake.</p><p class="example-note"><span class="inline-lang" data-lang="kk">the worst — ең жаман.</span><span class="inline-lang" data-lang="ru">the worst — самый плохой.</span></p></div>
+            <div class="mistake-box"><h4><span class="inline-lang" data-lang="kk">Жиі қате</span><span class="inline-lang" data-lang="ru">Частая ошибка</span></h4><p><span class="inline-lang" data-lang="kk">“gooder” немесе “badder” деп айту қате. Дұрысы: <b>better</b>, <b>worse</b>.</span><span class="inline-lang" data-lang="ru">“gooder” и “badder” — неправильно. Правильно: <b>better</b>, <b>worse</b>.</span></p></div>
+            <div class="test-box" data-test="adjective-irregular-test"><div class="test-header"><h4>Mini test · Irregular Adjectives</h4><span class="mini-badge">5 questions</span></div>
+              <div class="question" data-answer="c"><p>1. Choose the correct comparative form of “good”.</p><div class="options"><label class="option"><input type="radio" name="adjective-irregular-test-1" value="a"> gooder</label><label class="option"><input type="radio" name="adjective-irregular-test-1" value="b"> more good</label><label class="option"><input type="radio" name="adjective-irregular-test-1" value="c"> better</label><label class="option"><input type="radio" name="adjective-irregular-test-1" value="d"> the best</label><label class="option"><input type="radio" name="adjective-irregular-test-1" value="e"> bestest</label></div></div>
+              <div class="question" data-answer="b"><p>2. Choose the correct superlative form of “bad”.</p><div class="options"><label class="option"><input type="radio" name="adjective-irregular-test-2" value="a"> the baddest</label><label class="option"><input type="radio" name="adjective-irregular-test-2" value="b"> the worst</label><label class="option"><input type="radio" name="adjective-irregular-test-2" value="c"> worse</label><label class="option"><input type="radio" name="adjective-irregular-test-2" value="d"> badder</label><label class="option"><input type="radio" name="adjective-irregular-test-2" value="e"> the worse</label></div></div>
+              <div class="question" data-answer="a"><p>3. Choose the correct phrase.</p><div class="options"><label class="option"><input type="radio" name="adjective-irregular-test-3" value="a"> farther than</label><label class="option"><input type="radio" name="adjective-irregular-test-3" value="b"> more far than</label><label class="option"><input type="radio" name="adjective-irregular-test-3" value="c"> farer than</label><label class="option"><input type="radio" name="adjective-irregular-test-3" value="d"> the farther than</label><label class="option"><input type="radio" name="adjective-irregular-test-3" value="e"> farest than</label></div></div>
+              <div class="question" data-answer="a"><p>4. Complete: This is ___ result.</p><div class="options"><label class="option"><input type="radio" name="adjective-irregular-test-4" value="a"> the best</label><label class="option"><input type="radio" name="adjective-irregular-test-4" value="b"> better</label><label class="option"><input type="radio" name="adjective-irregular-test-4" value="c"> gooder</label><label class="option"><input type="radio" name="adjective-irregular-test-4" value="d"> more good</label><label class="option"><input type="radio" name="adjective-irregular-test-4" value="e"> best than</label></div></div>
+              <div class="question" data-answer="a"><p>5. Choose the correct sentence.</p><div class="options"><label class="option"><input type="radio" name="adjective-irregular-test-5" value="a"> This task is worse than that one.</label><label class="option"><input type="radio" name="adjective-irregular-test-5" value="b"> This task is badder than that one.</label><label class="option"><input type="radio" name="adjective-irregular-test-5" value="c"> This task is more worse than that one.</label><label class="option"><input type="radio" name="adjective-irregular-test-5" value="d"> This task is the worse than that one.</label><label class="option"><input type="radio" name="adjective-irregular-test-5" value="e"> This task is worst than that one.</label></div></div>
+              <button class="check-btn" type="button" data-check="adjective-irregular-test"><span class="inline-lang" data-lang="kk">Жауаптарды тексеру</span><span class="inline-lang" data-lang="ru">Проверить ответы</span></button>
+              <div class="result-box" data-result="adjective-irregular-test"><h5><span class="inline-lang" data-lang="kk">Түсіндірме</span><span class="inline-lang" data-lang="ru">Объяснение</span></h5><div class="lang-content" data-lang="kk"><ol><li>good → better.</li><li>bad → the worst.</li><li>far → farther/further than.</li><li>Ең жоғары форма: the best.</li><li>bad сөзінің салыстырмалы формасы: worse.</li></ol></div><div class="lang-content" data-lang="ru"><ol><li>good → better.</li><li>bad → the worst.</li><li>far → farther/further than.</li><li>Superlative: the best.</li><li>Comparative of bad is worse.</li></ol></div></div>
+            </div>
+          </div>
+        </article>
+        <article class="subunit" id="adjective-ing-ed">
+          <div class="subunit-header"><div class="subunit-label">Adjective · Sub-unit 5</div><h3>-ing / -ed Adjectives</h3><div class="subunit-translation"><span class="inline-lang" data-lang="kk">-ing және -ed формалары</span><span class="inline-lang" data-lang="ru">Формы -ing и -ed</span></div></div>
+          <div class="subunit-body">
+            <div class="lesson-layout"><div class="lesson-box"><h4>English rule</h4><p><b>-ing</b> adjectives describe the thing or person that causes a feeling. <b>-ed</b> adjectives describe how a person feels.</p></div><div class="lesson-box"><h4><span class="inline-lang" data-lang="kk">Түсіндіру</span><span class="inline-lang" data-lang="ru">Объяснение</span></h4><div class="lang-content" data-lang="kk"><p><b>-ing</b> формасы сезім тудыратын затты сипаттайды: <b>boring lesson — жалықтыратын сабақ</b>. <b>-ed</b> формасы адамның сезімін көрсетеді: <b>bored student — жалыққан студент</b>.</p></div><div class="lang-content" data-lang="ru"><p><b>-ing</b> описывает предмет или человека, который вызывает чувство: <b>boring lesson — скучный урок</b>. <b>-ed</b> описывает чувство человека: <b>bored student — заскучавший студент</b>.</p></div></div></div>
+            <div class="formula-box"><div class="formula-main">boring lesson → I am bored · exciting film → I am excited</div><div class="formula-translation"><span class="inline-lang" data-lang="kk"><span class="label">Аударма:</span> boring — жалықтыратын, bored — жалыққан; exciting — қызықтыратын, excited — қуанышты/толқыған; confusing — шатастыратын, confused — шатасқан.</span><span class="inline-lang" data-lang="ru"><span class="label">Перевод:</span> boring — скучный, bored — заскучавший; exciting — захватывающий, excited — взволнованный; confusing — запутанный, confused — запутавшийся.</span></div></div>
+            
+            <div class="example-box"><p class="example-sentence">The film was <span class="mark adjective">exciting</span>.</p><p class="example-note"><span class="inline-lang" data-lang="kk">Фильм сезім тудырады, сондықтан exciting.</span><span class="inline-lang" data-lang="ru">Фильм вызывает чувство, поэтому exciting.</span></p></div>
+            <div class="example-box"><p class="example-sentence">I was <span class="mark adjective">excited</span> after the film.</p><p class="example-note"><span class="inline-lang" data-lang="kk">Адамның сезімі: excited.</span><span class="inline-lang" data-lang="ru">Чувство человека: excited.</span></p></div>
+            <div class="mistake-box"><h4><span class="inline-lang" data-lang="kk">Жиі қате</span><span class="inline-lang" data-lang="ru">Частая ошибка</span></h4><p><span class="inline-lang" data-lang="kk">Адамға көбіне <b>-ed</b>, затқа/оқиғаға көбіне <b>-ing</b>: <b>I am bored</b>, but <b>The lesson is boring</b>.</span><span class="inline-lang" data-lang="ru">Для человека чаще <b>-ed</b>, для предмета/события чаще <b>-ing</b>: <b>I am bored</b>, but <b>The lesson is boring</b>.</span></p></div>
+            <div class="test-box" data-test="adjective-ing-ed-test"><div class="test-header"><h4>Mini test · -ing / -ed Adjectives</h4><span class="mini-badge">5 questions</span></div>
+              <div class="question" data-answer="b"><p>1. Complete: The film was very ___.</p><div class="options"><label class="option"><input type="radio" name="adjective-ing-ed-test-1" value="a"> excited</label><label class="option"><input type="radio" name="adjective-ing-ed-test-1" value="b"> exciting</label><label class="option"><input type="radio" name="adjective-ing-ed-test-1" value="c"> excitement</label><label class="option"><input type="radio" name="adjective-ing-ed-test-1" value="d"> excite</label><label class="option"><input type="radio" name="adjective-ing-ed-test-1" value="e"> excitedly</label></div></div>
+              <div class="question" data-answer="c"><p>2. Complete: I was ___ by the news.</p><div class="options"><label class="option"><input type="radio" name="adjective-ing-ed-test-2" value="a"> surprising</label><label class="option"><input type="radio" name="adjective-ing-ed-test-2" value="b"> surprise</label><label class="option"><input type="radio" name="adjective-ing-ed-test-2" value="c"> surprised</label><label class="option"><input type="radio" name="adjective-ing-ed-test-2" value="d"> surprisingly</label><label class="option"><input type="radio" name="adjective-ing-ed-test-2" value="e"> surprises</label></div></div>
+              <div class="question" data-answer="b"><p>3. Choose the correct sentence.</p><div class="options"><label class="option"><input type="radio" name="adjective-ing-ed-test-3" value="a"> The lesson was bored.</label><label class="option"><input type="radio" name="adjective-ing-ed-test-3" value="b"> The lesson was boring.</label><label class="option"><input type="radio" name="adjective-ing-ed-test-3" value="c"> I was boring by the lesson.</label><label class="option"><input type="radio" name="adjective-ing-ed-test-3" value="d"> The lesson boredly was.</label><label class="option"><input type="radio" name="adjective-ing-ed-test-3" value="e"> I boring was.</label></div></div>
+              <div class="question" data-answer="a"><p>4. Complete: The instructions were ___. I didn’t understand them.</p><div class="options"><label class="option"><input type="radio" name="adjective-ing-ed-test-4" value="a"> confusing</label><label class="option"><input type="radio" name="adjective-ing-ed-test-4" value="b"> confused</label><label class="option"><input type="radio" name="adjective-ing-ed-test-4" value="c"> confuse</label><label class="option"><input type="radio" name="adjective-ing-ed-test-4" value="d"> confusingly</label><label class="option"><input type="radio" name="adjective-ing-ed-test-4" value="e"> confuses</label></div></div>
+              <div class="question" data-answer="b"><p>5. Complete: She felt ___ after the long trip.</p><div class="options"><label class="option"><input type="radio" name="adjective-ing-ed-test-5" value="a"> tiring</label><label class="option"><input type="radio" name="adjective-ing-ed-test-5" value="b"> tired</label><label class="option"><input type="radio" name="adjective-ing-ed-test-5" value="c"> tire</label><label class="option"><input type="radio" name="adjective-ing-ed-test-5" value="d"> tiredly</label><label class="option"><input type="radio" name="adjective-ing-ed-test-5" value="e"> tires</label></div></div>
+              <button class="check-btn" type="button" data-check="adjective-ing-ed-test"><span class="inline-lang" data-lang="kk">Жауаптарды тексеру</span><span class="inline-lang" data-lang="ru">Проверить ответы</span></button>
+              <div class="result-box" data-result="adjective-ing-ed-test"><h5><span class="inline-lang" data-lang="kk">Түсіндірме</span><span class="inline-lang" data-lang="ru">Объяснение</span></h5><div class="lang-content" data-lang="kk"><ol><li>Фильм сезім тудырады: exciting.</li><li>Адам сезінеді: surprised.</li><li>Lesson сезім тудырады: boring.</li><li>Instructions шатастырады: confusing.</li><li>She адамның күйі: tired.</li></ol></div><div class="lang-content" data-lang="ru"><ol><li>A film causes the feeling: exciting.</li><li>A person feels: surprised.</li><li>The lesson causes the feeling: boring.</li><li>Instructions cause confusion: confusing.</li><li>She describes a person’s state: tired.</li></ol></div></div>
+            </div>
+          </div>
+        </article>
+        <article class="subunit" id="adjective-too-enough">
+          <div class="subunit-header"><div class="subunit-label">Adjective · Sub-unit 6</div><h3>Too / Enough / So / Such</h3><div class="subunit-translation"><span class="inline-lang" data-lang="kk">Күшейткіш құрылымдар</span><span class="inline-lang" data-lang="ru">Усилительные конструкции</span></div></div>
+          <div class="subunit-body">
+            <div class="lesson-layout"><div class="lesson-box"><h4>English rule</h4><p><b>Too</b> means “more than needed”. <b>Enough</b> means “as much as needed”. <b>So</b> is used before an adjective; <b>such</b> is used before a noun phrase.</p></div><div class="lesson-box"><h4><span class="inline-lang" data-lang="kk">Түсіндіру</span><span class="inline-lang" data-lang="ru">Объяснение</span></h4><div class="lang-content" data-lang="kk"><p><b>Too</b> — тым, қажеттен артық. <b>Enough</b> — жеткілікті. <b>So</b> сын есімнің алдында келеді: <b>so easy</b>. <b>Such</b> зат есімді тіркестің алдында келеді: <b>such a nice room</b>.</p></div><div class="lang-content" data-lang="ru"><p><b>Too</b> — слишком, больше чем нужно. <b>Enough</b> — достаточно. <b>So</b> стоит перед прилагательным: <b>so easy</b>. <b>Such</b> стоит перед группой с существительным: <b>such a nice room</b>.</p></div></div></div>
+            <div class="formula-box"><div class="formula-main">too + adjective · adjective + enough · so + adjective · such + a/an + adjective + noun</div><div class="formula-translation"><span class="inline-lang" data-lang="kk"><span class="label">Аударма:</span> too difficult — тым қиын, easy enough — жеткілікті оңай, so beautiful — өте әдемі, such a nice room — сондай жақсы бөлме.</span><span class="inline-lang" data-lang="ru"><span class="label">Перевод:</span> too difficult — слишком трудный, easy enough — достаточно лёгкий, so beautiful — очень красивый, such a nice room — такая хорошая комната.</span></div></div>
+            
+            <div class="example-box"><p class="example-sentence">The task is <span class="mark adjective">too difficult</span> for me.</p><p class="example-note"><span class="inline-lang" data-lang="kk">too difficult — тым қиын.</span><span class="inline-lang" data-lang="ru">too difficult — слишком трудный.</span></p></div>
+            <div class="example-box"><p class="example-sentence">This is <span class="mark adjective">such a nice</span> room.</p><p class="example-note"><span class="inline-lang" data-lang="kk">such + a + adjective + noun.</span><span class="inline-lang" data-lang="ru">such + a + adjective + noun.</span></p></div>
+            <div class="mistake-box"><h4><span class="inline-lang" data-lang="kk">Жиі қате</span><span class="inline-lang" data-lang="ru">Частая ошибка</span></h4><p><span class="inline-lang" data-lang="kk"><b>enough</b> сын есімнен кейін келеді: <b>old enough</b>, not <b>enough old</b>.</span><span class="inline-lang" data-lang="ru"><b>enough</b> стоит после прилагательного: <b>old enough</b>, не <b>enough old</b>.</span></p></div>
+            <div class="test-box" data-test="adjective-too-enough-test"><div class="test-header"><h4>Mini test · Too / Enough / So / Such</h4><span class="mini-badge">5 questions</span></div>
+              <div class="question" data-answer="b"><p>1. Choose the correct phrase.</p><div class="options"><label class="option"><input type="radio" name="adjective-too-enough-test-1" value="a"> enough old</label><label class="option"><input type="radio" name="adjective-too-enough-test-1" value="b"> old enough</label><label class="option"><input type="radio" name="adjective-too-enough-test-1" value="c"> old too enough</label><label class="option"><input type="radio" name="adjective-too-enough-test-1" value="d"> enoughly old</label><label class="option"><input type="radio" name="adjective-too-enough-test-1" value="e"> old such enough</label></div></div>
+              <div class="question" data-answer="b"><p>2. Choose the correct sentence.</p><div class="options"><label class="option"><input type="radio" name="adjective-too-enough-test-2" value="a"> It is such cold.</label><label class="option"><input type="radio" name="adjective-too-enough-test-2" value="b"> It is so cold.</label><label class="option"><input type="radio" name="adjective-too-enough-test-2" value="c"> It is so a cold day.</label><label class="option"><input type="radio" name="adjective-too-enough-test-2" value="d"> It is such coldly.</label><label class="option"><input type="radio" name="adjective-too-enough-test-2" value="e"> It is enough coldly.</label></div></div>
+              <div class="question" data-answer="a"><p>3. Choose the correct phrase.</p><div class="options"><label class="option"><input type="radio" name="adjective-too-enough-test-3" value="a"> such a nice room</label><label class="option"><input type="radio" name="adjective-too-enough-test-3" value="b"> so a nice room</label><label class="option"><input type="radio" name="adjective-too-enough-test-3" value="c"> such nice</label><label class="option"><input type="radio" name="adjective-too-enough-test-3" value="d"> so nice room</label><label class="option"><input type="radio" name="adjective-too-enough-test-3" value="e"> suchly nice room</label></div></div>
+              <div class="question" data-answer="c"><p>4. Complete: The coffee is ___ hot to drink.</p><div class="options"><label class="option"><input type="radio" name="adjective-too-enough-test-4" value="a"> enough</label><label class="option"><input type="radio" name="adjective-too-enough-test-4" value="b"> such</label><label class="option"><input type="radio" name="adjective-too-enough-test-4" value="c"> too</label><label class="option"><input type="radio" name="adjective-too-enough-test-4" value="d"> so a</label><label class="option"><input type="radio" name="adjective-too-enough-test-4" value="e"> many</label></div></div>
+              <div class="question" data-answer="d"><p>5. Complete: She is clever ___ to solve it.</p><div class="options"><label class="option"><input type="radio" name="adjective-too-enough-test-5" value="a"> too</label><label class="option"><input type="radio" name="adjective-too-enough-test-5" value="b"> such</label><label class="option"><input type="radio" name="adjective-too-enough-test-5" value="c"> so</label><label class="option"><input type="radio" name="adjective-too-enough-test-5" value="d"> enough</label><label class="option"><input type="radio" name="adjective-too-enough-test-5" value="e"> enoughly</label></div></div>
+              <button class="check-btn" type="button" data-check="adjective-too-enough-test"><span class="inline-lang" data-lang="kk">Жауаптарды тексеру</span><span class="inline-lang" data-lang="ru">Проверить ответы</span></button>
+              <div class="result-box" data-result="adjective-too-enough-test"><h5><span class="inline-lang" data-lang="kk">Түсіндірме</span><span class="inline-lang" data-lang="ru">Объяснение</span></h5><div class="lang-content" data-lang="kk"><ol><li>enough сын есімнен кейін: old enough.</li><li>so + adjective: so cold.</li><li>such + a + adjective + noun.</li><li>too hot — тым ыстық.</li><li>clever enough — жеткілікті ақылды.</li></ol></div><div class="lang-content" data-lang="ru"><ol><li>enough goes after adjective: old enough.</li><li>so + adjective: so cold.</li><li>such + a + adjective + noun.</li><li>too hot means too much.</li><li>clever enough is correct.</li></ol></div></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="grammar-section" id="pronoun">
       <div class="page-shell">
         <div class="grammar-hero">
           <div class="grammar-title-card">
@@ -5552,478 +5575,59 @@ Shymkent is in the south of Kz
               </div>
             </div>
           </div>
+
+
+        <article class="subunit" id="pronoun-demonstrative">
+          <div class="subunit-header"><div class="subunit-label">Pronoun · Sub-unit 7</div><h3>Demonstrative Pronouns</h3><div class="subunit-translation"><span class="inline-lang" data-lang="kk">Сілтеу есімдіктері</span><span class="inline-lang" data-lang="ru">Указательные местоимения</span></div></div>
+          <div class="subunit-body">
+            <div class="lesson-layout"><div class="lesson-box"><h4>English rule</h4><p><b>This, that, these, those</b> point to a person, object, or idea. They show distance and number.</p></div><div class="lesson-box"><h4><span class="inline-lang" data-lang="kk">Түсіндіру</span><span class="inline-lang" data-lang="ru">Объяснение</span></h4><div class="lang-content" data-lang="kk"><p><b>This</b> — бұл, жақын және жекеше. <b>That</b> — анау, алыс және жекеше. <b>These</b> — бұлар, жақын және көпше. <b>Those</b> — аналар, алыс және көпше.</p></div><div class="lang-content" data-lang="ru"><p><b>This</b> — этот/это, близко и единственное число. <b>That</b> — тот/то, далеко и единственное число. <b>These</b> — эти, близко и множественное число. <b>Those</b> — те, далеко и множественное число.</p></div></div></div>
+            <div class="formula-box"><div class="formula-main">this book · that house · these books · those houses</div><div class="formula-translation"><span class="inline-lang" data-lang="kk">this book — бұл кітап, that house — анау үй, these books — бұл кітаптар, those houses — анау үйлер.</span><span class="inline-lang" data-lang="ru">this book — эта книга, that house — тот дом, these books — эти книги, those houses — те дома.</span></div></div>
+            <div class="example-box"><p class="example-sentence"><span class="mark pronoun">This</span> dress is expensive, but it is very nice.</p><p class="example-note"><span class="inline-lang" data-lang="kk">this — жақын тұрған жекеше затты көрсетеді: бұл көйлек.</span><span class="inline-lang" data-lang="ru">this указывает на близкий предмет в единственном числе: это платье.</span></p></div>
+            <div class="mistake-box"><h4><span class="inline-lang" data-lang="kk">Жиі қате</span><span class="inline-lang" data-lang="ru">Частая ошибка</span></h4><p><span class="inline-lang" data-lang="kk"><b>These</b> көпше затпен келеді: these books. <b>This books</b> — қате.</span><span class="inline-lang" data-lang="ru"><b>These</b> используется с множественным числом: these books. <b>This books</b> — ошибка.</span></p></div>
+            <div class="test-box" data-test="pronoun-demonstrative-test"><div class="test-header"><h4>Mini test · Demonstrative Pronouns</h4><span class="mini-badge">5 questions</span></div>
+              <div class="question" data-answer="a"><p>1. ___ dress is expensive, but it’s very nice.</p><div class="options"><label class="option"><input type="radio" name="pron-dem-1" value="a"> This</label><label class="option"><input type="radio" name="pron-dem-1" value="b"> Those</label><label class="option"><input type="radio" name="pron-dem-1" value="c"> These</label><label class="option"><input type="radio" name="pron-dem-1" value="d"> Them</label><label class="option"><input type="radio" name="pron-dem-1" value="e"> Their</label></div></div>
+              <div class="question" data-answer="c"><p>2. Choose the correct phrase.</p><div class="options"><label class="option"><input type="radio" name="pron-dem-2" value="a"> this books</label><label class="option"><input type="radio" name="pron-dem-2" value="b"> that books</label><label class="option"><input type="radio" name="pron-dem-2" value="c"> these books</label><label class="option"><input type="radio" name="pron-dem-2" value="d"> them books</label><label class="option"><input type="radio" name="pron-dem-2" value="e"> theirs books</label></div></div>
+              <div class="question" data-answer="d"><p>3. Choose the correct phrase for a far singular object.</p><div class="options"><label class="option"><input type="radio" name="pron-dem-3" value="a"> these car</label><label class="option"><input type="radio" name="pron-dem-3" value="b"> this car</label><label class="option"><input type="radio" name="pron-dem-3" value="c"> those car</label><label class="option"><input type="radio" name="pron-dem-3" value="d"> that car</label><label class="option"><input type="radio" name="pron-dem-3" value="e"> them car</label></div></div>
+              <div class="question" data-answer="b"><p>4. Choose the correct phrase for far plural objects.</p><div class="options"><label class="option"><input type="radio" name="pron-dem-4" value="a"> that houses</label><label class="option"><input type="radio" name="pron-dem-4" value="b"> those houses</label><label class="option"><input type="radio" name="pron-dem-4" value="c"> this houses</label><label class="option"><input type="radio" name="pron-dem-4" value="d"> these house</label><label class="option"><input type="radio" name="pron-dem-4" value="e"> those house</label></div></div>
+              <div class="question" data-answer="e"><p>5. Choose the correct sentence.</p><div class="options"><label class="option"><input type="radio" name="pron-dem-5" value="a"> These is my bag.</label><label class="option"><input type="radio" name="pron-dem-5" value="b"> Those is my bags.</label><label class="option"><input type="radio" name="pron-dem-5" value="c"> This are my bag.</label><label class="option"><input type="radio" name="pron-dem-5" value="d"> That are my bag.</label><label class="option"><input type="radio" name="pron-dem-5" value="e"> This is my bag.</label></div></div>
+              <button class="check-btn" type="button" data-check="pronoun-demonstrative-test"><span class="inline-lang" data-lang="kk">Жауаптарды тексеру</span><span class="inline-lang" data-lang="ru">Проверить ответы</span></button>
+              <div class="result-box" data-result="pronoun-demonstrative-test"><h5><span class="inline-lang" data-lang="kk">Түсіндірме</span><span class="inline-lang" data-lang="ru">Объяснение</span></h5><div class="lang-content" data-lang="kk"><ol><li>dress жекеше, жақын: <b>This</b>.</li><li>books көпше, жақын: <b>these books</b>.</li><li>Алыс жекеше: <b>that car</b>.</li><li>Алыс көпше: <b>those houses</b>.</li><li>Жекеше subject: <b>This is</b>.</li></ol></div><div class="lang-content" data-lang="ru"><ol><li>dress — единственное число, близко: <b>This</b>.</li><li>books — множественное число, близко: <b>these books</b>.</li><li>Далеко и единственное число: <b>that car</b>.</li><li>Далеко и множественное число: <b>those houses</b>.</li><li>Единственное число: <b>This is</b>.</li></ol></div></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="subunit" id="pronoun-question">
+          <div class="subunit-header"><div class="subunit-label">Pronoun · Sub-unit 8</div><h3>Question Pronouns</h3><div class="subunit-translation"><span class="inline-lang" data-lang="kk">Сұрау есімдіктері</span><span class="inline-lang" data-lang="ru">Вопросительные местоимения</span></div></div>
+          <div class="subunit-body">
+            <div class="lesson-layout"><div class="lesson-box"><h4>English rule</h4><p><b>Who, whom, whose, what, which</b> are used to ask questions about people, possession, things, or choice.</p></div><div class="lesson-box"><h4><span class="inline-lang" data-lang="kk">Түсіндіру</span><span class="inline-lang" data-lang="ru">Объяснение</span></h4><div class="lang-content" data-lang="kk"><p><b>Who</b> — кім, адам туралы сұрайды. <b>Whose</b> — кімнің, иесін сұрайды. <b>What</b> — не/қандай, зат немесе ақпарат туралы. <b>Which</b> — қайсысы, таңдау болғанда қолданылады.</p></div><div class="lang-content" data-lang="ru"><p><b>Who</b> — кто, спрашивает о человеке. <b>Whose</b> — чей, спрашивает владельца. <b>What</b> — что/какой, о предмете или информации. <b>Which</b> — который/какой из нескольких, когда есть выбор.</p></div></div></div>
+            <div class="formula-box"><div class="formula-main">Who is he? · Whose pen is this? · What is it made of? · Which answer is correct?</div><div class="formula-translation"><span class="inline-lang" data-lang="kk">Who — кім, whose — кімнің, what — не/қандай, which — қайсысы.</span><span class="inline-lang" data-lang="ru">Who — кто, whose — чей, what — что/какой, which — который/какой.</span></div></div>
+            <div class="example-box"><p class="example-sentence"><span class="mark pronoun">Whose</span> pen is this?</p><p class="example-note"><span class="inline-lang" data-lang="kk">Whose — кімнің? Қаламның иесін сұрайды.</span><span class="inline-lang" data-lang="ru">Whose — чей? Вопрос о владельце ручки.</span></p></div>
+            <div class="mistake-box"><h4><span class="inline-lang" data-lang="kk">Жиі қате</span><span class="inline-lang" data-lang="ru">Частая ошибка</span></h4><p><span class="inline-lang" data-lang="kk"><b>Who pen is this?</b> қате. Иесін сұрағанда <b>Whose pen is this?</b> деп айтамыз.</span><span class="inline-lang" data-lang="ru"><b>Who pen is this?</b> неправильно. Когда спрашиваем владельца, говорим <b>Whose pen is this?</b>.</span></p></div>
+            <div class="test-box" data-test="pronoun-question-test"><div class="test-header"><h4>Mini test · Question Pronouns</h4><span class="mini-badge">5 questions</span></div>
+              <div class="question" data-answer="b"><p>1. “___ pen is this?”</p><div class="options"><label class="option"><input type="radio" name="pron-q-1" value="a"> Who</label><label class="option"><input type="radio" name="pron-q-1" value="b"> Whose</label><label class="option"><input type="radio" name="pron-q-1" value="c"> Which</label><label class="option"><input type="radio" name="pron-q-1" value="d"> That</label><label class="option"><input type="radio" name="pron-q-1" value="e"> Whom</label></div></div>
+              <div class="question" data-answer="a"><p>2. “___ is it made of?”</p><div class="options"><label class="option"><input type="radio" name="pron-q-2" value="a"> What</label><label class="option"><input type="radio" name="pron-q-2" value="b"> Where</label><label class="option"><input type="radio" name="pron-q-2" value="c"> Whose</label><label class="option"><input type="radio" name="pron-q-2" value="d"> Which</label><label class="option"><input type="radio" name="pron-q-2" value="e"> Who</label></div></div>
+              <div class="question" data-answer="d"><p>3. ___ answer is correct, A or B?</p><div class="options"><label class="option"><input type="radio" name="pron-q-3" value="a"> What</label><label class="option"><input type="radio" name="pron-q-3" value="b"> Who</label><label class="option"><input type="radio" name="pron-q-3" value="c"> Whose</label><label class="option"><input type="radio" name="pron-q-3" value="d"> Which</label><label class="option"><input type="radio" name="pron-q-3" value="e"> Whom</label></div></div>
+              <div class="question" data-answer="c"><p>4. ___ is your English teacher?</p><div class="options"><label class="option"><input type="radio" name="pron-q-4" value="a"> Whose</label><label class="option"><input type="radio" name="pron-q-4" value="b"> Which</label><label class="option"><input type="radio" name="pron-q-4" value="c"> Who</label><label class="option"><input type="radio" name="pron-q-4" value="d"> What</label><label class="option"><input type="radio" name="pron-q-4" value="e"> That</label></div></div>
+              <div class="question" data-answer="e"><p>5. Choose the correct question.</p><div class="options"><label class="option"><input type="radio" name="pron-q-5" value="a"> Who book is this?</label><label class="option"><input type="radio" name="pron-q-5" value="b"> What pen is this owner?</label><label class="option"><input type="radio" name="pron-q-5" value="c"> Which pen owner this?</label><label class="option"><input type="radio" name="pron-q-5" value="d"> Whom pen is this?</label><label class="option"><input type="radio" name="pron-q-5" value="e"> Whose book is this?</label></div></div>
+              <button class="check-btn" type="button" data-check="pronoun-question-test"><span class="inline-lang" data-lang="kk">Жауаптарды тексеру</span><span class="inline-lang" data-lang="ru">Проверить ответы</span></button>
+              <div class="result-box" data-result="pronoun-question-test"><h5><span class="inline-lang" data-lang="kk">Түсіндірме</span><span class="inline-lang" data-lang="ru">Объяснение</span></h5><div class="lang-content" data-lang="kk"><ol><li>Иесін сұрағанда <b>whose</b>.</li><li>Материал туралы сұрақ: <b>What is it made of?</b></li><li>Таңдау болса: <b>which</b>.</li><li>Адам туралы: <b>who</b>.</li><li>Дұрыс құрылым: <b>Whose book is this?</b></li></ol></div><div class="lang-content" data-lang="ru"><ol><li>Вопрос о владельце: <b>whose</b>.</li><li>Вопрос о материале: <b>What is it made of?</b></li><li>Когда есть выбор: <b>which</b>.</li><li>Вопрос о человеке: <b>who</b>.</li><li>Правильная структура: <b>Whose book is this?</b></li></ol></div></div>
+            </div>
+          </div>
         </article>
       </div>
     </section>
+
         <section class="grammar-section" id="final-test">
       <div class="page-shell">
-        <div class="grammar-hero">
-          <div class="grammar-title-card">
-            <div class="section-kicker">Final Practice</div>
-            <h2>Final Test</h2>
-            <div class="translation">
-              <span class="inline-lang" data-lang="kk">Қорытынды тест</span>
-              <span class="inline-lang" data-lang="ru">Итоговый тест</span>
-            </div>
-          </div>
-
-          <div class="grammar-info-card">
-            <div class="lang-content" data-lang="kk">
-              <p>
-                Бұл қорытынды бөлімде алғашқы төрт grammar rule бойынша аралас тапсырмалар берілген:
-                <b>Noun — зат есім</b>, <b>Article — артикль</b>, <b>Adjective — сын есім</b>,
-                <b>Pronoun — есімдік</b>. Әр сұрақта грамматикалық белгіге назар аудару керек.
-              </p>
-            </div>
-
-            <div class="lang-content" data-lang="ru">
-              <p>
-                В этом итоговом разделе собраны смешанные задания по первым четырём grammar rules:
-                <b>Noun — существительное</b>, <b>Article — артикль</b>, <b>Adjective — прилагательное</b>,
-                <b>Pronoun — местоимение</b>. В каждом вопросе нужно смотреть на грамматический признак.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <article class="subunit">
-          <div class="subunit-header">
-            <div class="subunit-label">Mixed Practice</div>
-            <h3>Noun · Article · Adjective · Pronoun</h3>
-            <div class="subunit-translation">
-              <span class="inline-lang" data-lang="kk">Аралас грамматикалық тапсырмалар</span>
-              <span class="inline-lang" data-lang="ru">Смешанные грамматические задания</span>
-            </div>
-          </div>
-
-          <div class="subunit-body">
-            <div class="test-box" data-test="final-mixed-test">
-              <div class="test-header">
-                <h4>Final test · Mixed grammar</h4>
-                <span class="mini-badge">20 questions</span>
-              </div>
-
-              <div class="question" data-answer="c">
-                <p>1. Choose the correct sentence.</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="final-1" value="a"> She gave me an useful advice.</label>
-                  <label class="option"><input type="radio" name="final-1" value="b"> She gave me useful advices.</label>
-                  <label class="option"><input type="radio" name="final-1" value="c"> She gave me useful advice.</label>
-                  <label class="option"><input type="radio" name="final-1" value="d"> She gave me a useful advices.</label>
-                  <label class="option"><input type="radio" name="final-1" value="e"> She gave me the useful advices.</label>
-                </div>
-              </div>
-
-              <div class="question" data-answer="e">
-                <p>2. Choose the correct form: “The students submitted ___ projects on time.”</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="final-2" value="a"> theirs</label>
-                  <label class="option"><input type="radio" name="final-2" value="b"> them</label>
-                  <label class="option"><input type="radio" name="final-2" value="c"> they</label>
-                  <label class="option"><input type="radio" name="final-2" value="d"> themselves</label>
-                  <label class="option"><input type="radio" name="final-2" value="e"> their</label>
-                </div>
-              </div>
-
-              <div class="question" data-answer="a">
-                <p>3. Choose the correct article: “___ Thames flows through London.”</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="final-3" value="a"> The</label>
-                  <label class="option"><input type="radio" name="final-3" value="b"> A</label>
-                  <label class="option"><input type="radio" name="final-3" value="c"> An</label>
-                  <label class="option"><input type="radio" name="final-3" value="d"> Zero article</label>
-                  <label class="option"><input type="radio" name="final-3" value="e"> Some</label>
-                </div>
-              </div>
-
-              <div class="question" data-answer="d">
-                <p>4. Choose the correct form: “This explanation is ___ than the previous one.”</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="final-4" value="a"> clear</label>
-                  <label class="option"><input type="radio" name="final-4" value="b"> more clear than</label>
-                  <label class="option"><input type="radio" name="final-4" value="c"> the clearest</label>
-                  <label class="option"><input type="radio" name="final-4" value="d"> clearer</label>
-                  <label class="option"><input type="radio" name="final-4" value="e"> most clear</label>
-                </div>
-              </div>
-
-              <div class="question" data-answer="b">
-                <p>5. Choose the correct pronoun: “The woman ___ helped us works at the university.”</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="final-5" value="a"> which</label>
-                  <label class="option"><input type="radio" name="final-5" value="b"> who</label>
-                  <label class="option"><input type="radio" name="final-5" value="c"> whose</label>
-                  <label class="option"><input type="radio" name="final-5" value="d"> where</label>
-                  <label class="option"><input type="radio" name="final-5" value="e"> when</label>
-                </div>
-              </div>
-
-              <div class="question" data-answer="e">
-                <p>6. Choose the correct plural form: “Several ___ attended the seminar.”</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="final-6" value="a"> childs</label>
-                  <label class="option"><input type="radio" name="final-6" value="b"> childes</label>
-                  <label class="option"><input type="radio" name="final-6" value="c"> childrens</label>
-                  <label class="option"><input type="radio" name="final-6" value="d"> child</label>
-                  <label class="option"><input type="radio" name="final-6" value="e"> children</label>
-                </div>
-              </div>
-
-              <div class="question" data-answer="c">
-                <p>7. Choose the correct sentence.</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="final-7" value="a"> This rules are important.</label>
-                  <label class="option"><input type="radio" name="final-7" value="b"> That rules are important.</label>
-                  <label class="option"><input type="radio" name="final-7" value="c"> These rules are important.</label>
-                  <label class="option"><input type="radio" name="final-7" value="d"> It rules are important.</label>
-                  <label class="option"><input type="radio" name="final-7" value="e"> Them rules are important.</label>
-                </div>
-              </div>
-
-              <div class="question" data-answer="a">
-                <p>8. Choose the correct article: “She is ___ honest person.”</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="final-8" value="a"> an</label>
-                  <label class="option"><input type="radio" name="final-8" value="b"> a</label>
-                  <label class="option"><input type="radio" name="final-8" value="c"> the</label>
-                  <label class="option"><input type="radio" name="final-8" value="d"> zero article</label>
-                  <label class="option"><input type="radio" name="final-8" value="e"> some</label>
-                </div>
-              </div>
-
-              <div class="question" data-answer="d">
-                <p>9. Choose the correct form: “The lecture was ___, so many students asked questions.”</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="final-9" value="a"> interested</label>
-                  <label class="option"><input type="radio" name="final-9" value="b"> interest</label>
-                  <label class="option"><input type="radio" name="final-9" value="c"> interestingly</label>
-                  <label class="option"><input type="radio" name="final-9" value="d"> interesting</label>
-                  <label class="option"><input type="radio" name="final-9" value="e"> interests</label>
-                </div>
-              </div>
-
-              <div class="question" data-answer="b">
-                <p>10. Choose the correct phrase.</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="final-10" value="a"> the students’s answers</label>
-                  <label class="option"><input type="radio" name="final-10" value="b"> the students’ answers</label>
-                  <label class="option"><input type="radio" name="final-10" value="c"> the student answers’s</label>
-                  <label class="option"><input type="radio" name="final-10" value="d"> the students answers</label>
-                  <label class="option"><input type="radio" name="final-10" value="e"> the answer’s students</label>
-                </div>
-              </div>
-
-              <div class="question" data-answer="e">
-                <p>11. Choose the correct pronoun: “The teacher gave ___ extra materials.”</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="final-11" value="a"> we</label>
-                  <label class="option"><input type="radio" name="final-11" value="b"> our</label>
-                  <label class="option"><input type="radio" name="final-11" value="c"> ours</label>
-                  <label class="option"><input type="radio" name="final-11" value="d"> ourselves</label>
-                  <label class="option"><input type="radio" name="final-11" value="e"> us</label>
-                </div>
-              </div>
-
-              <div class="question" data-answer="c">
-                <p>12. Choose the correct sentence.</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="final-12" value="a"> English language is the useful.</label>
-                  <label class="option"><input type="radio" name="final-12" value="b"> The English is useful for study.</label>
-                  <label class="option"><input type="radio" name="final-12" value="c"> English is useful for study.</label>
-                  <label class="option"><input type="radio" name="final-12" value="d"> An English is useful for study.</label>
-                  <label class="option"><input type="radio" name="final-12" value="e"> A English is useful for study.</label>
-                </div>
-              </div>
-
-              <div class="question" data-answer="a">
-                <p>13. Choose the correct form: “This is ___ answer in the group.”</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="final-13" value="a"> the best</label>
-                  <label class="option"><input type="radio" name="final-13" value="b"> better</label>
-                  <label class="option"><input type="radio" name="final-13" value="c"> gooder</label>
-                  <label class="option"><input type="radio" name="final-13" value="d"> more good</label>
-                  <label class="option"><input type="radio" name="final-13" value="e"> best than</label>
-                </div>
-              </div>
-
-              <div class="question" data-answer="d">
-                <p>14. Choose the correct pronoun: “The student ___ notebook was found thanked the teacher.”</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="final-14" value="a"> who</label>
-                  <label class="option"><input type="radio" name="final-14" value="b"> which</label>
-                  <label class="option"><input type="radio" name="final-14" value="c"> where</label>
-                  <label class="option"><input type="radio" name="final-14" value="d"> whose</label>
-                  <label class="option"><input type="radio" name="final-14" value="e"> when</label>
-                </div>
-              </div>
-
-              <div class="question" data-answer="b">
-                <p>15. Choose the correct phrase.</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="final-15" value="a"> many information</label>
-                  <label class="option"><input type="radio" name="final-15" value="b"> much information</label>
-                  <label class="option"><input type="radio" name="final-15" value="c"> several information</label>
-                  <label class="option"><input type="radio" name="final-15" value="d"> informations</label>
-                  <label class="option"><input type="radio" name="final-15" value="e"> an information</label>
-                </div>
-              </div>
-
-              <div class="question" data-answer="e">
-                <p>16. Choose the correct sentence.</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="final-16" value="a"> Nobody did not understand the rule.</label>
-                  <label class="option"><input type="radio" name="final-16" value="b"> Nobody not understood the rule.</label>
-                  <label class="option"><input type="radio" name="final-16" value="c"> No nobody understood the rule.</label>
-                  <label class="option"><input type="radio" name="final-16" value="d"> Anybody understood no rule.</label>
-                  <label class="option"><input type="radio" name="final-16" value="e"> Nobody understood the rule.</label>
-                </div>
-              </div>
-
-              <div class="question" data-answer="a">
-                <p>17. Choose the correct article: “He lives in ___ United Kingdom.”</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="final-17" value="a"> the</label>
-                  <label class="option"><input type="radio" name="final-17" value="b"> a</label>
-                  <label class="option"><input type="radio" name="final-17" value="c"> an</label>
-                  <label class="option"><input type="radio" name="final-17" value="d"> zero article</label>
-                  <label class="option"><input type="radio" name="final-17" value="e"> some</label>
-                </div>
-              </div>
-
-              <div class="question" data-answer="c">
-                <p>18. Choose the correct form: “The students prepared ___ for the oral exam.”</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="final-18" value="a"> themself</label>
-                  <label class="option"><input type="radio" name="final-18" value="b"> theirself</label>
-                  <label class="option"><input type="radio" name="final-18" value="c"> themselves</label>
-                  <label class="option"><input type="radio" name="final-18" value="d"> theirs</label>
-                  <label class="option"><input type="radio" name="final-18" value="e"> they</label>
-                </div>
-              </div>
-
-              <div class="question" data-answer="d">
-                <p>19. Choose the correct sentence.</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="final-19" value="a"> The Kazakhstan is large country.</label>
-                  <label class="option"><input type="radio" name="final-19" value="b"> Kazakhstan is a large the country.</label>
-                  <label class="option"><input type="radio" name="final-19" value="c"> Kazakhstan is large country.</label>
-                  <label class="option"><input type="radio" name="final-19" value="d"> Kazakhstan is a large country.</label>
-                  <label class="option"><input type="radio" name="final-19" value="e"> A Kazakhstan is large country.</label>
-                </div>
-              </div>
-
-              <div class="question" data-answer="b">
-                <p>20. Choose the correct form: “The topic was confusing, and many learners felt ___.”</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="final-20" value="a"> confusing</label>
-                  <label class="option"><input type="radio" name="final-20" value="b"> confused</label>
-                  <label class="option"><input type="radio" name="final-20" value="c"> confuse</label>
-                  <label class="option"><input type="radio" name="final-20" value="d"> confusingly</label>
-                  <label class="option"><input type="radio" name="final-20" value="e"> confusion</label>
-                </div>
-              </div>
-
-              <button class="check-btn" type="button" data-check="final-mixed-test">
-                <span class="inline-lang" data-lang="kk">Жауаптарды тексеру</span>
-                <span class="inline-lang" data-lang="ru">Проверить ответы</span>
-              </button>
-
-              <div class="result-box" data-result="final-mixed-test">
-                <h5>
-                  <span class="inline-lang" data-lang="kk">Түсіндірме</span>
-                  <span class="inline-lang" data-lang="ru">Объяснение</span>
-                </h5>
-
-                <div class="lang-content" data-lang="kk">
-                  <ol>
-                    <li><b>useful advice</b> дұрыс, себебі advice саналмайтын зат есім.</li>
-                    <li><b>their projects</b> дұрыс, себебі projects алдында тәуелдік форма керек.</li>
-                    <li><b>the Thames</b> дұрыс, өзен атауларымен the қолданылады.</li>
-                    <li><b>clearer</b> дұрыс, себебі than екі нәрсені салыстырып тұр.</li>
-                    <li><b>who</b> дұрыс, себебі woman — адам.</li>
-                    <li><b>children</b> — child сөзінің дұрыс емес көпше түрі.</li>
-                    <li><b>These rules</b> дұрыс, себебі rules көпше түрде.</li>
-                    <li><b>an honest person</b> дұрыс, себебі honest сөзінде h айтылмайды.</li>
-                    <li><b>interesting</b> лекцияның әсерін сипаттайды.</li>
-                    <li><b>students’ answers</b> дұрыс, себебі students көпше түрде -s әрпіне аяқталады.</li>
-                    <li><b>us</b> дұрыс, себебі әрекет бізге бағытталған.</li>
-                    <li><b>English</b> тіл атауы, жалпы мағынада артикльсіз қолданылады.</li>
-                    <li><b>the best</b> дұрыс, себебі in the group ең жоғары дәрежені білдіреді.</li>
-                    <li><b>whose</b> дұрыс, себебі notebook кімге тиесілі екенін көрсетеді.</li>
-                    <li><b>much information</b> дұрыс, себебі information саналмайды.</li>
-                    <li><b>Nobody understood</b> дұрыс, nobody өзі болымсыз мағына береді.</li>
-                    <li><b>the United Kingdom</b> the артиклімен қолданылады.</li>
-                    <li><b>themselves</b> дұрыс, себебі students көпше мағынада.</li>
-                    <li><b>Kazakhstan is a large country</b> дұрыс: Kazakhstan артикльсіз, country алдында a керек.</li>
-                    <li><b>confused</b> адамдардың сезімін көрсетеді.</li>
-                  </ol>
-                </div>
-
-                <div class="lang-content" data-lang="ru">
-                  <ol>
-                    <li><b>useful advice</b> правильно, потому что advice неисчисляемое.</li>
-                    <li><b>their projects</b> правильно, потому что перед projects нужна притяжательная форма.</li>
-                    <li><b>the Thames</b> правильно, с названиями рек используется the.</li>
-                    <li><b>clearer</b> правильно, потому что than сравнивает две вещи.</li>
-                    <li><b>who</b> правильно, потому что woman — человек.</li>
-                    <li><b>children</b> — неправильная форма множественного числа от child.</li>
-                    <li><b>These rules</b> правильно, потому что rules во множественном числе.</li>
-                    <li><b>an honest person</b> правильно, потому что h в honest не произносится.</li>
-                    <li><b>interesting</b> описывает эффект лекции.</li>
-                    <li><b>students’ answers</b> правильно, потому что students заканчивается на -s.</li>
-                    <li><b>us</b> правильно, потому что действие направлено на нас.</li>
-                    <li><b>English</b> — название языка, в общем значении без артикля.</li>
-                    <li><b>the best</b> правильно, потому что in the group указывает на превосходную степень.</li>
-                    <li><b>whose</b> правильно, потому что показывает принадлежность notebook.</li>
-                    <li><b>much information</b> правильно, потому что information неисчисляемое.</li>
-                    <li><b>Nobody understood</b> правильно, nobody уже имеет отрицательное значение.</li>
-                    <li><b>the United Kingdom</b> используется с the.</li>
-                    <li><b>themselves</b> правильно, потому что students имеет множественное значение.</li>
-                    <li><b>Kazakhstan is a large country</b> правильно: Kazakhstan без артикля, перед country нужен a.</li>
-                    <li><b>confused</b> показывает чувство людей.</li>
-                  </ol>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-  </main>
-
-  <footer class="section">
-    <div class="page-shell">
-      <div class="content-card">
-        <div class="section-kicker">© Назерке</div>
-        <h2 class="section-title">
-          <span class="inline-lang" data-lang="kk">Барлық құқық қорғалған</span>
-          <span class="inline-lang" data-lang="ru">Все права защищены</span>
-        </h2>
-        <p class="section-desc">
-          <span class="inline-lang" data-lang="kk">
-            Материалды рұқсатсыз көшіруге, сатуға, қайта таратуға немесе коммерциялық мақсатта қолдануға болмайды.
-          </span>
-          <span class="inline-lang" data-lang="ru">
-            Запрещается копировать, продавать, распространять или использовать материал в коммерческих целях без разрешения.
-          </span>
-        </p>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    function switchLanguage(lang) {
-      document.body.classList.remove("lang-kk", "lang-ru");
-      document.body.classList.add("lang-" + lang);
-
-      document.querySelectorAll(".lang-btn").forEach(function(btn) {
-        btn.classList.remove("active");
-      });
-
-      document.querySelectorAll('[data-set-lang="' + lang + '"]').forEach(function(btn) {
-        btn.classList.add("active");
-      });
-
-      try {
-        localStorage.setItem("geGrammarLang", lang);
-      } catch (e) {}
-    }
-
-    function checkTest(testId) {
-      const testBox = document.querySelector('[data-test="' + testId + '"]');
-      const resultBox = document.querySelector('[data-result="' + testId + '"]');
-
-      if (!testBox || !resultBox) return;
-
-      const questions = testBox.querySelectorAll(".question");
-      let score = 0;
-
-      questions.forEach(function(question) {
-        const correctAnswer = question.getAttribute("data-answer");
-        const selected = question.querySelector('input[type="radio"]:checked');
-
-        question.querySelectorAll(".option").forEach(function(option) {
-          option.classList.remove("correct", "wrong");
-
-          const input = option.querySelector("input");
-          if (!input) return;
-
-          if (input.value === correctAnswer) {
-            option.classList.add("correct");
-          }
-
-          if (selected && input.checked && input.value !== correctAnswer) {
-            option.classList.add("wrong");
-          }
-        });
-
-        if (selected && selected.value === correctAnswer) {
-          score++;
-        }
-      });
-
-      const oldScore = resultBox.querySelector(".score-line");
-      if (oldScore) oldScore.remove();
-
-      const scoreLine = document.createElement("div");
-      scoreLine.className = "score-line";
-      scoreLine.innerHTML =
-        '<span class="inline-lang" data-lang="kk">Нәтиже: ' + score + ' / ' + questions.length + '</span>' +
-        '<span class="inline-lang" data-lang="ru">Результат: ' + score + ' / ' + questions.length + '</span>';
-
-      resultBox.prepend(scoreLine);
-      resultBox.classList.add("show");
-
-      const currentLang = document.body.classList.contains("lang-ru") ? "ru" : "kk";
-      switchLanguage(currentLang);
-
-      resultBox.scrollIntoView({
-        behavior: "smooth",
-        block: "nearest"
-      });
-    }
-
-    document.addEventListener("DOMContentLoaded", function() {
-      document.querySelectorAll("[data-set-lang]").forEach(function(button) {
-        button.addEventListener("click", function() {
-          const lang = button.getAttribute("data-set-lang");
-          switchLanguage(lang);
-        });
-      });
-
-      let savedLang = "kk";
-      try {
-        savedLang = localStorage.getItem("geGrammarLang") || "kk";
-      } catch (e) {}
-
-      if (savedLang !== "kk" && savedLang !== "ru") {
-        savedLang = "kk";
-      }
-
-      switchLanguage(savedLang);
-
-      document.querySelectorAll("[data-check]").forEach(function(button) {
-        button.addEventListener("click", function() {
-          const testId = button.getAttribute("data-check");
-          checkTest(testId);
-        });
-      });
-
-      document.querySelectorAll('a[href^="#"]').forEach(function(link) {
-        link.addEventListener("click", function(event) {
-          const targetId = link.getAttribute("href");
-          const target = document.querySelector(targetId);
-
-          if (!target) return;
-
-          event.preventDefault();
-          target.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-          });
-        });
-      });
-    });
-  </script>
-</body>
-</html>
+        <div class="grammar-hero"><div class="grammar-title-card"><div class="section-kicker">Final Practice</div><h2>Final Test</h2><div class="translation"><span class="inline-lang" data-lang="kk">Қорытынды тест</span><span class="inline-lang" data-lang="ru">Итоговый тест</span></div></div><div class="grammar-info-card"><div class="lang-content" data-lang="kk"><p>Бұл қорытынды бөлімде <b>Noun</b>, <b>Article</b>, <b>Adjective</b>, <b>Pronoun</b> тақырыптары аралас түрде беріледі. Формат емтиханға ұқсас: дұрыс жауапты таңдау керек.</p></div><div class="lang-content" data-lang="ru"><p>В этом итоговом разделе смешаны темы <b>Noun</b>, <b>Article</b>, <b>Adjective</b>, <b>Pronoun</b>. Формат похож на экзамен: нужно выбрать правильный ответ.</p></div></div></div>
+        <article class="subunit"><div class="subunit-header"><div class="subunit-label">Mixed Practice</div><h3>Noun · Article · Adjective · Pronoun</h3><div class="subunit-translation"><span class="inline-lang" data-lang="kk">Аралас грамматикалық тапсырмалар</span><span class="inline-lang" data-lang="ru">Смешанные грамматические задания</span></div></div><div class="subunit-body"><div class="test-box" data-test="final-mixed-test"><div class="test-header"><h4>Final test · Mixed grammar</h4><span class="mini-badge">30 questions</span></div>
+              <div class="question" data-answer="c"><p>1. Choose the correct sentence.</p><div class="options"><label class="option"><input type="radio" name="final-1" value="a"> She gave me an useful advice.</label><label class="option"><input type="radio" name="final-1" value="b"> She gave me useful advices.</label><label class="option"><input type="radio" name="final-1" value="c"> She gave me useful advice.</label><label class="option"><input type="radio" name="final-1" value="d"> She gave me a useful advices.</label><label class="option"><input type="radio" name="final-1" value="e"> She gave me the useful advices.</label></div></div>
+              <div class="question" data-answer="e"><p>2. The students submitted ___ projects on time.</p><div class="options"><label class="option"><input type="radio" name="final-2" value="a"> theirs</label><label class="option"><input type="radio" name="final-2" value="b"> them</label><label class="option"><input type="radio" name="final-2" value="c"> they</label><label class="option"><input type="radio" name="final-2" value="d"> themselves</label><label class="option"><input type="radio" name="final-2" value="e"> their</label></div></div>
+              <div class="question" data-answer="b"><p>3. ___ sun rises in ___ east.</p><div class="options"><label class="option"><input type="radio" name="final-3" value="a"> A / an</label><label class="option"><input type="radio" name="final-3" value="b"> The / the</label><label class="option"><input type="radio" name="final-3" value="c"> - / the</label><label class="option"><input type="radio" name="final-3" value="d"> The / -</label><label class="option"><input type="radio" name="final-3" value="e"> A / the</label></div></div>
+              <div class="question" data-answer="c"><p>4. Choose the correct plural form of “diary”.</p><div class="options"><label class="option"><input type="radio" name="final-4" value="a"> diarys</label><label class="option"><input type="radio" name="final-4" value="b"> diaryes</label><label class="option"><input type="radio" name="final-4" value="c"> diaries</label><label class="option"><input type="radio" name="final-4" value="d"> diarieses</label><label class="option"><input type="radio" name="final-4" value="e"> diaryies</label></div></div>
+              <div class="question" data-answer="d"><p>5. This is ___ most difficult question.</p><div class="options"><label class="option"><input type="radio" name="final-5" value="a"> a</label><label class="option"><input type="radio" name="final-5" value="b"> an</label><label class="option"><input type="radio" name="final-5" value="c"> -</label><label class="option"><input type="radio" name="final-5" value="d"> the</label><label class="option"><input type="radio" name="final-5" value="e"> some</label></div></div>
+              <div class="question" data-answer="a"><p>6. Choose the correct phrase.</p><div class="options"><label class="option"><input type="radio" name="final-6" value="a"> a nice room</label><label class="option"><input type="radio" name="final-6" value="b"> a room nice</label><label class="option"><input type="radio" name="final-6" value="c"> nice a room</label><label class="option"><input type="radio" name="final-6" value="d"> a nicely room</label><label class="option"><input type="radio" name="final-6" value="e"> a room nicely</label></div></div>
+              <div class="question" data-answer="b"><p>7. I was ___ by the long lecture.</p><div class="options"><label class="option"><input type="radio" name="final-7" value="a"> boring</label><label class="option"><input type="radio" name="final-7" value="b"> bored</label><label class="option"><input type="radio" name="final-7" value="c"> bore</label><label class="option"><input type="radio" name="final-7" value="d"> boringly</label><label class="option"><input type="radio" name="final-7" value="e"> boredom</label></div></div>
+              <div class="question" data-answer="b"><p>8. The lecture was ___.</p><div class="options"><label class="option"><input type="radio" name="final-8" value="a"> bored</label><label class="option"><input type="radio" name="final-8" value="b"> boring</label><label class="option"><input type="radio" name="final-8" value="c"> bore</label><label class="option"><input type="radio" name="final-8" value="d"> boredly</label><label class="option"><input type="radio" name="final-8" value="e"> boredom</label></div></div>
+              <div class="question" data-answer="b"><p>9. ___ pen is this?</p><div class="options"><label class="option"><input type="radio" name="final-9" value="a"> Who</label><label class="option"><input type="radio" name="final-9" value="b"> Whose</label><label class="option"><input type="radio" name="final-9" value="c"> Which</label><label class="option"><input type="radio" name="final-9" value="d"> That</label><label class="option"><input type="radio" name="final-9" value="e"> Whom</label></div></div>
+              <div class="question" data-answer="a"><p>10. ___ dress is expensive but very nice.</p><div class="options"><label class="option"><input type="radio" name="final-10" value="a"> This</label><label class="option"><input type="radio" name="final-10" value="b"> Those</label><label class="option"><input type="radio" name="final-10" value="c"> These</label><label class="option"><input type="radio" name="f
