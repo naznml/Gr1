@@ -1184,6 +1184,57 @@
         font-size: 16px;
       }
     }
+
+
+    /* Strong KZ/RU separation and visible navigator */
+    body.lang-kk .inline-lang[data-lang="ru"],
+    body.lang-kk .block-lang[data-lang="ru"],
+    body.lang-kk .lang-content[data-lang="ru"],
+    body.lang-ru .inline-lang[data-lang="kk"],
+    body.lang-ru .block-lang[data-lang="kk"],
+    body.lang-ru .lang-content[data-lang="kk"] {
+      display: none !important;
+    }
+
+    body.lang-kk .inline-lang[data-lang="kk"],
+    body.lang-ru .inline-lang[data-lang="ru"] {
+      display: inline !important;
+    }
+
+    body.lang-kk .block-lang[data-lang="kk"],
+    body.lang-ru .block-lang[data-lang="ru"],
+    body.lang-kk .lang-content[data-lang="kk"],
+    body.lang-ru .lang-content[data-lang="ru"] {
+      display: block !important;
+    }
+
+    .back-to-top {
+      position: fixed !important;
+      right: 14px !important;
+      bottom: 14px !important;
+      z-index: 99999 !important;
+      width: auto !important;
+      min-width: 96px !important;
+      height: 48px !important;
+      padding: 0 14px !important;
+      border-radius: 999px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 7px !important;
+      color: white !important;
+      background: linear-gradient(135deg, var(--primary), var(--pink)) !important;
+      box-shadow: 0 14px 30px rgba(124, 58, 237, 0.35) !important;
+      font-weight: 950 !important;
+      font-size: 14px !important;
+      border: 1px solid rgba(255, 255, 255, 0.55) !important;
+    }
+
+    .back-to-top .arrow {
+      font-size: 22px;
+      line-height: 1;
+    }
+
   </style>
 </head>
 
@@ -4872,4 +4923,9 @@ Shymkent is in the south of Kazakhstan.
                   <li>This answer is mine. &#8212; &#1073;&#1201;&#1083; &#1078;&#1072;&#1091;&#1072;&#1087; &#1084;&#1077;&#1085;&#1110;&#1082;&#1110; / &#1101;&#1090;&#1086;&#1090; &#1086;&#1090;&#1074;&#1077;&#1090; &#1084;&#1086;&#1081;</li>
                   <li>This book is yours. &#8212; &#1073;&#1201;&#1083; &#1082;&#1110;&#1090;&#1072;&#1087; &#1089;&#1077;&#1085;&#1110;&#1082;&#1110; / &#1101;&#1090;&#1072; &#1082;&#1085;&#1080;&#1075;&#1072; &#1090;&#1074;&#1086;&#1103;</li>
                   <li>This phone is his. &#8212; &#1073;&#1201;&#1083; &#1090;&#1077;&#1083;&#1077;&#1092;&#1086;&#1085; &#1086;&#1085;&#1099;&#1082;&#1110; / &#1101;&#1090;&#1086;&#1090; &#1090;&#1077;&#1083;&#1077;&#1092;&#1086;&#1085; &#1077;&#1075;&#1086;</li>
-                  <li>This bag is hers. &#8212; &#1073;&#1201;&#1083; &#1089;&#1257;&#1084;&#1082;&#1077; &#1086;&#1085;&#1099;&#1082;&#1110; / &#1101;&#
+                  <li>This bag is hers. &#8212; &#1073;&#1201;&#1083; &#1089;&#1257;&#1084;&#1082;&#1077; &#1086;&#1085;&#1099;&#1082;&#1110; / &#1101;&#1090;&#1072; &#1089;&#1091;&#1084;&#1082;&#1072; &#1077;&#1105;</li>
+                  <li>This lesson is ours. &#8212; &#1073;&#1201;&#1083; &#1089;&#1072;&#1073;&#1072;&#1179; &#1073;&#1110;&#1079;&#1076;&#1110;&#1082;&#1110; / &#1101;&#1090;&#1086;&#1090; &#1091;&#1088;&#1086;&#1082; &#1085;&#1072;&#1096;</li>
+                  <li>This project is theirs. &#8212; &#1073;&#1201;&#1083; &#1078;&#1086;&#1073;&#1072; &#1086;&#1083;&#1072;&#1088;&#1076;&#1110;&#1082;&#1110; / &#1101;&#1090;&#1086;&#1090; &#1087;&#1088;&#1086;&#1077;&#1082;&#1090; &#1080;&#1093;</li>
+                </ul>
+              </div>
+            </di
