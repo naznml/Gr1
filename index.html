@@ -453,6 +453,76 @@
       font-size: 12px;
     }
 
+
+
+    .compact-map-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .compact-map-row {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 14px;
+      border-radius: 20px;
+      border: 1px solid rgba(124, 58, 237, 0.14);
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: 0 10px 24px rgba(76, 29, 149, 0.07);
+      transition: 0.2s ease;
+    }
+
+    .compact-map-row:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(76, 29, 149, 0.11);
+    }
+
+    .compact-map-num {
+      width: 38px;
+      height: 38px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 950;
+      background: linear-gradient(135deg, var(--primary), var(--pink));
+      box-shadow: 0 10px 20px rgba(124, 58, 237, 0.18);
+    }
+
+    .compact-map-row h3 {
+      font-size: 20px;
+      line-height: 1.15;
+      letter-spacing: -0.035em;
+      margin-bottom: 3px;
+    }
+
+    .compact-map-mini {
+      color: var(--primary-dark);
+      font-size: 12.5px;
+      line-height: 1.35;
+      font-weight: 850;
+      margin-bottom: 8px;
+    }
+
+    .compact-map-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .compact-map-tags span {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 8px;
+      border-radius: 999px;
+      background: rgba(124, 58, 237, 0.08);
+      color: #4c1d95;
+      font-size: 11.5px;
+      line-height: 1.2;
+      font-weight: 850;
+    }
+
     .quick-nav {
       position: relative;
       z-index: 8;
@@ -966,19 +1036,21 @@
 
     .back-to-top {
       position: fixed;
-      right: 18px;
-      bottom: 18px;
-      z-index: 999;
-      width: 46px;
+      right: 16px;
+      bottom: 88px;
+      z-index: 2147483647;
+      min-width: 58px;
       height: 46px;
       border-radius: 999px;
-      display: grid;
-      place-items: center;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
       color: white;
       background: linear-gradient(135deg, var(--primary), var(--pink));
       box-shadow: 0 14px 30px rgba(124, 58, 237, 0.28);
       font-weight: 950;
-      font-size: 22px;
+      font-size: 16px;
       border: 1px solid rgba(255, 255, 255, 0.45);
       transition: 0.22s ease;
     }
@@ -1112,6 +1184,107 @@
         font-size: 16px;
       }
     }
+
+
+    /* Strong KZ/RU separation and visible navigator */
+    body.lang-kk .inline-lang[data-lang="ru"],
+    body.lang-kk .block-lang[data-lang="ru"],
+    body.lang-kk .lang-content[data-lang="ru"],
+    body.lang-ru .inline-lang[data-lang="kk"],
+    body.lang-ru .block-lang[data-lang="kk"],
+    body.lang-ru .lang-content[data-lang="kk"] {
+      display: none !important;
+    }
+
+    body.lang-kk .inline-lang[data-lang="kk"],
+    body.lang-ru .inline-lang[data-lang="ru"] {
+      display: inline !important;
+    }
+
+    body.lang-kk .block-lang[data-lang="kk"],
+    body.lang-ru .block-lang[data-lang="ru"],
+    body.lang-kk .lang-content[data-lang="kk"],
+    body.lang-ru .lang-content[data-lang="ru"] {
+      display: block !important;
+    }
+
+    .back-to-top {
+      position: fixed !important;
+      right: 14px !important;
+      bottom: 88px !important;
+      z-index: 2147483647 !important;
+      width: auto !important;
+      min-width: 96px !important;
+      height: 48px !important;
+      padding: 0 14px !important;
+      border-radius: 999px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 7px !important;
+      color: white !important;
+      background: linear-gradient(135deg, var(--primary), var(--pink)) !important;
+      box-shadow: 0 14px 30px rgba(124, 58, 237, 0.35) !important;
+      font-weight: 950 !important;
+      font-size: 14px !important;
+      border: 1px solid rgba(255, 255, 255, 0.55) !important;
+      cursor: pointer !important;
+      pointer-events: auto !important;
+    }
+
+    .back-to-top .arrow {
+      font-size: 22px;
+      line-height: 1;
+    }
+
+
+    /* HARD language separation: KZ and RU never show together */
+    .inline-lang[data-lang],
+    .block-lang[data-lang],
+    .lang-content[data-lang] { display: none !important; }
+
+    body.lang-kk .inline-lang[data-lang="kk"] { display: inline !important; }
+    body.lang-ru .inline-lang[data-lang="ru"] { display: inline !important; }
+    body.lang-kk .block-lang[data-lang="kk"],
+    body.lang-kk .lang-content[data-lang="kk"] { display: block !important; }
+    body.lang-ru .block-lang[data-lang="ru"],
+    body.lang-ru .lang-content[data-lang="ru"] { display: block !important; }
+
+    /* Visible back-to-top navigator, lifted above iPad/Safari bottom bar */
+    .back-to-top {
+      position: fixed !important;
+      right: 18px !important;
+      bottom: calc(env(safe-area-inset-bottom, 0px) + 92px) !important;
+      z-index: 99999 !important;
+      min-width: 86px !important;
+      height: 46px !important;
+      padding: 0 14px !important;
+      border-radius: 999px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 7px !important;
+      color: #ffffff !important;
+      background: linear-gradient(135deg, #7c3aed, #ec4899) !important;
+      box-shadow: 0 14px 34px rgba(124, 58, 237, 0.38) !important;
+      border: 1px solid rgba(255, 255, 255, 0.55) !important;
+      font-weight: 950 !important;
+      font-size: 14px !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    .back-to-top .arrow { font-size: 20px !important; line-height: 1 !important; }
+
+    @media (max-width: 680px) {
+      .back-to-top {
+        right: 14px !important;
+        bottom: calc(env(safe-area-inset-bottom, 0px) + 96px) !important;
+        min-width: 74px !important;
+        height: 42px !important;
+        font-size: 13px !important;
+      }
+    }
+
   </style>
 </head>
 
@@ -1131,8 +1304,8 @@
 
       <div class="top-actions">
         <div class="language-switch" aria-label="Language switcher">
-          <button class="lang-btn active" type="button" data-set-lang="kk">&#1178;&#1072;&#1079;&#1072;&#1179;&#1096;&#1072;</button>
-          <button class="lang-btn" type="button" data-set-lang="ru">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</button>
+          <button class="lang-btn active" type="button" data-set-lang="kk" onclick="switchLanguage('kk')" aria-pressed="true">&#1178;&#1072;&#1079;&#1072;&#1179;&#1096;&#1072;</button>
+          <button class="lang-btn" type="button" data-set-lang="ru" onclick="switchLanguage('ru')" aria-pressed="false">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</button>
         </div>
 
         <a class="ghost-link" href="#rules-map">
@@ -1226,113 +1399,94 @@
               <span class="inline-lang" data-lang="kk">&#1057;&#1072;&#1081;&#1090; &#1082;&#1072;&#1088;&#1090;&#1072;&#1089;&#1099;</span>
               <span class="inline-lang" data-lang="ru">&#1050;&#1072;&#1088;&#1090;&#1072; &#1089;&#1072;&#1081;&#1090;&#1072;</span>
             </div>
-
             <h2 class="section-title">
-              <span class="inline-lang" data-lang="kk">&#1041;&#1201;&#1083; &#1089;&#1072;&#1081;&#1090;&#1090;&#1072; &#1257;&#1090;&#1077;&#1090;&#1110;&#1085; 4 &#1077;&#1088;&#1077;&#1078;&#1077;</span>
-              <span class="inline-lang" data-lang="ru">4 &#1087;&#1088;&#1072;&#1074;&#1080;&#1083;&#1072; &#1085;&#1072; &#1101;&#1090;&#1086;&#1084; &#1089;&#1072;&#1081;&#1090;&#1077;</span>
+              <span class="inline-lang" data-lang="kk">&#1053;&#1077;&#1075;&#1110;&#1079;&#1075;&#1110; &#1073;&#1257;&#1083;&#1110;&#1084;&#1076;&#1077;&#1088; &#1078;&#1241;&#1085;&#1077; &#1110;&#1096;&#1110;&#1085;&#1076;&#1077;&#1075;&#1110; &#1077;&#1088;&#1077;&#1078;&#1077;&#1083;&#1077;&#1088;</span>
+              <span class="inline-lang" data-lang="ru">&#1054;&#1089;&#1085;&#1086;&#1074;&#1085;&#1099;&#1077; &#1088;&#1072;&#1079;&#1076;&#1077;&#1083;&#1099; &#1080; &#1087;&#1088;&#1072;&#1074;&#1080;&#1083;&#1072; &#1074;&#1085;&#1091;&#1090;&#1088;&#1080;</span>
             </h2>
-
             <p class="section-desc">
-              <span class="inline-lang" data-lang="kk">
-                &#1050;&#1072;&#1088;&#1090;&#1086;&#1095;&#1082;&#1072;&#1085;&#1099; &#1073;&#1072;&#1089;&#1179;&#1072;&#1085;&#1076;&#1072; &#1089;&#1072;&#1081;&#1090; &#1073;&#1110;&#1088;&#1076;&#1077;&#1085; &#1089;&#1086;&#1083; &#1073;&#1257;&#1083;&#1110;&#1084;&#1075;&#1077; &#1090;&#1199;&#1089;&#1077;&#1076;&#1110;. &#1058;&#1077;&#1083;&#1077;&#1092;&#1086;&#1085;&#1076;&#1072; &#1082;&#1072;&#1088;&#1090;&#1086;&#1095;&#1082;&#1072;&#1083;&#1072;&#1088;&#1076;&#1099; &#1086;&#1187;&#1171;&#1072;-&#1089;&#1086;&#1083;&#1171;&#1072; &#1089;&#1099;&#1088;&#1171;&#1099;&#1090;&#1099;&#1087; &#1082;&#1257;&#1088;&#1091;&#1075;&#1077; &#1073;&#1086;&#1083;&#1072;&#1076;&#1099;.
-              </span>
-              <span class="inline-lang" data-lang="ru">
-                &#1053;&#1072;&#1078;&#1084;&#1080;&#1090;&#1077; &#1085;&#1072; &#1082;&#1072;&#1088;&#1090;&#1086;&#1095;&#1082;&#1091;, &#1080; &#1089;&#1072;&#1081;&#1090; &#1087;&#1083;&#1072;&#1074;&#1085;&#1086; &#1087;&#1077;&#1088;&#1077;&#1081;&#1076;&#1105;&#1090; &#1082; &#1085;&#1091;&#1078;&#1085;&#1086;&#1084;&#1091; &#1088;&#1072;&#1079;&#1076;&#1077;&#1083;&#1091;. &#1053;&#1072; &#1090;&#1077;&#1083;&#1077;&#1092;&#1086;&#1085;&#1077; &#1082;&#1072;&#1088;&#1090;&#1086;&#1095;&#1082;&#1080; &#1084;&#1086;&#1078;&#1085;&#1086; &#1083;&#1080;&#1089;&#1090;&#1072;&#1090;&#1100; &#1089;&#1074;&#1072;&#1081;&#1087;&#1086;&#1084;.
-              </span>
+              <span class="inline-lang" data-lang="kk">&#1058;&#1257;&#1084;&#1077;&#1085;&#1076;&#1077;&#1075;&#1110; &#1090;&#1110;&#1079;&#1110;&#1084;&#1085;&#1077;&#1085; &#1082;&#1077;&#1088;&#1077;&#1082; &#1090;&#1072;&#1179;&#1099;&#1088;&#1099;&#1087;&#1090;&#1099; &#1090;&#1072;&#1187;&#1076;&#1072;&#1187;&#1099;&#1079;. &#1240;&#1088; &#1073;&#1257;&#1083;&#1110;&#1084;&#1085;&#1110;&#1187; &#1110;&#1096;&#1110;&#1085;&#1076;&#1077; &#1090;&#1086;&#1083;&#1099;&#1179; &#1090;&#1199;&#1089;&#1110;&#1085;&#1076;&#1110;&#1088;&#1091;, &#1092;&#1086;&#1088;&#1084;&#1091;&#1083;&#1072;, &#1084;&#1099;&#1089;&#1072;&#1083;, &#1072;&#1091;&#1076;&#1072;&#1088;&#1084;&#1072;, &#1078;&#1080;&#1110; &#1179;&#1072;&#1090;&#1077; &#1078;&#1241;&#1085;&#1077; &#1090;&#1077;&#1089;&#1090; &#1073;&#1072;&#1088;.</span>
+              <span class="inline-lang" data-lang="ru">&#1042;&#1099;&#1073;&#1077;&#1088;&#1080;&#1090;&#1077; &#1085;&#1091;&#1078;&#1085;&#1091;&#1102; &#1090;&#1077;&#1084;&#1091; &#1080;&#1079; &#1089;&#1087;&#1080;&#1089;&#1082;&#1072;. &#1042;&#1085;&#1091;&#1090;&#1088;&#1080; &#1082;&#1072;&#1078;&#1076;&#1086;&#1075;&#1086; &#1088;&#1072;&#1079;&#1076;&#1077;&#1083;&#1072; &#1077;&#1089;&#1090;&#1100; &#1087;&#1086;&#1083;&#1085;&#1086;&#1077; &#1086;&#1073;&#1098;&#1103;&#1089;&#1085;&#1077;&#1085;&#1080;&#1077;, &#1092;&#1086;&#1088;&#1084;&#1091;&#1083;&#1099;, &#1087;&#1088;&#1080;&#1084;&#1077;&#1088;&#1099;, &#1087;&#1077;&#1088;&#1077;&#1074;&#1086;&#1076;, &#1095;&#1072;&#1089;&#1090;&#1099;&#1077; &#1086;&#1096;&#1080;&#1073;&#1082;&#1080; &#1080; &#1090;&#1077;&#1089;&#1090;.</span>
             </p>
           </div>
         </div>
 
-        <div class="rules-track-wrap">
-          <div class="rules-track">
-            <a class="rule-card" href="#noun">
-              <div class="rule-icon">N</div>
+        
+        <div class="compact-map-list">
+          <a class="compact-map-row" href="#noun">
+            <div class="compact-map-num">1</div>
+            <div>
               <h3>Noun</h3>
-              <div class="rule-mini">
-                <span class="inline-lang" data-lang="kk">&#1047;&#1072;&#1090; &#1077;&#1089;&#1110;&#1084;</span>
-                <span class="inline-lang" data-lang="ru">&#1057;&#1091;&#1097;&#1077;&#1089;&#1090;&#1074;&#1080;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086;&#1077;</span>
+              <div class="compact-map-mini">
+                <span class="inline-lang" data-lang="kk">&#1047;&#1072;&#1090; &#1077;&#1089;&#1110;&#1084; / &#1072;&#1076;&#1072;&#1084;, &#1079;&#1072;&#1090;, &#1086;&#1088;&#1099;&#1085;, &#1086;&#1081; &#1072;&#1090;&#1072;&#1091;&#1099;</span>
+                <span class="inline-lang" data-lang="ru">&#1057;&#1091;&#1097;&#1077;&#1089;&#1090;&#1074;&#1080;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086;&#1077; / &#1085;&#1072;&#1079;&#1074;&#1072;&#1085;&#1080;&#1077; &#1095;&#1077;&#1083;&#1086;&#1074;&#1077;&#1082;&#1072;, &#1087;&#1088;&#1077;&#1076;&#1084;&#1077;&#1090;&#1072;, &#1084;&#1077;&#1089;&#1090;&#1072;, &#1080;&#1076;&#1077;&#1080;</span>
               </div>
-              <p>
-                <span class="inline-lang" data-lang="kk">
-                  &#1040;&#1076;&#1072;&#1084;&#1076;&#1099;, &#1079;&#1072;&#1090;&#1090;&#1099;, &#1086;&#1088;&#1099;&#1085;&#1076;&#1099;, &#1086;&#1081;&#1076;&#1099; &#1085;&#1077;&#1084;&#1077;&#1089;&#1077; &#1089;&#1077;&#1079;&#1110;&#1084;&#1076;&#1110; &#1073;&#1110;&#1083;&#1076;&#1110;&#1088;&#1077;&#1090;&#1110;&#1085; &#1089;&#1257;&#1079;&#1076;&#1077;&#1088;.
-                </span>
-                <span class="inline-lang" data-lang="ru">
-                  &#1057;&#1083;&#1086;&#1074;&#1072;, &#1082;&#1086;&#1090;&#1086;&#1088;&#1099;&#1077; &#1085;&#1072;&#1079;&#1099;&#1074;&#1072;&#1102;&#1090; &#1095;&#1077;&#1083;&#1086;&#1074;&#1077;&#1082;&#1072;, &#1087;&#1088;&#1077;&#1076;&#1084;&#1077;&#1090;, &#1084;&#1077;&#1089;&#1090;&#1086;, &#1080;&#1076;&#1077;&#1102; &#1080;&#1083;&#1080; &#1095;&#1091;&#1074;&#1089;&#1090;&#1074;&#1086;.
-                </span>
-              </p>
-              <div class="rule-meta">
-                <span class="pill">A1</span>
-                <span class="pill">7 sub-units</span>
-                <span class="pill">Tests</span>
+              <div class="compact-map-tags">
+                <span><span class="inline-lang" data-lang="kk">singular / plural &#8212; &#1078;&#1077;&#1082;&#1077;&#1096;&#1077; / &#1082;&#1257;&#1087;&#1096;&#1077;</span><span class="inline-lang" data-lang="ru">singular / plural &#8212; &#1077;&#1076;&#1080;&#1085;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1077; / &#1084;&#1085;&#1086;&#1078;&#1077;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1077;</span></span>
+                <span><span class="inline-lang" data-lang="kk">irregular plural &#8212; &#1077;&#1088;&#1077;&#1082;&#1096;&#1077; &#1082;&#1257;&#1087;&#1096;&#1077;</span><span class="inline-lang" data-lang="ru">irregular plural &#8212; &#1085;&#1077;&#1087;&#1088;&#1072;&#1074;&#1080;&#1083;&#1100;&#1085;&#1086;&#1077; &#1084;&#1085;&#1086;&#1078;&#1077;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1077;</span></span>
+                <span><span class="inline-lang" data-lang="kk">countable / uncountable &#8212; &#1089;&#1072;&#1085;&#1072;&#1083;&#1072;&#1090;&#1099;&#1085; / &#1089;&#1072;&#1085;&#1072;&#1083;&#1084;&#1072;&#1081;&#1090;&#1099;&#1085;</span><span class="inline-lang" data-lang="ru">countable / uncountable &#8212; &#1080;&#1089;&#1095;&#1080;&#1089;&#1083;&#1103;&#1077;&#1084;&#1086;&#1077; / &#1085;&#1077;&#1080;&#1089;&#1095;&#1080;&#1089;&#1083;&#1103;&#1077;&#1084;&#1086;&#1077;</span></span>
+                <span><span class="inline-lang" data-lang="kk">possessive &#8212; &#1090;&#1241;&#1091;&#1077;&#1083;&#1076;&#1110;&#1082;</span><span class="inline-lang" data-lang="ru">possessive &#8212; &#1087;&#1088;&#1080;&#1090;&#1103;&#1078;&#1072;&#1090;&#1077;&#1083;&#1100;&#1085;&#1072;&#1103; &#1092;&#1086;&#1088;&#1084;&#1072;</span></span>
+                <span><span class="inline-lang" data-lang="kk">quantifiers &#8212; &#1084;&#1257;&#1083;&#1096;&#1077;&#1088; &#1089;&#1257;&#1079;&#1076;&#1077;&#1088;&#1110;</span><span class="inline-lang" data-lang="ru">quantifiers &#8212; &#1089;&#1083;&#1086;&#1074;&#1072; &#1082;&#1086;&#1083;&#1080;&#1095;&#1077;&#1089;&#1090;&#1074;&#1072;</span></span>
               </div>
-            </a>
+            </div>
+          </a>
 
-            <a class="rule-card" href="#article">
-              <div class="rule-icon">A</div>
+          <a class="compact-map-row" href="#article">
+            <div class="compact-map-num">2</div>
+            <div>
               <h3>Article</h3>
-              <div class="rule-mini">
-                <span class="inline-lang" data-lang="kk">&#1040;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100;</span>
-                <span class="inline-lang" data-lang="ru">&#1040;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100;</span>
+              <div class="compact-map-mini">
+                <span class="inline-lang" data-lang="kk">&#1040;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100; / a, an, the &#1078;&#1241;&#1085;&#1077; &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100;&#1089;&#1110;&#1079; &#1179;&#1086;&#1083;&#1076;&#1072;&#1085;&#1091;</span>
+                <span class="inline-lang" data-lang="ru">&#1040;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100; / a, an, the &#1080; &#1089;&#1083;&#1091;&#1095;&#1072;&#1080; &#1073;&#1077;&#1079; &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1103;</span>
               </div>
-              <p>
-                <span class="inline-lang" data-lang="kk">
-                  A, an, the &#1078;&#1241;&#1085;&#1077; &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100; &#1179;&#1086;&#1083;&#1076;&#1072;&#1085;&#1099;&#1083;&#1084;&#1072;&#1081;&#1090;&#1099;&#1085; &#1078;&#1072;&#1171;&#1076;&#1072;&#1081;&#1083;&#1072;&#1088;.
-                </span>
-                <span class="inline-lang" data-lang="ru">
-                  &#1048;&#1089;&#1087;&#1086;&#1083;&#1100;&#1079;&#1086;&#1074;&#1072;&#1085;&#1080;&#1077; a, an, the &#1080; &#1089;&#1083;&#1091;&#1095;&#1072;&#1080;, &#1082;&#1086;&#1075;&#1076;&#1072; &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100; &#1085;&#1077; &#1085;&#1091;&#1078;&#1077;&#1085;.
-                </span>
-              </p>
-              <div class="rule-meta">
-                <span class="pill">B1</span>
-                <span class="pill">8 sub-units</span>
-                <span class="pill">Tests</span>
+              <div class="compact-map-tags">
+                <span><span class="inline-lang" data-lang="kk">a / an &#8212; &#1073;&#1110;&#1088; &#1073;&#1077;&#1083;&#1075;&#1110;&#1089;&#1110;&#1079; &#1079;&#1072;&#1090;</span><span class="inline-lang" data-lang="ru">a / an &#8212; &#1086;&#1076;&#1080;&#1085; &#1085;&#1077;&#1086;&#1087;&#1088;&#1077;&#1076;&#1077;&#1083;&#1105;&#1085;&#1085;&#1099;&#1081; &#1087;&#1088;&#1077;&#1076;&#1084;&#1077;&#1090;</span></span>
+                <span><span class="inline-lang" data-lang="kk">the &#8212; &#1085;&#1072;&#1179;&#1090;&#1099; / &#1073;&#1077;&#1083;&#1075;&#1110;&#1083;&#1110; &#1079;&#1072;&#1090;</span><span class="inline-lang" data-lang="ru">the &#8212; &#1082;&#1086;&#1085;&#1082;&#1088;&#1077;&#1090;&#1085;&#1099;&#1081; / &#1080;&#1079;&#1074;&#1077;&#1089;&#1090;&#1085;&#1099;&#1081; &#1087;&#1088;&#1077;&#1076;&#1084;&#1077;&#1090;</span></span>
+                <span><span class="inline-lang" data-lang="kk">zero article &#8212; &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100; &#1078;&#1086;&#1179;</span><span class="inline-lang" data-lang="ru">zero article &#8212; &#1073;&#1077;&#1079; &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1103;</span></span>
+                <span><span class="inline-lang" data-lang="kk">directions &#8212; &#1073;&#1072;&#1171;&#1099;&#1090;&#1090;&#1072;&#1088;: north / south</span><span class="inline-lang" data-lang="ru">directions &#8212; &#1089;&#1090;&#1086;&#1088;&#1086;&#1085;&#1099; &#1089;&#1074;&#1077;&#1090;&#1072;: north / south</span></span>
+                <span><span class="inline-lang" data-lang="kk">ordinal numbers &#8212; &#1088;&#1077;&#1090;&#1090;&#1110;&#1082; &#1089;&#1072;&#1085;&#1076;&#1072;&#1088;</span><span class="inline-lang" data-lang="ru">ordinal numbers &#8212; &#1087;&#1086;&#1088;&#1103;&#1076;&#1082;&#1086;&#1074;&#1099;&#1077; &#1095;&#1080;&#1089;&#1083;&#1080;&#1090;&#1077;&#1083;&#1100;&#1085;&#1099;&#1077;</span></span>
+                <span><span class="inline-lang" data-lang="kk">countries &#8212; &#1077;&#1083;&#1076;&#1077;&#1088;</span><span class="inline-lang" data-lang="ru">countries &#8212; &#1089;&#1090;&#1088;&#1072;&#1085;&#1099;</span></span>
               </div>
-            </a>
+            </div>
+          </a>
 
-            <a class="rule-card" href="#adjective">
-              <div class="rule-icon">Adj</div>
+          <a class="compact-map-row" href="#adjective">
+            <div class="compact-map-num">3</div>
+            <div>
               <h3>Adjective</h3>
-              <div class="rule-mini">
-                <span class="inline-lang" data-lang="kk">&#1057;&#1099;&#1085; &#1077;&#1089;&#1110;&#1084;</span>
-                <span class="inline-lang" data-lang="ru">&#1055;&#1088;&#1080;&#1083;&#1072;&#1075;&#1072;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086;&#1077;</span>
+              <div class="compact-map-mini">
+                <span class="inline-lang" data-lang="kk">&#1057;&#1099;&#1085; &#1077;&#1089;&#1110;&#1084; / &#1079;&#1072;&#1090;&#1090;&#1099;&#1187; &#1073;&#1077;&#1083;&#1075;&#1110;&#1089;&#1110; &#1084;&#1077;&#1085; &#1089;&#1072;&#1087;&#1072;&#1089;&#1099;&#1085; &#1082;&#1257;&#1088;&#1089;&#1077;&#1090;&#1077;&#1076;&#1110;</span>
+                <span class="inline-lang" data-lang="ru">&#1055;&#1088;&#1080;&#1083;&#1072;&#1075;&#1072;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086;&#1077; / &#1087;&#1088;&#1080;&#1079;&#1085;&#1072;&#1082; &#1080; &#1082;&#1072;&#1095;&#1077;&#1089;&#1090;&#1074;&#1086; &#1087;&#1088;&#1077;&#1076;&#1084;&#1077;&#1090;&#1072;</span>
               </div>
-              <p>
-                <span class="inline-lang" data-lang="kk">
-                  &#1047;&#1072;&#1090;&#1090;&#1099;&#1187; &#1089;&#1072;&#1087;&#1072;&#1089;&#1099;&#1085;, &#1073;&#1077;&#1083;&#1075;&#1110;&#1089;&#1110;&#1085;, &#1090;&#1199;&#1088;&#1110;&#1085; &#1078;&#1241;&#1085;&#1077; &#1089;&#1072;&#1083;&#1099;&#1089;&#1090;&#1099;&#1088;&#1091; &#1076;&#1241;&#1088;&#1077;&#1078;&#1077;&#1089;&#1110;&#1085; &#1082;&#1257;&#1088;&#1089;&#1077;&#1090;&#1077;&#1076;&#1110;.
-                </span>
-                <span class="inline-lang" data-lang="ru">
-                  &#1055;&#1086;&#1082;&#1072;&#1079;&#1099;&#1074;&#1072;&#1077;&#1090; &#1082;&#1072;&#1095;&#1077;&#1089;&#1090;&#1074;&#1086;, &#1087;&#1088;&#1080;&#1079;&#1085;&#1072;&#1082;, &#1074;&#1080;&#1076; &#1087;&#1088;&#1077;&#1076;&#1084;&#1077;&#1090;&#1072; &#1080; &#1089;&#1090;&#1077;&#1087;&#1077;&#1085;&#1080; &#1089;&#1088;&#1072;&#1074;&#1085;&#1077;&#1085;&#1080;&#1103;.
-                </span>
-              </p>
-              <div class="rule-meta">
-                <span class="pill">A1&#8211;B1</span>
-                <span class="pill">6 sub-units</span>
-                <span class="pill">Tests</span>
+              <div class="compact-map-tags">
+                <span><span class="inline-lang" data-lang="kk">position &#8212; &#1089;&#1257;&#1081;&#1083;&#1077;&#1084;&#1076;&#1077;&#1075;&#1110; &#1086;&#1088;&#1085;&#1099;</span><span class="inline-lang" data-lang="ru">position &#8212; &#1084;&#1077;&#1089;&#1090;&#1086; &#1074; &#1087;&#1088;&#1077;&#1076;&#1083;&#1086;&#1078;&#1077;&#1085;&#1080;&#1080;</span></span>
+                <span><span class="inline-lang" data-lang="kk">comparison &#8212; &#1089;&#1072;&#1083;&#1099;&#1089;&#1090;&#1099;&#1088;&#1091;</span><span class="inline-lang" data-lang="ru">comparison &#8212; &#1089;&#1088;&#1072;&#1074;&#1085;&#1077;&#1085;&#1080;&#1077;</span></span>
+                <span><span class="inline-lang" data-lang="kk">irregular &#8212; &#1077;&#1088;&#1077;&#1082;&#1096;&#1077; &#1090;&#1199;&#1088;&#1083;&#1077;&#1088;&#1110;</span><span class="inline-lang" data-lang="ru">irregular &#8212; &#1085;&#1077;&#1087;&#1088;&#1072;&#1074;&#1080;&#1083;&#1100;&#1085;&#1099;&#1077; &#1092;&#1086;&#1088;&#1084;&#1099;</span></span>
+                <span><span class="inline-lang" data-lang="kk">-ing / -ed &#8212; &#1089;&#1077;&#1079;&#1110;&#1084; &#1090;&#1091;&#1076;&#1099;&#1088;&#1091; / &#1089;&#1077;&#1079;&#1110;&#1085;&#1091;</span><span class="inline-lang" data-lang="ru">-ing / -ed &#8212; &#1074;&#1099;&#1079;&#1099;&#1074;&#1072;&#1077;&#1090; &#1095;&#1091;&#1074;&#1089;&#1090;&#1074;&#1086; / &#1095;&#1091;&#1074;&#1089;&#1090;&#1074;&#1086; &#1095;&#1077;&#1083;&#1086;&#1074;&#1077;&#1082;&#1072;</span></span>
+                <span><span class="inline-lang" data-lang="kk">too / enough &#8212; &#1090;&#1099;&#1084; / &#1078;&#1077;&#1090;&#1082;&#1110;&#1083;&#1110;&#1082;&#1090;&#1110;</span><span class="inline-lang" data-lang="ru">too / enough &#8212; &#1089;&#1083;&#1080;&#1096;&#1082;&#1086;&#1084; / &#1076;&#1086;&#1089;&#1090;&#1072;&#1090;&#1086;&#1095;&#1085;&#1086;</span></span>
+                <span><span class="inline-lang" data-lang="kk">what / how &#8212; &#1083;&#1077;&#1087;&#1090;&#1110; &#1089;&#1257;&#1081;&#1083;&#1077;&#1084;</span><span class="inline-lang" data-lang="ru">what / how &#8212; &#1074;&#1086;&#1089;&#1082;&#1083;&#1080;&#1094;&#1072;&#1090;&#1077;&#1083;&#1100;&#1085;&#1099;&#1077; &#1087;&#1088;&#1077;&#1076;&#1083;&#1086;&#1078;&#1077;&#1085;&#1080;&#1103;</span></span>
               </div>
-            </a>
+            </div>
+          </a>
 
-            <a class="rule-card" href="#pronoun">
-              <div class="rule-icon">P</div>
+          <a class="compact-map-row" href="#pronoun">
+            <div class="compact-map-num">4</div>
+            <div>
               <h3>Pronoun</h3>
-              <div class="rule-mini">
-                <span class="inline-lang" data-lang="kk">&#1045;&#1089;&#1110;&#1084;&#1076;&#1110;&#1082;</span>
-                <span class="inline-lang" data-lang="ru">&#1052;&#1077;&#1089;&#1090;&#1086;&#1080;&#1084;&#1077;&#1085;&#1080;&#1077;</span>
+              <div class="compact-map-mini">
+                <span class="inline-lang" data-lang="kk">&#1045;&#1089;&#1110;&#1084;&#1076;&#1110;&#1082; / &#1079;&#1072;&#1090; &#1077;&#1089;&#1110;&#1084;&#1085;&#1110;&#1187; &#1086;&#1088;&#1085;&#1099;&#1085;&#1072; &#1179;&#1086;&#1083;&#1076;&#1072;&#1085;&#1099;&#1083;&#1072;&#1090;&#1099;&#1085; &#1089;&#1257;&#1079;</span>
+                <span class="inline-lang" data-lang="ru">&#1052;&#1077;&#1089;&#1090;&#1086;&#1080;&#1084;&#1077;&#1085;&#1080;&#1077; / &#1089;&#1083;&#1086;&#1074;&#1086; &#1074;&#1084;&#1077;&#1089;&#1090;&#1086; &#1089;&#1091;&#1097;&#1077;&#1089;&#1090;&#1074;&#1080;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086;&#1075;&#1086;</span>
               </div>
-              <p>
-                <span class="inline-lang" data-lang="kk">
-                  &#1047;&#1072;&#1090; &#1077;&#1089;&#1110;&#1084;&#1085;&#1110;&#1187; &#1086;&#1088;&#1085;&#1099;&#1085;&#1072; &#1179;&#1086;&#1083;&#1076;&#1072;&#1085;&#1099;&#1083;&#1099;&#1087;, &#1072;&#1076;&#1072;&#1084;&#1076;&#1099;, &#1079;&#1072;&#1090;&#1090;&#1099; &#1085;&#1077;&#1084;&#1077;&#1089;&#1077; &#1201;&#1171;&#1099;&#1084;&#1076;&#1099; &#1072;&#1083;&#1084;&#1072;&#1089;&#1090;&#1099;&#1088;&#1072;&#1076;&#1099;.
-                </span>
-                <span class="inline-lang" data-lang="ru">
-                  &#1047;&#1072;&#1084;&#1077;&#1085;&#1103;&#1077;&#1090; &#1089;&#1091;&#1097;&#1077;&#1089;&#1090;&#1074;&#1080;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086;&#1077; &#1080; &#1091;&#1082;&#1072;&#1079;&#1099;&#1074;&#1072;&#1077;&#1090; &#1085;&#1072; &#1095;&#1077;&#1083;&#1086;&#1074;&#1077;&#1082;&#1072;, &#1087;&#1088;&#1077;&#1076;&#1084;&#1077;&#1090; &#1080;&#1083;&#1080; &#1087;&#1086;&#1085;&#1103;&#1090;&#1080;&#1077;.
-                </span>
-              </p>
-              <div class="rule-meta">
-                <span class="pill">A1&#8211;A2</span>
-                <span class="pill">6 sub-units</span>
-                <span class="pill">Tests</span>
+              <div class="compact-map-tags">
+                <span><span class="inline-lang" data-lang="kk">subject / object &#8212; &#1073;&#1072;&#1089;&#1090;&#1072;&#1091;&#1099;&#1096; / &#1090;&#1086;&#1083;&#1099;&#1179;&#1090;&#1072;&#1091;&#1099;&#1096;</span><span class="inline-lang" data-lang="ru">subject / object &#8212; &#1087;&#1086;&#1076;&#1083;&#1077;&#1078;&#1072;&#1097;&#1077;&#1077; / &#1076;&#1086;&#1087;&#1086;&#1083;&#1085;&#1077;&#1085;&#1080;&#1077;</span></span>
+                <span><span class="inline-lang" data-lang="kk">possessive &#8212; &#1090;&#1241;&#1091;&#1077;&#1083;&#1076;&#1110;&#1082;</span><span class="inline-lang" data-lang="ru">possessive &#8212; &#1087;&#1088;&#1080;&#1090;&#1103;&#1078;&#1072;&#1090;&#1077;&#1083;&#1100;&#1085;&#1099;&#1077;</span></span>
+                <span><span class="inline-lang" data-lang="kk">reflexive &#8212; &#1257;&#1079;&#1076;&#1110;&#1082;</span><span class="inline-lang" data-lang="ru">reflexive &#8212; &#1074;&#1086;&#1079;&#1074;&#1088;&#1072;&#1090;&#1085;&#1099;&#1077;</span></span>
+                <span><span class="inline-lang" data-lang="kk">relative &#8212; &#1073;&#1072;&#1081;&#1083;&#1072;&#1085;&#1099;&#1089;&#1090;&#1099;&#1088;&#1072;&#1090;&#1099;&#1085;</span><span class="inline-lang" data-lang="ru">relative &#8212; &#1086;&#1090;&#1085;&#1086;&#1089;&#1080;&#1090;&#1077;&#1083;&#1100;&#1085;&#1099;&#1077;</span></span>
+                <span><span class="inline-lang" data-lang="kk">indefinite &#8212; &#1073;&#1077;&#1083;&#1075;&#1110;&#1089;&#1110;&#1079;</span><span class="inline-lang" data-lang="ru">indefinite &#8212; &#1085;&#1077;&#1086;&#1087;&#1088;&#1077;&#1076;&#1077;&#1083;&#1105;&#1085;&#1085;&#1099;&#1077;</span></span>
+                <span><span class="inline-lang" data-lang="kk">this / that &#8212; &#1089;&#1110;&#1083;&#1090;&#1077;&#1091;</span><span class="inline-lang" data-lang="ru">this / that &#8212; &#1091;&#1082;&#1072;&#1079;&#1072;&#1090;&#1077;&#1083;&#1100;&#1085;&#1099;&#1077;</span></span>
+                <span><span class="inline-lang" data-lang="kk">who / whose &#8212; &#1082;&#1110;&#1084; / &#1082;&#1110;&#1084;&#1076;&#1110;&#1082;&#1110;</span><span class="inline-lang" data-lang="ru">who / whose &#8212; &#1082;&#1090;&#1086; / &#1095;&#1077;&#1081;</span></span>
               </div>
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
       </div>
     </section>
@@ -1355,6 +1509,14 @@
           </span>
         </a>
 
+        <a class="nav-item" href="#noun-quantifiers">
+          <span class="nav-main">Quantifiers</span>
+          <span class="nav-sub">
+            <span class="inline-lang" data-lang="kk">&#1057;&#1072;&#1085;/&#1084;&#1257;&#1083;&#1096;&#1077;&#1088; &#1089;&#1257;&#1079;&#1076;&#1077;&#1088;&#1110;</span>
+            <span class="inline-lang" data-lang="ru">&#1057;&#1083;&#1086;&#1074;&#1072; &#1082;&#1086;&#1083;&#1080;&#1095;&#1077;&#1089;&#1090;&#1074;&#1072;</span>
+          </span>
+        </a>
+
         <a class="nav-item" href="#article">
           <span class="nav-main">Article</span>
           <span class="nav-sub">
@@ -1368,6 +1530,14 @@
           <span class="nav-sub">
             <span class="inline-lang" data-lang="kk">&#1057;&#1099;&#1085; &#1077;&#1089;&#1110;&#1084;</span>
             <span class="inline-lang" data-lang="ru">&#1055;&#1088;&#1080;&#1083;&#1072;&#1075;&#1072;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086;&#1077;</span>
+          </span>
+        </a>
+
+        <a class="nav-item" href="#adjective-what-how">
+          <span class="nav-main">What / How</span>
+          <span class="nav-sub">
+            <span class="inline-lang" data-lang="kk">&#1051;&#1077;&#1087;&#1090;&#1110; &#1089;&#1257;&#1081;&#1083;&#1077;&#1084;</span>
+            <span class="inline-lang" data-lang="ru">&#1042;&#1086;&#1089;&#1082;&#1083;&#1080;&#1094;&#1072;&#1085;&#1080;&#1077;</span>
           </span>
         </a>
 
@@ -1469,7 +1639,15 @@
               </a>
             </div>
           </div>
-        </div>
+        
+              <a class="subunit-chip" href="#noun-quantifiers">
+                <strong>Quantifiers</strong>
+                <span>
+                  <span class="inline-lang" data-lang="kk">some, any, much, many, few, little</span>
+                  <span class="inline-lang" data-lang="ru">&#1089;&#1083;&#1086;&#1074;&#1072; &#1082;&#1086;&#1083;&#1080;&#1095;&#1077;&#1089;&#1090;&#1074;&#1072;</span>
+                </span>
+              </a>
+</div>
 
         <article class="subunit" id="noun-overview">
           <div class="subunit-header">
@@ -2695,7 +2873,76 @@
           </div>
         </article>
       </div>
-    </section>
+    
+
+        <article class="subunit" id="noun-quantifiers">
+          <div class="subunit-header">
+            <div class="subunit-label">Noun &#183; Sub-unit 7</div>
+            <h3>Quantifiers with Nouns</h3>
+            <div class="subunit-translation">
+              <span class="inline-lang" data-lang="kk">&#1047;&#1072;&#1090; &#1077;&#1089;&#1110;&#1084;&#1084;&#1077;&#1085; &#1179;&#1086;&#1083;&#1076;&#1072;&#1085;&#1099;&#1083;&#1072;&#1090;&#1099;&#1085; &#1084;&#1257;&#1083;&#1096;&#1077;&#1088; &#1089;&#1257;&#1079;&#1076;&#1077;&#1088;&#1110;</span>
+              <span class="inline-lang" data-lang="ru">&#1057;&#1083;&#1086;&#1074;&#1072; &#1082;&#1086;&#1083;&#1080;&#1095;&#1077;&#1089;&#1090;&#1074;&#1072; &#1089; &#1089;&#1091;&#1097;&#1077;&#1089;&#1090;&#1074;&#1080;&#1090;&#1077;&#1083;&#1100;&#1085;&#1099;&#1084;&#1080;</span>
+            </div>
+          </div>
+          <div class="subunit-body">
+            <div class="lesson-layout">
+              <div class="lesson-box">
+                <h4>English rule</h4>
+                <p><b>Quantifiers</b> are words that show quantity: how much or how many. They are used before nouns. Some quantifiers are used with countable nouns, some with uncountable nouns, and some with both.</p>
+              </div>
+              <div class="lesson-box">
+                <h4><span class="inline-lang" data-lang="kk">&#1058;&#1199;&#1089;&#1110;&#1085;&#1076;&#1110;&#1088;&#1091;</span><span class="inline-lang" data-lang="ru">&#1054;&#1073;&#1098;&#1103;&#1089;&#1085;&#1077;&#1085;&#1080;&#1077;</span></h4>
+                <div class="lang-content" data-lang="kk">
+                  <p><b>Quantifier</b> &#8212; &#1084;&#1257;&#1083;&#1096;&#1077;&#1088;&#1076;&#1110; &#1073;&#1110;&#1083;&#1076;&#1110;&#1088;&#1077;&#1090;&#1110;&#1085; &#1089;&#1257;&#1079;: &#8220;&#1179;&#1072;&#1085;&#1096;&#1072;?&#8221; &#1085;&#1077;&#1084;&#1077;&#1089;&#1077; &#8220;&#1179;&#1072;&#1085;&#1096;&#1072;&#1083;&#1099;&#1179;&#1090;&#1099; &#1082;&#1257;&#1087;?&#8221; &#1076;&#1077;&#1075;&#1077;&#1085; &#1084;&#1072;&#1171;&#1099;&#1085;&#1072; &#1073;&#1077;&#1088;&#1077;&#1076;&#1110;. &#1054;&#1083; &#1079;&#1072;&#1090; &#1077;&#1089;&#1110;&#1084;&#1085;&#1110;&#1187; &#1072;&#1083;&#1076;&#1099;&#1085;&#1076;&#1072; &#1090;&#1201;&#1088;&#1072;&#1076;&#1099;. <b>Some</b> &#8212; &#1073;&#1110;&#1088;&#1072;&#1079;/&#1073;&#1110;&#1088;&#1085;&#1077;&#1096;&#1077;, <b>any</b> &#8212; &#1179;&#1072;&#1085;&#1076;&#1072;&#1081; &#1076;&#1072; &#1073;&#1110;&#1088;/&#1077;&#1096;&#1179;&#1072;&#1085;&#1076;&#1072;&#1081;, <b>many</b> &#8212; &#1082;&#1257;&#1087;, &#1089;&#1072;&#1085;&#1072;&#1083;&#1072;&#1090;&#1099;&#1085; &#1079;&#1072;&#1090;&#1090;&#1072;&#1088;&#1084;&#1077;&#1085;, <b>much</b> &#8212; &#1082;&#1257;&#1087;, &#1089;&#1072;&#1085;&#1072;&#1083;&#1084;&#1072;&#1081;&#1090;&#1099;&#1085; &#1079;&#1072;&#1090;&#1090;&#1072;&#1088;&#1084;&#1077;&#1085;, <b>a few</b> &#8212; &#1073;&#1110;&#1088;&#1085;&#1077;&#1096;&#1077;, <b>few</b> &#8212; &#1072;&#1079;, <b>a little</b> &#8212; &#1072;&#1079;&#1076;&#1072;&#1087;, <b>little</b> &#8212; &#1257;&#1090;&#1077; &#1072;&#1079;.</p>
+                </div>
+                <div class="lang-content" data-lang="ru">
+                  <p><b>Quantifier</b> &#8212; &#1089;&#1083;&#1086;&#1074;&#1086; &#1082;&#1086;&#1083;&#1080;&#1095;&#1077;&#1089;&#1090;&#1074;&#1072;: &#1086;&#1085;&#1086; &#1087;&#1086;&#1082;&#1072;&#1079;&#1099;&#1074;&#1072;&#1077;&#1090; &#8220;&#1089;&#1082;&#1086;&#1083;&#1100;&#1082;&#1086;?&#8221; &#1080;&#1083;&#1080; &#8220;&#1082;&#1072;&#1082; &#1084;&#1085;&#1086;&#1075;&#1086;?&#8221;. &#1054;&#1085;&#1086; &#1089;&#1090;&#1086;&#1080;&#1090; &#1087;&#1077;&#1088;&#1077;&#1076; &#1089;&#1091;&#1097;&#1077;&#1089;&#1090;&#1074;&#1080;&#1090;&#1077;&#1083;&#1100;&#1085;&#1099;&#1084;. <b>Some</b> &#8212; &#1085;&#1077;&#1084;&#1085;&#1086;&#1075;&#1086;/&#1085;&#1077;&#1089;&#1082;&#1086;&#1083;&#1100;&#1082;&#1086;, <b>any</b> &#8212; &#1082;&#1072;&#1082;&#1086;&#1081;-&#1083;&#1080;&#1073;&#1086;/&#1085;&#1080;&#1082;&#1072;&#1082;&#1086;&#1081;, <b>many</b> &#8212; &#1084;&#1085;&#1086;&#1075;&#1086; &#1089; &#1080;&#1089;&#1095;&#1080;&#1089;&#1083;&#1103;&#1077;&#1084;&#1099;&#1084;&#1080;, <b>much</b> &#8212; &#1084;&#1085;&#1086;&#1075;&#1086; &#1089; &#1085;&#1077;&#1080;&#1089;&#1095;&#1080;&#1089;&#1083;&#1103;&#1077;&#1084;&#1099;&#1084;&#1080;, <b>a few</b> &#8212; &#1085;&#1077;&#1089;&#1082;&#1086;&#1083;&#1100;&#1082;&#1086;, <b>few</b> &#8212; &#1084;&#1072;&#1083;&#1086;, <b>a little</b> &#8212; &#1085;&#1077;&#1084;&#1085;&#1086;&#1075;&#1086;, <b>little</b> &#8212; &#1086;&#1095;&#1077;&#1085;&#1100; &#1084;&#1072;&#1083;&#1086;.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="formula-box">
+              <div class="formula-main">many + plural countable noun &#183; much + uncountable noun &#183; a few + plural countable noun &#183; a little + uncountable noun</div>
+              <div class="formula-translation">
+                <span class="inline-lang" data-lang="kk"><span class="label">KZ:</span> many books &#8212; &#1082;&#1257;&#1087; &#1082;&#1110;&#1090;&#1072;&#1087;; much time &#8212; &#1082;&#1257;&#1087; &#1091;&#1072;&#1179;&#1099;&#1090;; a few questions &#8212; &#1073;&#1110;&#1088;&#1085;&#1077;&#1096;&#1077; &#1089;&#1201;&#1088;&#1072;&#1179;; a little water &#8212; &#1072;&#1079;&#1076;&#1072;&#1087; &#1089;&#1091;.</span>
+                <span class="inline-lang" data-lang="ru"><span class="label">RU:</span> many books &#8212; &#1084;&#1085;&#1086;&#1075;&#1086; &#1082;&#1085;&#1080;&#1075;; much time &#8212; &#1084;&#1085;&#1086;&#1075;&#1086; &#1074;&#1088;&#1077;&#1084;&#1077;&#1085;&#1080;; a few questions &#8212; &#1085;&#1077;&#1089;&#1082;&#1086;&#1083;&#1100;&#1082;&#1086; &#1074;&#1086;&#1087;&#1088;&#1086;&#1089;&#1086;&#1074;; a little water &#8212; &#1085;&#1077;&#1084;&#1085;&#1086;&#1075;&#1086; &#1074;&#1086;&#1076;&#1099;.</span>
+              </div>
+            </div>
+
+            <div class="example-box">
+              <p class="example-sentence">There are <span class="mark countable">a few</span> notebooks on the desk, but there is only <span class="mark uncountable">a little</span> space in the bag.</p>
+              <p class="example-note"><span class="inline-lang" data-lang="kk">a few notebooks &#8212; &#1073;&#1110;&#1088;&#1085;&#1077;&#1096;&#1077; &#1076;&#1241;&#1087;&#1090;&#1077;&#1088;; a little space &#8212; &#1072;&#1079;&#1076;&#1072;&#1087; &#1086;&#1088;&#1099;&#1085;. Notebooks &#1089;&#1072;&#1085;&#1072;&#1083;&#1072;&#1090;&#1099;&#1085; &#1079;&#1072;&#1090;, space &#1089;&#1072;&#1085;&#1072;&#1083;&#1084;&#1072;&#1081;&#1090;&#1099;&#1085; &#1079;&#1072;&#1090;.</span><span class="inline-lang" data-lang="ru">a few notebooks &#8212; &#1085;&#1077;&#1089;&#1082;&#1086;&#1083;&#1100;&#1082;&#1086; &#1090;&#1077;&#1090;&#1088;&#1072;&#1076;&#1077;&#1081;; a little space &#8212; &#1085;&#1077;&#1084;&#1085;&#1086;&#1075;&#1086; &#1084;&#1077;&#1089;&#1090;&#1072;. Notebooks &#8212; &#1080;&#1089;&#1095;&#1080;&#1089;&#1083;&#1103;&#1077;&#1084;&#1086;&#1077;, space &#8212; &#1085;&#1077;&#1080;&#1089;&#1095;&#1080;&#1089;&#1083;&#1103;&#1077;&#1084;&#1086;&#1077;.</span></p>
+            </div>
+
+            <div class="lesson-box">
+              <h4><span class="inline-lang" data-lang="kk">&#1178;&#1086;&#1083;&#1076;&#1072;&#1085;&#1099;&#1083;&#1091;&#1099;</span><span class="inline-lang" data-lang="ru">&#1050;&#1072;&#1082; &#1080;&#1089;&#1087;&#1086;&#1083;&#1100;&#1079;&#1086;&#1074;&#1072;&#1090;&#1100;</span></h4>
+              <ul>
+                <li><b>Some</b> &#8212; &#1082;&#1257;&#1073;&#1110;&#1085;&#1077; &#1073;&#1086;&#1083;&#1099;&#1084;&#1076;&#1099; &#1089;&#1257;&#1081;&#1083;&#1077;&#1084;&#1076;&#1077;: <b>some apples</b> &#8212; &#1073;&#1110;&#1088;&#1085;&#1077;&#1096;&#1077; &#1072;&#1083;&#1084;&#1072;; <b>some tea</b> &#8212; &#1073;&#1110;&#1088;&#1072;&#1079; &#1096;&#1072;&#1081;.</li>
+                <li><b>Any</b> &#8212; &#1082;&#1257;&#1073;&#1110;&#1085;&#1077; &#1089;&#1201;&#1088;&#1072;&#1179;&#1090;&#1072; &#1078;&#1241;&#1085;&#1077; &#1073;&#1086;&#1083;&#1099;&#1084;&#1089;&#1099;&#1079; &#1089;&#1257;&#1081;&#1083;&#1077;&#1084;&#1076;&#1077;: <b>any books?</b> &#8212; &#1179;&#1072;&#1085;&#1076;&#1072;&#1081; &#1076;&#1072; &#1073;&#1110;&#1088; &#1082;&#1110;&#1090;&#1072;&#1087;&#1090;&#1072;&#1088;? <b>not any money</b> &#8212; &#1077;&#1096;&#1179;&#1072;&#1085;&#1076;&#1072;&#1081; &#1072;&#1179;&#1096;&#1072; &#1078;&#1086;&#1179;.</li>
+                <li><b>Many</b> &#8212; &#1089;&#1072;&#1085;&#1072;&#1083;&#1072;&#1090;&#1099;&#1085; &#1082;&#1257;&#1087;&#1096;&#1077; &#1079;&#1072;&#1090; &#1077;&#1089;&#1110;&#1084;&#1084;&#1077;&#1085;: <b>many students</b> &#8212; &#1082;&#1257;&#1087; &#1089;&#1090;&#1091;&#1076;&#1077;&#1085;&#1090;.</li>
+                <li><b>Much</b> &#8212; &#1089;&#1072;&#1085;&#1072;&#1083;&#1084;&#1072;&#1081;&#1090;&#1099;&#1085; &#1079;&#1072;&#1090; &#1077;&#1089;&#1110;&#1084;&#1084;&#1077;&#1085;: <b>much information</b> &#8212; &#1082;&#1257;&#1087; &#1072;&#1179;&#1087;&#1072;&#1088;&#1072;&#1090;.</li>
+                <li><b>Few / little</b> &#8212; &#8220;&#1072;&#1079;, &#1078;&#1077;&#1090;&#1082;&#1110;&#1083;&#1110;&#1082;&#1089;&#1110;&#1079;&#8221; &#1084;&#1072;&#1171;&#1099;&#1085;&#1072;&#1089;&#1099;&#1085; &#1073;&#1077;&#1088;&#1077;&#1076;&#1110;; <b>a few / a little</b> &#8212; &#8220;&#1072;&#1079; &#1073;&#1086;&#1083;&#1089;&#1072; &#1076;&#1072; &#1073;&#1072;&#1088;&#8221; &#1076;&#1077;&#1075;&#1077;&#1085; &#1078;&#1201;&#1084;&#1089;&#1072;&#1179; &#1084;&#1072;&#1171;&#1099;&#1085;&#1072; &#1073;&#1077;&#1088;&#1077;&#1076;&#1110;.</li>
+              </ul>
+            </div>
+
+            <div class="mistake-box">
+              <h4><span class="inline-lang" data-lang="kk">&#1046;&#1080;&#1110; &#1179;&#1072;&#1090;&#1077;</span><span class="inline-lang" data-lang="ru">&#1063;&#1072;&#1089;&#1090;&#1072;&#1103; &#1086;&#1096;&#1080;&#1073;&#1082;&#1072;</span></h4>
+              <p><span class="inline-lang" data-lang="kk"><b>Much books</b> &#8212; &#1179;&#1072;&#1090;&#1077;, &#1257;&#1081;&#1090;&#1082;&#1077;&#1085;&#1110; <b>books</b> &#1089;&#1072;&#1085;&#1072;&#1083;&#1072;&#1090;&#1099;&#1085; &#1082;&#1257;&#1087;&#1096;&#1077; &#1079;&#1072;&#1090; &#1077;&#1089;&#1110;&#1084;. &#1044;&#1201;&#1088;&#1099;&#1089;&#1099;: <b>many books</b>. <b>Many information</b> &#8212; &#1179;&#1072;&#1090;&#1077;, &#1257;&#1081;&#1090;&#1082;&#1077;&#1085;&#1110; <b>information</b> &#1089;&#1072;&#1085;&#1072;&#1083;&#1084;&#1072;&#1081;&#1076;&#1099;. &#1044;&#1201;&#1088;&#1099;&#1089;&#1099;: <b>much information</b>.</span><span class="inline-lang" data-lang="ru"><b>Much books</b> &#8212; &#1086;&#1096;&#1080;&#1073;&#1082;&#1072;, &#1087;&#1086;&#1090;&#1086;&#1084;&#1091; &#1095;&#1090;&#1086; <b>books</b> &#1080;&#1089;&#1095;&#1080;&#1089;&#1083;&#1103;&#1077;&#1084;&#1086;&#1077; &#1089;&#1091;&#1097;&#1077;&#1089;&#1090;&#1074;&#1080;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086;&#1077; &#1074;&#1086; &#1084;&#1085;&#1086;&#1078;&#1077;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1084; &#1095;&#1080;&#1089;&#1083;&#1077;. &#1055;&#1088;&#1072;&#1074;&#1080;&#1083;&#1100;&#1085;&#1086;: <b>many books</b>. <b>Many information</b> &#8212; &#1086;&#1096;&#1080;&#1073;&#1082;&#1072;, &#1087;&#1086;&#1090;&#1086;&#1084;&#1091; &#1095;&#1090;&#1086; <b>information</b> &#1085;&#1077;&#1080;&#1089;&#1095;&#1080;&#1089;&#1083;&#1103;&#1077;&#1084;&#1086;&#1077;. &#1055;&#1088;&#1072;&#1074;&#1080;&#1083;&#1100;&#1085;&#1086;: <b>much information</b>.</span></p>
+            </div>
+
+            <div class="test-box" data-test="noun-quantifiers-test">
+              <div class="test-header"><h4>Mini test &#183; Quantifiers</h4><span class="mini-badge">5 questions</span></div>
+              <div class="question" data-answer="b"><p>1. There are ___ chairs in the classroom.</p><div class="options"><label class="option"><input type="radio" name="nq-1" value="a"> much</label><label class="option"><input type="radio" name="nq-1" value="b"> many</label><label class="option"><input type="radio" name="nq-1" value="c"> little</label><label class="option"><input type="radio" name="nq-1" value="d"> a little</label><label class="option"><input type="radio" name="nq-1" value="e"> any of</label></div></div>
+              <div class="question" data-answer="d"><p>2. I have ___ time before the lesson, so I can help you.</p><div class="options"><label class="option"><input type="radio" name="nq-2" value="a"> a few</label><label class="option"><input type="radio" name="nq-2" value="b"> many</label><label class="option"><input type="radio" name="nq-2" value="c"> few</label><label class="option"><input type="radio" name="nq-2" value="d"> a little</label><label class="option"><input type="radio" name="nq-2" value="e"> several</label></div></div>
+              <div class="question" data-answer="a"><p>3. Choose the correct phrase.</p><div class="options"><label class="option"><input type="radio" name="nq-3" value="a"> much information</label><label class="option"><input type="radio" name="nq-3" value="b"> many information</label><label class="option"><input type="radio" name="nq-3" value="c"> a few information</label><label class="option"><input type="radio" name="nq-3" value="d"> several information</label><label class="option"><input type="radio" name="nq-3" value="e"> informations</label></div></div>
+              <div class="question" data-answer="c"><p>4. There aren't ___ clean cups on the table.</p><div class="options"><label class="option"><input type="radio" name="nq-4" value="a"> some</label><label class="option"><input type="radio" name="nq-4" value="b"> much</label><label class="option"><input type="radio" name="nq-4" value="c"> any</label><label class="option"><input type="radio" name="nq-4" value="d"> a little</label><label class="option"><input type="radio" name="nq-4" value="e"> little</label></div></div>
+              <div class="question" data-answer="e"><p>5. We need ___ sugar for this tea.</p><div class="options"><label class="option"><input type="radio" name="nq-5" value="a"> a few</label><label class="option"><input type="radio" name="nq-5" value="b"> many</label><label class="option"><input type="radio" name="nq-5" value="c"> several</label><label class="option"><input type="radio" name="nq-5" value="d"> few</label><label class="option"><input type="radio" name="nq-5" value="e"> a little</label></div></div>
+              <button class="check-btn" type="button" data-check="noun-quantifiers-test"><span class="inline-lang" data-lang="kk">&#1053;&#1241;&#1090;&#1080;&#1078;&#1077;&#1085;&#1110; &#1082;&#1257;&#1088;&#1089;&#1077;&#1090;&#1091;</span><span class="inline-lang" data-lang="ru">&#1055;&#1086;&#1082;&#1072;&#1079;&#1072;&#1090;&#1100; &#1088;&#1077;&#1079;&#1091;&#1083;&#1100;&#1090;&#1072;&#1090;</span></button>
+              <div class="result-box" data-result="noun-quantifiers-test"><h5><span class="inline-lang" data-lang="kk">&#1058;&#1199;&#1089;&#1110;&#1085;&#1076;&#1110;&#1088;&#1091;</span><span class="inline-lang" data-lang="ru">&#1054;&#1073;&#1098;&#1103;&#1089;&#1085;&#1077;&#1085;&#1080;&#1077;</span></h5><ol><li><b>many chairs</b> &#8212; chairs &#1089;&#1072;&#1085;&#1072;&#1083;&#1072;&#1090;&#1099;&#1085; &#1082;&#1257;&#1087;&#1096;&#1077; &#1079;&#1072;&#1090; &#1077;&#1089;&#1110;&#1084; / &#1080;&#1089;&#1095;&#1080;&#1089;&#1083;&#1103;&#1077;&#1084;&#1086;&#1077; &#1084;&#1085;&#1086;&#1078;&#1077;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1077;.</li><li><b>a little time</b> &#8212; time &#1089;&#1072;&#1085;&#1072;&#1083;&#1084;&#1072;&#1081;&#1090;&#1099;&#1085; &#1079;&#1072;&#1090; &#1077;&#1089;&#1110;&#1084;, &#1072;&#1079;&#1076;&#1072;&#1087; &#1091;&#1072;&#1179;&#1099;&#1090; &#1073;&#1072;&#1088; / &#1085;&#1077;&#1084;&#1085;&#1086;&#1075;&#1086; &#1074;&#1088;&#1077;&#1084;&#1077;&#1085;&#1080;.</li><li><b>much information</b> &#8212; information &#1089;&#1072;&#1085;&#1072;&#1083;&#1084;&#1072;&#1081;&#1090;&#1099;&#1085; &#1079;&#1072;&#1090; &#1077;&#1089;&#1110;&#1084; / &#1085;&#1077;&#1080;&#1089;&#1095;&#1080;&#1089;&#1083;&#1103;&#1077;&#1084;&#1086;&#1077;.</li><li><b>any</b> &#1073;&#1086;&#1083;&#1099;&#1084;&#1089;&#1099;&#1079; &#1089;&#1257;&#1081;&#1083;&#1077;&#1084;&#1076;&#1077; &#1078;&#1080;&#1110; &#1179;&#1086;&#1083;&#1076;&#1072;&#1085;&#1099;&#1083;&#1072;&#1076;&#1099; / &#1095;&#1072;&#1089;&#1090;&#1086; &#1080;&#1089;&#1087;&#1086;&#1083;&#1100;&#1079;&#1091;&#1077;&#1090;&#1089;&#1103; &#1074; &#1086;&#1090;&#1088;&#1080;&#1094;&#1072;&#1085;&#1080;&#1080;.</li><li><b>a little sugar</b> &#8212; sugar &#1089;&#1072;&#1085;&#1072;&#1083;&#1084;&#1072;&#1081;&#1076;&#1099; / &#1089;&#1072;&#1093;&#1072;&#1088; &#1085;&#1077;&#1080;&#1089;&#1095;&#1080;&#1089;&#1083;&#1103;&#1077;&#1084;&#1099;&#1081;.</li></ol></div>
+            </div>
+          </div>
+        </article>
+</section>
         <section class="grammar-section" id="article">
       <div class="page-shell">
         <div class="grammar-hero">
@@ -2754,8 +3001,8 @@
               <a class="subunit-chip" href="#article-zero">
                 <strong>Zero Article</strong>
                 <span>
-                  <span class="inline-lang" data-lang="kk">&#1040;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100; &#1179;&#1086;&#1083;&#1076;&#1072;&#1085;&#1099;&#1083;&#1084;&#1072;&#1081;&#1090;&#1099;&#1085; &#1078;&#1072;&#1171;&#1076;&#1072;&#1081;</span>
-                  <span class="inline-lang" data-lang="ru">&#1053;&#1091;&#1083;&#1077;&#1074;&#1086;&#1081; &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100;</span>
+                  <span class="inline-lang" data-lang="kk">&#1040;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100; &#1078;&#1086;&#1179;: &#1077;&#1083;&#1076;&#1077;&#1088;, &#1090;&#1110;&#1083;&#1076;&#1077;&#1088;, &#1090;&#1072;&#1084;&#1072;&#1179;, &#1078;&#1072;&#1083;&#1087;&#1099; &#1082;&#1257;&#1087;&#1096;&#1077;, &#1089;&#1072;&#1085;&#1072;&#1083;&#1084;&#1072;&#1081;&#1090;&#1099;&#1085; &#1089;&#1257;&#1079;&#1076;&#1077;&#1088;</span>
+                  <span class="inline-lang" data-lang="ru">&#1041;&#1077;&#1079; &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1103;: &#1089;&#1090;&#1088;&#1072;&#1085;&#1099;, &#1103;&#1079;&#1099;&#1082;&#1080;, &#1077;&#1076;&#1072;, &#1086;&#1073;&#1097;&#1077;&#1077; &#1084;&#1085;&#1086;&#1078;&#1077;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1077;, &#1085;&#1077;&#1080;&#1089;&#1095;&#1080;&#1089;&#1083;&#1103;&#1077;&#1084;&#1099;&#1077; &#1089;&#1083;&#1086;&#1074;&#1072;</span>
                 </span>
               </a>
 
@@ -3386,13 +3633,14 @@ Shymkent is in the south of Kazakhstan.
             </div>
           </div>
         </article>
-                <article class="subunit" id="article-zero">
+                
+        <article class="subunit" id="article-zero">
           <div class="subunit-header">
             <div class="subunit-label">Article &#183; Sub-unit 4</div>
             <h3>Zero Article</h3>
             <div class="subunit-translation">
               <span class="inline-lang" data-lang="kk">&#1040;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100; &#1179;&#1086;&#1083;&#1076;&#1072;&#1085;&#1099;&#1083;&#1084;&#1072;&#1081;&#1090;&#1099;&#1085; &#1078;&#1072;&#1171;&#1076;&#1072;&#1081;&#1083;&#1072;&#1088;</span>
-              <span class="inline-lang" data-lang="ru">&#1057;&#1083;&#1091;&#1095;&#1072;&#1080; &#1073;&#1077;&#1079; &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1103;</span>
+              <span class="inline-lang" data-lang="ru">&#1057;&#1083;&#1091;&#1095;&#1072;&#1080;, &#1082;&#1086;&#1075;&#1076;&#1072; &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100; &#1085;&#1077; &#1080;&#1089;&#1087;&#1086;&#1083;&#1100;&#1079;&#1091;&#1077;&#1090;&#1089;&#1103;</span>
             </div>
           </div>
 
@@ -3401,186 +3649,90 @@ Shymkent is in the south of Kazakhstan.
               <div class="lesson-box">
                 <h4>English rule</h4>
                 <p>
-                  No article is used with plural countable nouns and uncountable nouns when they have a general meaning.
-                  No article is also used with many proper names, languages, school subjects, meals, and some institutions.
+                  <b>Zero article</b> means that we do not use <b>a</b>, <b>an</b>, or <b>the</b> before a noun. It is common with general plural nouns, general uncountable nouns, most countries, cities, languages, school subjects, meals, streets, parks, lakes, and single mountains.
                 </p>
               </div>
 
               <div class="lesson-box">
-                <h4>
-                  <span class="inline-lang" data-lang="kk">&#1058;&#1199;&#1089;&#1110;&#1085;&#1076;&#1110;&#1088;&#1091;</span>
-                  <span class="inline-lang" data-lang="ru">&#1054;&#1073;&#1098;&#1103;&#1089;&#1085;&#1077;&#1085;&#1080;&#1077;</span>
-                </h4>
-
+                <h4><span class="inline-lang" data-lang="kk">&#1058;&#1199;&#1089;&#1110;&#1085;&#1076;&#1110;&#1088;&#1091;</span><span class="inline-lang" data-lang="ru">&#1054;&#1073;&#1098;&#1103;&#1089;&#1085;&#1077;&#1085;&#1080;&#1077;</span></h4>
                 <div class="lang-content" data-lang="kk">
                   <p>
-                    &#1040;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100; &#1241;&#1088;&#1179;&#1072;&#1096;&#1072;&#1085; &#1082;&#1077;&#1088;&#1077;&#1082; &#1077;&#1084;&#1077;&#1089;. &#1045;&#1075;&#1077;&#1088; &#1082;&#1257;&#1087;&#1096;&#1077; &#1079;&#1072;&#1090; &#1077;&#1089;&#1110;&#1084; &#1078;&#1072;&#1083;&#1087;&#1099; &#1084;&#1072;&#1171;&#1099;&#1085;&#1072;&#1076;&#1072; &#1072;&#1081;&#1090;&#1099;&#1083;&#1089;&#1072;, &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100; &#1179;&#1086;&#1081;&#1099;&#1083;&#1084;&#1072;&#1081;&#1076;&#1099;:
-                    <b>Books are useful</b>. &#1045;&#1075;&#1077;&#1088; &#1089;&#1072;&#1085;&#1072;&#1083;&#1084;&#1072;&#1081;&#1090;&#1099;&#1085; &#1079;&#1072;&#1090; &#1077;&#1089;&#1110;&#1084; &#1078;&#1072;&#1083;&#1087;&#1099; &#1084;&#1072;&#1171;&#1099;&#1085;&#1072;&#1076;&#1072; &#1072;&#1081;&#1090;&#1099;&#1083;&#1089;&#1072;, &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100; &#1179;&#1086;&#1081;&#1099;&#1083;&#1084;&#1072;&#1081;&#1076;&#1099;:
-                    <b>Water is important</b>. &#1058;&#1110;&#1083;&#1076;&#1077;&#1088; &#1084;&#1077;&#1085; &#1086;&#1179;&#1091; &#1087;&#1241;&#1085;&#1076;&#1077;&#1088;&#1110;&#1084;&#1077;&#1085; &#1076;&#1077; &#1082;&#1257;&#1073;&#1110;&#1085;&#1077; &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100; &#1179;&#1086;&#1083;&#1076;&#1072;&#1085;&#1099;&#1083;&#1084;&#1072;&#1081;&#1076;&#1099;:
-                    English, history, mathematics.
+                    <b>Zero article</b> &#8212; &#1079;&#1072;&#1090; &#1077;&#1089;&#1110;&#1084;&#1085;&#1110;&#1187; &#1072;&#1083;&#1076;&#1099;&#1085;&#1076;&#1072; <b>a / an / the</b> &#1179;&#1086;&#1081;&#1099;&#1083;&#1084;&#1072;&#1081;&#1090;&#1099;&#1085; &#1078;&#1072;&#1171;&#1076;&#1072;&#1081;. &#1178;&#1072;&#1079;&#1072;&#1179;&#1096;&#1072;&#1076;&#1072; &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100; &#1078;&#1086;&#1179;, &#1089;&#1086;&#1085;&#1076;&#1099;&#1179;&#1090;&#1072;&#1085; &#1089;&#1090;&#1091;&#1076;&#1077;&#1085;&#1090;&#1090;&#1077;&#1088; &#1072;&#1171;&#1099;&#1083;&#1096;&#1099;&#1085; &#1090;&#1110;&#1083;&#1110;&#1085;&#1076;&#1077; &#8220;&#1179;&#1086;&#1102; &#1082;&#1077;&#1088;&#1077;&#1082; &#1087;&#1077;, &#1179;&#1086;&#1081;&#1084;&#1072;&#1091; &#1082;&#1077;&#1088;&#1077;&#1082; &#1087;&#1077;?&#8221; &#1076;&#1077;&#1075;&#1077;&#1085;&#1076;&#1110; &#1096;&#1072;&#1090;&#1072;&#1089;&#1090;&#1099;&#1088;&#1072;&#1076;&#1099;. &#1045;&#1075;&#1077;&#1088; &#1089;&#1257;&#1079; &#1078;&#1072;&#1083;&#1087;&#1099; &#1084;&#1072;&#1171;&#1099;&#1085;&#1072;&#1076;&#1072; &#1072;&#1081;&#1090;&#1099;&#1083;&#1089;&#1072; &#1085;&#1077;&#1084;&#1077;&#1089;&#1077; &#1072;&#1090;&#1072;&#1091; &#1088;&#1077;&#1090;&#1110;&#1085;&#1076;&#1077; &#1179;&#1086;&#1083;&#1076;&#1072;&#1085;&#1099;&#1083;&#1089;&#1072;, &#1082;&#1257;&#1087; &#1078;&#1072;&#1171;&#1076;&#1072;&#1081;&#1076;&#1072; &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100; &#1179;&#1086;&#1081;&#1099;&#1083;&#1084;&#1072;&#1081;&#1076;&#1099;.
                   </p>
                 </div>
-
                 <div class="lang-content" data-lang="ru">
                   <p>
-                    &#1040;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100; &#1085;&#1091;&#1078;&#1077;&#1085; &#1085;&#1077; &#1074;&#1089;&#1077;&#1075;&#1076;&#1072;. &#1045;&#1089;&#1083;&#1080; &#1089;&#1091;&#1097;&#1077;&#1089;&#1090;&#1074;&#1080;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086;&#1077; &#1074;&#1086; &#1084;&#1085;&#1086;&#1078;&#1077;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1084; &#1095;&#1080;&#1089;&#1083;&#1077; &#1080;&#1089;&#1087;&#1086;&#1083;&#1100;&#1079;&#1091;&#1077;&#1090;&#1089;&#1103; &#1074; &#1086;&#1073;&#1097;&#1077;&#1084; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1080;,
-                    &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100; &#1085;&#1077; &#1089;&#1090;&#1072;&#1074;&#1080;&#1090;&#1089;&#1103;: <b>Books are useful</b>. &#1045;&#1089;&#1083;&#1080; &#1085;&#1077;&#1080;&#1089;&#1095;&#1080;&#1089;&#1083;&#1103;&#1077;&#1084;&#1086;&#1077; &#1089;&#1091;&#1097;&#1077;&#1089;&#1090;&#1074;&#1080;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086;&#1077; &#1080;&#1089;&#1087;&#1086;&#1083;&#1100;&#1079;&#1091;&#1077;&#1090;&#1089;&#1103; &#1074; &#1086;&#1073;&#1097;&#1077;&#1084;
-                    &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1080;, &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100; &#1090;&#1086;&#1078;&#1077; &#1085;&#1077; &#1085;&#1091;&#1078;&#1077;&#1085;: <b>Water is important</b>. &#1057; &#1103;&#1079;&#1099;&#1082;&#1072;&#1084;&#1080; &#1080; &#1091;&#1095;&#1077;&#1073;&#1085;&#1099;&#1084;&#1080; &#1087;&#1088;&#1077;&#1076;&#1084;&#1077;&#1090;&#1072;&#1084;&#1080; &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100;
-                    &#1086;&#1073;&#1099;&#1095;&#1085;&#1086; &#1085;&#1077; &#1080;&#1089;&#1087;&#1086;&#1083;&#1100;&#1079;&#1091;&#1077;&#1090;&#1089;&#1103;: English, history, mathematics.
+                    <b>Zero article</b> &#8212; &#1101;&#1090;&#1086; &#1089;&#1083;&#1091;&#1095;&#1072;&#1081;, &#1082;&#1086;&#1075;&#1076;&#1072; &#1087;&#1077;&#1088;&#1077;&#1076; &#1089;&#1091;&#1097;&#1077;&#1089;&#1090;&#1074;&#1080;&#1090;&#1077;&#1083;&#1100;&#1085;&#1099;&#1084; &#1085;&#1077; &#1089;&#1090;&#1072;&#1074;&#1080;&#1090;&#1089;&#1103; <b>a / an / the</b>. &#1042; &#1088;&#1091;&#1089;&#1089;&#1082;&#1086;&#1084; &#1103;&#1079;&#1099;&#1082;&#1077; &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1077;&#1081; &#1085;&#1077;&#1090;, &#1087;&#1086;&#1101;&#1090;&#1086;&#1084;&#1091; &#1074;&#1072;&#1078;&#1085;&#1086; &#1079;&#1072;&#1087;&#1086;&#1084;&#1085;&#1080;&#1090;&#1100;, &#1075;&#1076;&#1077; &#1074; &#1072;&#1085;&#1075;&#1083;&#1080;&#1081;&#1089;&#1082;&#1086;&#1084; &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100; &#1085;&#1077; &#1085;&#1091;&#1078;&#1077;&#1085;. &#1045;&#1089;&#1083;&#1080; &#1089;&#1083;&#1086;&#1074;&#1086; &#1080;&#1089;&#1087;&#1086;&#1083;&#1100;&#1079;&#1091;&#1077;&#1090;&#1089;&#1103; &#1074; &#1086;&#1073;&#1097;&#1077;&#1084; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1080; &#1080;&#1083;&#1080; &#1082;&#1072;&#1082; &#1085;&#1072;&#1079;&#1074;&#1072;&#1085;&#1080;&#1077;, &#1095;&#1072;&#1089;&#1090;&#1086; &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100; &#1085;&#1077; &#1089;&#1090;&#1072;&#1074;&#1080;&#1090;&#1089;&#1103;.
                   </p>
                 </div>
               </div>
             </div>
 
             <div class="formula-box">
-              <div class="formula-main">general plural: Students learn &#183; general uncountable: Water is important &#183; languages: English &#183; subjects: history</div>
+              <div class="formula-main">Zero article = no a / an / the</div>
               <div class="formula-translation">
-                <span class="inline-lang" data-lang="kk">
-                  <span class="label">&#1178;&#1072;&#1079;&#1072;&#1179;&#1096;&#1072;:</span> &#1078;&#1072;&#1083;&#1087;&#1099; &#1084;&#1072;&#1171;&#1099;&#1085;&#1072;&#1076;&#1072;&#1171;&#1099; &#1082;&#1257;&#1087;&#1096;&#1077; &#1079;&#1072;&#1090; &#1077;&#1089;&#1110;&#1084;&#1076;&#1077;&#1088;&#1084;&#1077;&#1085;, &#1089;&#1072;&#1085;&#1072;&#1083;&#1084;&#1072;&#1081;&#1090;&#1099;&#1085; &#1079;&#1072;&#1090; &#1077;&#1089;&#1110;&#1084;&#1076;&#1077;&#1088;&#1084;&#1077;&#1085;, &#1090;&#1110;&#1083; &#1078;&#1241;&#1085;&#1077; &#1087;&#1241;&#1085; &#1072;&#1090;&#1072;&#1091;&#1083;&#1072;&#1088;&#1099;&#1084;&#1077;&#1085; &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100; &#1078;&#1080;&#1110; &#1179;&#1086;&#1083;&#1076;&#1072;&#1085;&#1099;&#1083;&#1084;&#1072;&#1081;&#1076;&#1099;.
-                </span>
-                <span class="inline-lang" data-lang="ru">
-                  <span class="label">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;:</span> &#1074; &#1086;&#1073;&#1097;&#1077;&#1084; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1080; &#1089; &#1084;&#1085;&#1086;&#1078;&#1077;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1099;&#1084;&#1080; &#1080; &#1085;&#1077;&#1080;&#1089;&#1095;&#1080;&#1089;&#1083;&#1103;&#1077;&#1084;&#1099;&#1084;&#1080; &#1089;&#1091;&#1097;&#1077;&#1089;&#1090;&#1074;&#1080;&#1090;&#1077;&#1083;&#1100;&#1085;&#1099;&#1084;&#1080;, &#1103;&#1079;&#1099;&#1082;&#1072;&#1084;&#1080; &#1080; &#1087;&#1088;&#1077;&#1076;&#1084;&#1077;&#1090;&#1072;&#1084;&#1080; &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100; &#1095;&#1072;&#1089;&#1090;&#1086; &#1085;&#1077; &#1089;&#1090;&#1072;&#1074;&#1080;&#1090;&#1089;&#1103;.
-                </span>
+                <span class="inline-lang" data-lang="kk"><span class="label">&#1178;&#1072;&#1079;&#1072;&#1179;&#1096;&#1072;:</span> zero article &#8212; &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100; &#1078;&#1086;&#1179; &#1076;&#1077;&#1075;&#1077;&#1085; &#1089;&#1257;&#1079;.</span>
+                <span class="inline-lang" data-lang="ru"><span class="label">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;:</span> zero article &#8212; &#1079;&#1085;&#1072;&#1095;&#1080;&#1090; &#1073;&#1077;&#1079; &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1103;.</span>
+              </div>
+            </div>
+
+            <div class="lesson-layout">
+              <div class="lesson-box">
+                <h4><span class="inline-lang" data-lang="kk">&#1178;&#1072;&#1081; &#1078;&#1077;&#1088;&#1076;&#1077; &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100; &#1179;&#1086;&#1083;&#1076;&#1072;&#1085;&#1099;&#1083;&#1084;&#1072;&#1081;&#1076;&#1099;?</span><span class="inline-lang" data-lang="ru">&#1043;&#1076;&#1077; &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100; &#1085;&#1077; &#1080;&#1089;&#1087;&#1086;&#1083;&#1100;&#1079;&#1091;&#1077;&#1090;&#1089;&#1103;?</span></h4>
+                <ul>
+                  <li><b>Countries</b> &#8212; <span class="inline-lang" data-lang="kk">&#1077;&#1083;&#1076;&#1077;&#1088;</span><span class="inline-lang" data-lang="ru">&#1089;&#1090;&#1088;&#1072;&#1085;&#1099;</span>: Kazakhstan, Italy, France, Holland. <b>She studies in Italy.</b></li>
+                  <li><b>Cities</b> &#8212; <span class="inline-lang" data-lang="kk">&#1179;&#1072;&#1083;&#1072;&#1083;&#1072;&#1088;</span><span class="inline-lang" data-lang="ru">&#1075;&#1086;&#1088;&#1086;&#1076;&#1072;</span>: Almaty, London, Paris, Rome. <b>They visited London.</b></li>
+                  <li><b>Languages</b> &#8212; <span class="inline-lang" data-lang="kk">&#1090;&#1110;&#1083;&#1076;&#1077;&#1088;</span><span class="inline-lang" data-lang="ru">&#1103;&#1079;&#1099;&#1082;&#1080;</span>: English, Kazakh, Russian, Italian. <b>She speaks English.</b></li>
+                  <li><b>School subjects</b> &#8212; <span class="inline-lang" data-lang="kk">&#1087;&#1241;&#1085;&#1076;&#1077;&#1088;</span><span class="inline-lang" data-lang="ru">&#1087;&#1088;&#1077;&#1076;&#1084;&#1077;&#1090;&#1099;</span>: Math, History, Biology. <b>I like History.</b></li>
+                  <li><b>Meals</b> &#8212; <span class="inline-lang" data-lang="kk">&#1090;&#1072;&#1084;&#1072;&#1179; &#1072;&#1090;&#1072;&#1091;&#1083;&#1072;&#1088;&#1099;</span><span class="inline-lang" data-lang="ru">&#1087;&#1088;&#1080;&#1105;&#1084;&#1099; &#1087;&#1080;&#1097;&#1080;</span>: breakfast, lunch, dinner. <b>We had dinner at seven.</b></li>
+                </ul>
+              </div>
+              <div class="lesson-box">
+                <h4><span class="inline-lang" data-lang="kk">&#1058;&#1072;&#1171;&#1099; &#1084;&#1072;&#1187;&#1099;&#1079;&#1076;&#1099; &#1078;&#1072;&#1171;&#1076;&#1072;&#1081;&#1083;&#1072;&#1088;</span><span class="inline-lang" data-lang="ru">&#1045;&#1097;&#1105; &#1074;&#1072;&#1078;&#1085;&#1099;&#1077; &#1089;&#1083;&#1091;&#1095;&#1072;&#1080;</span></h4>
+                <ul>
+                  <li><b>General plural nouns</b> &#8212; <span class="inline-lang" data-lang="kk">&#1078;&#1072;&#1083;&#1087;&#1099; &#1082;&#1257;&#1087;&#1096;&#1077; &#1079;&#1072;&#1090; &#1077;&#1089;&#1110;&#1084;&#1076;&#1077;&#1088;</span><span class="inline-lang" data-lang="ru">&#1084;&#1085;&#1086;&#1078;&#1077;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1077; &#1095;&#1080;&#1089;&#1083;&#1086; &#1074; &#1086;&#1073;&#1097;&#1077;&#1084; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1080;</span>: <b>Students need practice.</b></li>
+                  <li><b>General uncountable nouns</b> &#8212; <span class="inline-lang" data-lang="kk">&#1078;&#1072;&#1083;&#1087;&#1099; &#1089;&#1072;&#1085;&#1072;&#1083;&#1084;&#1072;&#1081;&#1090;&#1099;&#1085; &#1079;&#1072;&#1090; &#1077;&#1089;&#1110;&#1084;&#1076;&#1077;&#1088;</span><span class="inline-lang" data-lang="ru">&#1085;&#1077;&#1080;&#1089;&#1095;&#1080;&#1089;&#1083;&#1103;&#1077;&#1084;&#1099;&#1077; &#1074; &#1086;&#1073;&#1097;&#1077;&#1084; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1080;</span>: <b>Water is important.</b></li>
+                  <li><b>Streets / parks / squares</b> &#8212; <span class="inline-lang" data-lang="kk">&#1082;&#1257;&#1096;&#1077;&#1083;&#1077;&#1088;, &#1089;&#1072;&#1103;&#1073;&#1072;&#1179;&#1090;&#1072;&#1088;, &#1072;&#1083;&#1072;&#1187;&#1076;&#1072;&#1088;</span><span class="inline-lang" data-lang="ru">&#1091;&#1083;&#1080;&#1094;&#1099;, &#1087;&#1072;&#1088;&#1082;&#1080;, &#1087;&#1083;&#1086;&#1097;&#1072;&#1076;&#1080;</span>: Oxford Street, Central Park, Times Square.</li>
+                  <li><b>Lakes and single mountains</b> &#8212; <span class="inline-lang" data-lang="kk">&#1082;&#1257;&#1083;&#1076;&#1077;&#1088; &#1084;&#1077;&#1085; &#1078;&#1077;&#1082;&#1077; &#1090;&#1072;&#1091;&#1083;&#1072;&#1088;</span><span class="inline-lang" data-lang="ru">&#1086;&#1079;&#1105;&#1088;&#1072; &#1080; &#1086;&#1090;&#1076;&#1077;&#1083;&#1100;&#1085;&#1099;&#1077; &#1075;&#1086;&#1088;&#1099;</span>: Lake Baikal, Mount Everest.</li>
+                  <li><b>Games and sports</b> &#8212; <span class="inline-lang" data-lang="kk">&#1086;&#1081;&#1099;&#1085;&#1076;&#1072;&#1088; &#1084;&#1077;&#1085; &#1089;&#1087;&#1086;&#1088;&#1090; &#1090;&#1199;&#1088;&#1083;&#1077;&#1088;&#1110;</span><span class="inline-lang" data-lang="ru">&#1080;&#1075;&#1088;&#1099; &#1080; &#1074;&#1080;&#1076;&#1099; &#1089;&#1087;&#1086;&#1088;&#1090;&#1072;</span>: football, tennis, chess. <b>He plays football.</b></li>
+                </ul>
               </div>
             </div>
 
             <div class="example-box">
-              <p class="example-sentence">
-                <span class="mark noun">Children</span> learn quickly.
-              </p>
-              <p class="example-note">
-                <span class="inline-lang" data-lang="kk">
-                  Children &#1078;&#1072;&#1083;&#1087;&#1099; &#1084;&#1072;&#1171;&#1099;&#1085;&#1072;&#1076;&#1072; &#1072;&#1081;&#1090;&#1099;&#1083;&#1099;&#1087; &#1090;&#1201;&#1088;. &#1057;&#1086;&#1085;&#1076;&#1099;&#1179;&#1090;&#1072;&#1085; &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100; &#1078;&#1086;&#1179;.
-                </span>
-                <span class="inline-lang" data-lang="ru">
-                  Children &#1080;&#1089;&#1087;&#1086;&#1083;&#1100;&#1079;&#1091;&#1077;&#1090;&#1089;&#1103; &#1074; &#1086;&#1073;&#1097;&#1077;&#1084; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1080;. &#1055;&#1086;&#1101;&#1090;&#1086;&#1084;&#1091; &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1103; &#1085;&#1077;&#1090;.
-                </span>
-              </p>
+              <p class="example-sentence">She moved to <span class="mark article">Italy</span> last year.</p>
+              <p class="example-note"><span class="inline-lang" data-lang="kk">Italy &#8212; &#1077;&#1083; &#1072;&#1090;&#1072;&#1091;&#1099;. &#1050;&#1257;&#1087; &#1077;&#1083; &#1072;&#1090;&#1072;&#1091;&#1083;&#1072;&#1088;&#1099;&#1085;&#1099;&#1187; &#1072;&#1083;&#1076;&#1099;&#1085;&#1076;&#1072; <b>the</b> &#1179;&#1086;&#1083;&#1076;&#1072;&#1085;&#1099;&#1083;&#1084;&#1072;&#1081;&#1076;&#1099;: Italy, Kazakhstan, France.</span><span class="inline-lang" data-lang="ru">Italy &#8212; &#1085;&#1072;&#1079;&#1074;&#1072;&#1085;&#1080;&#1077; &#1089;&#1090;&#1088;&#1072;&#1085;&#1099;. &#1055;&#1077;&#1088;&#1077;&#1076; &#1073;&#1086;&#1083;&#1100;&#1096;&#1080;&#1085;&#1089;&#1090;&#1074;&#1086;&#1084; &#1089;&#1090;&#1088;&#1072;&#1085; <b>the</b> &#1085;&#1077; &#1080;&#1089;&#1087;&#1086;&#1083;&#1100;&#1079;&#1091;&#1077;&#1090;&#1089;&#1103;: Italy, Kazakhstan, France.</span></p>
             </div>
 
             <div class="example-box">
-              <p class="example-sentence">
-                She studies <span class="mark noun">English</span> and <span class="mark noun">history</span>.
-              </p>
-              <p class="example-note">
-                <span class="inline-lang" data-lang="kk">
-                  English &#8212; &#1090;&#1110;&#1083; &#1072;&#1090;&#1072;&#1091;&#1099;, history &#8212; &#1087;&#1241;&#1085; &#1072;&#1090;&#1072;&#1091;&#1099;. &#1240;&#1076;&#1077;&#1090;&#1090;&#1077; &#1073;&#1201;&#1083;&#1072;&#1088;&#1084;&#1077;&#1085; &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100; &#1179;&#1086;&#1083;&#1076;&#1072;&#1085;&#1099;&#1083;&#1084;&#1072;&#1081;&#1076;&#1099;.
-                </span>
-                <span class="inline-lang" data-lang="ru">
-                  English &#8212; &#1085;&#1072;&#1079;&#1074;&#1072;&#1085;&#1080;&#1077; &#1103;&#1079;&#1099;&#1082;&#1072;, history &#8212; &#1085;&#1072;&#1079;&#1074;&#1072;&#1085;&#1080;&#1077; &#1087;&#1088;&#1077;&#1076;&#1084;&#1077;&#1090;&#1072;. &#1054;&#1073;&#1099;&#1095;&#1085;&#1086; &#1089; &#1085;&#1080;&#1084;&#1080; &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100; &#1085;&#1077; &#1080;&#1089;&#1087;&#1086;&#1083;&#1100;&#1079;&#1091;&#1077;&#1090;&#1089;&#1103;.
-                </span>
-              </p>
+              <p class="example-sentence"><span class="mark article">Water</span> is necessary for life.</p>
+              <p class="example-note"><span class="inline-lang" data-lang="kk">Water &#8212; &#1089;&#1072;&#1085;&#1072;&#1083;&#1084;&#1072;&#1081;&#1090;&#1099;&#1085; &#1079;&#1072;&#1090; &#1077;&#1089;&#1110;&#1084; &#1078;&#1241;&#1085;&#1077; &#1078;&#1072;&#1083;&#1087;&#1099; &#1084;&#1072;&#1171;&#1099;&#1085;&#1072;&#1076;&#1072; &#1072;&#1081;&#1090;&#1099;&#1083;&#1099;&#1087; &#1090;&#1201;&#1088;. &#1057;&#1086;&#1085;&#1076;&#1099;&#1179;&#1090;&#1072;&#1085; &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100; &#1179;&#1086;&#1081;&#1099;&#1083;&#1084;&#1072;&#1081;&#1076;&#1099;.</span><span class="inline-lang" data-lang="ru">Water &#8212; &#1085;&#1077;&#1080;&#1089;&#1095;&#1080;&#1089;&#1083;&#1103;&#1077;&#1084;&#1086;&#1077; &#1089;&#1091;&#1097;&#1077;&#1089;&#1090;&#1074;&#1080;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086;&#1077; &#1074; &#1086;&#1073;&#1097;&#1077;&#1084; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1080;. &#1055;&#1086;&#1101;&#1090;&#1086;&#1084;&#1091; &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100; &#1085;&#1077; &#1085;&#1091;&#1078;&#1077;&#1085;.</span></p>
+            </div>
+
+            <div class="example-box">
+              <p class="example-sentence"><span class="mark article">Students</span> often make this mistake.</p>
+              <p class="example-note"><span class="inline-lang" data-lang="kk">Students &#8212; &#1078;&#1072;&#1083;&#1087;&#1099; &#1089;&#1090;&#1091;&#1076;&#1077;&#1085;&#1090;&#1090;&#1077;&#1088; &#1090;&#1091;&#1088;&#1072;&#1083;&#1099; &#1072;&#1081;&#1090;&#1099;&#1083;&#1099;&#1087; &#1090;&#1201;&#1088;, &#1085;&#1072;&#1179;&#1090;&#1099; &#1073;&#1110;&#1088; &#1090;&#1086;&#1087; &#1077;&#1084;&#1077;&#1089;. &#1057;&#1086;&#1085;&#1076;&#1099;&#1179;&#1090;&#1072;&#1085; <b>the students</b> &#1077;&#1084;&#1077;&#1089;, <b>students</b>.</span><span class="inline-lang" data-lang="ru">Students &#8212; &#1088;&#1077;&#1095;&#1100; &#1086; &#1089;&#1090;&#1091;&#1076;&#1077;&#1085;&#1090;&#1072;&#1093; &#1074;&#1086;&#1086;&#1073;&#1097;&#1077;, &#1085;&#1077; &#1086; &#1082;&#1086;&#1085;&#1082;&#1088;&#1077;&#1090;&#1085;&#1086;&#1081; &#1075;&#1088;&#1091;&#1087;&#1087;&#1077;. &#1055;&#1086;&#1101;&#1090;&#1086;&#1084;&#1091; &#1085;&#1077; <b>the students</b>, &#1072; <b>students</b>.</span></p>
             </div>
 
             <div class="mistake-box">
-              <h4>
-                <span class="inline-lang" data-lang="kk">&#1046;&#1080;&#1110; &#1179;&#1072;&#1090;&#1077;</span>
-                <span class="inline-lang" data-lang="ru">&#1063;&#1072;&#1089;&#1090;&#1072;&#1103; &#1086;&#1096;&#1080;&#1073;&#1082;&#1072;</span>
-              </h4>
-              <p>
-                <span class="inline-lang" data-lang="kk">
-                  &#8220;The English is difficult&#8221; &#1076;&#1077;&#1087; &#1078;&#1072;&#1079;&#1091;&#1171;&#1072; &#1073;&#1086;&#1083;&#1084;&#1072;&#1081;&#1076;&#1099;, &#1077;&#1075;&#1077;&#1088; &#1090;&#1110;&#1083; &#1090;&#1091;&#1088;&#1072;&#1083;&#1099; &#1078;&#1072;&#1083;&#1087;&#1099; &#1072;&#1081;&#1090;&#1089;&#1072;&#1179;. &#1044;&#1201;&#1088;&#1099;&#1089;&#1099;:
-                  <b>English is difficult</b>.
-                </span>
-                <span class="inline-lang" data-lang="ru">
-                  &#1053;&#1077;&#1083;&#1100;&#1079;&#1103; &#1087;&#1080;&#1089;&#1072;&#1090;&#1100; &#8220;The English is difficult&#8221;, &#1077;&#1089;&#1083;&#1080; &#1088;&#1077;&#1095;&#1100; &#1086; &#1103;&#1079;&#1099;&#1082;&#1077; &#1074; &#1086;&#1073;&#1097;&#1077;&#1084;. &#1055;&#1088;&#1072;&#1074;&#1080;&#1083;&#1100;&#1085;&#1086;:
-                  <b>English is difficult</b>.
-                </span>
-              </p>
+              <h4><span class="inline-lang" data-lang="kk">&#1046;&#1080;&#1110; &#1179;&#1072;&#1090;&#1077;</span><span class="inline-lang" data-lang="ru">&#1063;&#1072;&#1089;&#1090;&#1072;&#1103; &#1086;&#1096;&#1080;&#1073;&#1082;&#1072;</span></h4>
+              <p><span class="inline-lang" data-lang="kk"><b>The English</b> &#1076;&#1077;&#1087; &#1078;&#1072;&#1079;&#1091; &#1076;&#1201;&#1088;&#1099;&#1089; &#1077;&#1084;&#1077;&#1089;, &#1077;&#1075;&#1077;&#1088; &#1090;&#1110;&#1083; &#1090;&#1091;&#1088;&#1072;&#1083;&#1099; &#1072;&#1081;&#1090;&#1089;&#1072;&#1179;. &#1044;&#1201;&#1088;&#1099;&#1089;&#1099;: <b>I learn English</b>. &#1041;&#1110;&#1088;&#1072;&#1179; &#1093;&#1072;&#1083;&#1099;&#1179; &#1090;&#1091;&#1088;&#1072;&#1083;&#1099; &#1072;&#1081;&#1090;&#1179;&#1072;&#1085;&#1076;&#1072; <b>the English</b> &#1073;&#1086;&#1083;&#1091;&#1099; &#1084;&#1199;&#1084;&#1082;&#1110;&#1085;: the English &#8212; &#1072;&#1171;&#1099;&#1083;&#1096;&#1099;&#1085; &#1093;&#1072;&#1083;&#1179;&#1099;.</span><span class="inline-lang" data-lang="ru"><b>The English</b> &#8212; &#1086;&#1096;&#1080;&#1073;&#1082;&#1072;, &#1077;&#1089;&#1083;&#1080; &#1088;&#1077;&#1095;&#1100; &#1086; &#1103;&#1079;&#1099;&#1082;&#1077;. &#1055;&#1088;&#1072;&#1074;&#1080;&#1083;&#1100;&#1085;&#1086;: <b>I learn English</b>. &#1053;&#1086; &#1077;&#1089;&#1083;&#1080; &#1088;&#1077;&#1095;&#1100; &#1086; &#1085;&#1072;&#1088;&#1086;&#1076;&#1077;, <b>the English</b> &#1074;&#1086;&#1079;&#1084;&#1086;&#1078;&#1085;&#1086;: the English &#8212; &#1072;&#1085;&#1075;&#1083;&#1080;&#1095;&#1072;&#1085;&#1077;.</span></p>
+            </div>
+
+            <div class="mistake-box">
+              <h4><span class="inline-lang" data-lang="kk">&#1045;&#1088;&#1077;&#1082;&#1096;&#1077; &#1078;&#1072;&#1171;&#1076;&#1072;&#1081;&#1083;&#1072;&#1088;&#1076;&#1099; &#1077;&#1089;&#1090;&#1077; &#1089;&#1072;&#1179;&#1090;&#1072;</span><span class="inline-lang" data-lang="ru">&#1047;&#1072;&#1087;&#1086;&#1084;&#1085;&#1080; &#1080;&#1089;&#1082;&#1083;&#1102;&#1095;&#1077;&#1085;&#1080;&#1103;</span></h4>
+              <p><span class="inline-lang" data-lang="kk">&#1050;&#1257;&#1087; &#1077;&#1083;&#1076;&#1077;&#1088; &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100;&#1089;&#1110;&#1079; &#1082;&#1077;&#1083;&#1077;&#1076;&#1110;: <b>Kazakhstan, Italy, France</b>. &#1041;&#1110;&#1088;&#1072;&#1179; &#1082;&#1077;&#1081;&#1073;&#1110;&#1088; &#1077;&#1083;&#1076;&#1077;&#1088;&#1076;&#1077; <b>the</b> &#1073;&#1086;&#1083;&#1072;&#1076;&#1099;: <b>the USA</b>, <b>the UK</b>, <b>the Netherlands</b>, <b>the Philippines</b>. &#1058;&#1072;&#1091;&#1083;&#1072;&#1088; &#1090;&#1110;&#1079;&#1073;&#1077;&#1075;&#1110;&#1084;&#1077;&#1085; &#1076;&#1077; <b>the</b> &#1179;&#1086;&#1083;&#1076;&#1072;&#1085;&#1099;&#1083;&#1072;&#1076;&#1099;: <b>the Alps</b>, <b>the Himalayas</b>.</span><span class="inline-lang" data-lang="ru">&#1041;&#1086;&#1083;&#1100;&#1096;&#1080;&#1085;&#1089;&#1090;&#1074;&#1086; &#1089;&#1090;&#1088;&#1072;&#1085; &#1073;&#1077;&#1079; &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1103;: <b>Kazakhstan, Italy, France</b>. &#1053;&#1086; &#1074; &#1085;&#1077;&#1082;&#1086;&#1090;&#1086;&#1088;&#1099;&#1093; &#1085;&#1072;&#1079;&#1074;&#1072;&#1085;&#1080;&#1103;&#1093; &#1077;&#1089;&#1090;&#1100; <b>the</b>: <b>the USA</b>, <b>the UK</b>, <b>the Netherlands</b>, <b>the Philippines</b>. &#1057; &#1075;&#1086;&#1088;&#1085;&#1099;&#1084;&#1080; &#1094;&#1077;&#1087;&#1103;&#1084;&#1080; &#1090;&#1086;&#1078;&#1077; &#1080;&#1089;&#1087;&#1086;&#1083;&#1100;&#1079;&#1091;&#1077;&#1090;&#1089;&#1103; <b>the</b>: <b>the Alps</b>, <b>the Himalayas</b>.</span></p>
             </div>
 
             <div class="test-box" data-test="article-zero-test">
-              <div class="test-header">
-                <h4>Mini test &#183; Zero Article</h4>
-                <span class="mini-badge">5 questions</span>
-              </div>
-
-              <div class="question" data-answer="a">
-                <p>1. Choose the correct sentence.</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="art-zero-1" value="a"> Water is necessary for life.</label>
-                  <label class="option"><input type="radio" name="art-zero-1" value="b"> The water is necessary for life.</label>
-                  <label class="option"><input type="radio" name="art-zero-1" value="c"> A water is necessary for life.</label>
-                  <label class="option"><input type="radio" name="art-zero-1" value="d"> An water is necessary for life.</label>
-                  <label class="option"><input type="radio" name="art-zero-1" value="e"> Waters are necessary for life.</label>
-                </div>
-              </div>
-
-              <div class="question" data-answer="c">
-                <p>2. Choose the correct sentence.</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="art-zero-2" value="a"> The English is useful.</label>
-                  <label class="option"><input type="radio" name="art-zero-2" value="b"> A English is useful.</label>
-                  <label class="option"><input type="radio" name="art-zero-2" value="c"> English is useful.</label>
-                  <label class="option"><input type="radio" name="art-zero-2" value="d"> An English is useful.</label>
-                  <label class="option"><input type="radio" name="art-zero-2" value="e"> Englishes are useful.</label>
-                </div>
-              </div>
-
-              <div class="question" data-answer="e">
-                <p>3. Choose the correct sentence with a general plural noun.</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="art-zero-3" value="a"> The books are useful in general.</label>
-                  <label class="option"><input type="radio" name="art-zero-3" value="b"> A books are useful.</label>
-                  <label class="option"><input type="radio" name="art-zero-3" value="c"> An books are useful.</label>
-                  <label class="option"><input type="radio" name="art-zero-3" value="d"> Book are useful.</label>
-                  <label class="option"><input type="radio" name="art-zero-3" value="e"> Books are useful.</label>
-                </div>
-              </div>
-
-              <div class="question" data-answer="b">
-                <p>4. Choose the correct article: &#8220;She studies ___ mathematics.&#8221;</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="art-zero-4" value="a"> the</label>
-                  <label class="option"><input type="radio" name="art-zero-4" value="b"> zero article</label>
-                  <label class="option"><input type="radio" name="art-zero-4" value="c"> a</label>
-                  <label class="option"><input type="radio" name="art-zero-4" value="d"> an</label>
-                  <label class="option"><input type="radio" name="art-zero-4" value="e"> some</label>
-                </div>
-              </div>
-
-              <div class="question" data-answer="d">
-                <p>5. Choose the correct sentence.</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="art-zero-5" value="a"> The breakfast is at 8 every day.</label>
-                  <label class="option"><input type="radio" name="art-zero-5" value="b"> A breakfast is at 8 every day.</label>
-                  <label class="option"><input type="radio" name="art-zero-5" value="c"> An breakfast is at 8 every day.</label>
-                  <label class="option"><input type="radio" name="art-zero-5" value="d"> Breakfast is at 8 every day.</label>
-                  <label class="option"><input type="radio" name="art-zero-5" value="e"> Breakfasts is at 8 every day.</label>
-                </div>
-              </div>
-
-              <button class="check-btn" type="button" data-check="article-zero-test">
-                <span class="inline-lang" data-lang="kk">&#1046;&#1072;&#1091;&#1072;&#1087;&#1090;&#1072;&#1088;&#1076;&#1099; &#1090;&#1077;&#1082;&#1089;&#1077;&#1088;&#1091;</span>
-                <span class="inline-lang" data-lang="ru">&#1055;&#1088;&#1086;&#1074;&#1077;&#1088;&#1080;&#1090;&#1100; &#1086;&#1090;&#1074;&#1077;&#1090;&#1099;</span>
-              </button>
-
-              <div class="result-box" data-result="article-zero-test">
-                <h5>
-                  <span class="inline-lang" data-lang="kk">&#1058;&#1199;&#1089;&#1110;&#1085;&#1076;&#1110;&#1088;&#1084;&#1077;</span>
-                  <span class="inline-lang" data-lang="ru">&#1054;&#1073;&#1098;&#1103;&#1089;&#1085;&#1077;&#1085;&#1080;&#1077;</span>
-                </h5>
-
-                <div class="lang-content" data-lang="kk">
-                  <ol>
-                    <li><b>Water</b> &#1078;&#1072;&#1083;&#1087;&#1099; &#1084;&#1072;&#1171;&#1099;&#1085;&#1072;&#1076;&#1072; &#1090;&#1201;&#1088;&#1171;&#1072;&#1085; &#1089;&#1072;&#1085;&#1072;&#1083;&#1084;&#1072;&#1081;&#1090;&#1099;&#1085; &#1079;&#1072;&#1090; &#1077;&#1089;&#1110;&#1084;.</li>
-                    <li><b>English</b> &#1090;&#1110;&#1083; &#1072;&#1090;&#1072;&#1091;&#1099;, &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100; &#1179;&#1086;&#1083;&#1076;&#1072;&#1085;&#1099;&#1083;&#1084;&#1072;&#1081;&#1076;&#1099;.</li>
-                    <li><b>Books</b> &#1078;&#1072;&#1083;&#1087;&#1099; &#1082;&#1257;&#1087;&#1096;&#1077; &#1084;&#1072;&#1171;&#1099;&#1085;&#1072;&#1076;&#1072; &#1090;&#1201;&#1088;.</li>
-                    <li><b>mathematics</b> &#1087;&#1241;&#1085; &#1072;&#1090;&#1072;&#1091;&#1099;, &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100; &#1179;&#1072;&#1078;&#1077;&#1090; &#1077;&#1084;&#1077;&#1089;.</li>
-                    <li><b>Breakfast</b> &#1082;&#1199;&#1085;&#1076;&#1077;&#1083;&#1110;&#1082;&#1090;&#1110; &#1072;&#1089; &#1072;&#1090;&#1072;&#1091;&#1099; &#1088;&#1077;&#1090;&#1110;&#1085;&#1076;&#1077; &#1078;&#1072;&#1083;&#1087;&#1099; &#1072;&#1081;&#1090;&#1099;&#1083;&#1099;&#1087; &#1090;&#1201;&#1088;.</li>
-                  </ol>
-                </div>
-
-                <div class="lang-content" data-lang="ru">
-                  <ol>
-                    <li><b>Water</b> &#8212; &#1085;&#1077;&#1080;&#1089;&#1095;&#1080;&#1089;&#1083;&#1103;&#1077;&#1084;&#1086;&#1077; &#1089;&#1091;&#1097;&#1077;&#1089;&#1090;&#1074;&#1080;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086;&#1077; &#1074; &#1086;&#1073;&#1097;&#1077;&#1084; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1080;.</li>
-                    <li><b>English</b> &#8212; &#1085;&#1072;&#1079;&#1074;&#1072;&#1085;&#1080;&#1077; &#1103;&#1079;&#1099;&#1082;&#1072;, &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100; &#1085;&#1077; &#1085;&#1091;&#1078;&#1077;&#1085;.</li>
-                    <li><b>Books</b> &#8212; &#1086;&#1073;&#1097;&#1077;&#1077; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1077; &#1074;&#1086; &#1084;&#1085;&#1086;&#1078;&#1077;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1084; &#1095;&#1080;&#1089;&#1083;&#1077;.</li>
-                    <li><b>mathematics</b> &#8212; &#1085;&#1072;&#1079;&#1074;&#1072;&#1085;&#1080;&#1077; &#1087;&#1088;&#1077;&#1076;&#1084;&#1077;&#1090;&#1072;, &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100; &#1085;&#1077; &#1085;&#1091;&#1078;&#1077;&#1085;.</li>
-                    <li><b>Breakfast</b> &#1080;&#1089;&#1087;&#1086;&#1083;&#1100;&#1079;&#1091;&#1077;&#1090;&#1089;&#1103; &#1082;&#1072;&#1082; &#1086;&#1073;&#1099;&#1095;&#1085;&#1086;&#1077; &#1085;&#1072;&#1079;&#1074;&#1072;&#1085;&#1080;&#1077; &#1087;&#1088;&#1080;&#1105;&#1084;&#1072; &#1087;&#1080;&#1097;&#1080;.</li>
-                  </ol>
-                </div>
-              </div>
+              <div class="test-header"><h4>Mini test &#183; Zero Article</h4><span class="mini-badge">5 questions</span></div>
+              <div class="question" data-answer="d"><p>1. Choose the correct sentence.</p><div class="options"><label class="option"><input type="radio" name="art-zero-1" value="a"> She speaks the English.</label><label class="option"><input type="radio" name="art-zero-1" value="b"> She speaks an English.</label><label class="option"><input type="radio" name="art-zero-1" value="c"> She speaks a English.</label><label class="option"><input type="radio" name="art-zero-1" value="d"> She speaks English.</label><label class="option"><input type="radio" name="art-zero-1" value="e"> She speaks some English language.</label></div></div>
+              <div class="question" data-answer="b"><p>2. Choose the correct sentence.</p><div class="options"><label class="option"><input type="radio" name="art-zero-2" value="a"> The water is important for life in general.</label><label class="option"><input type="radio" name="art-zero-2" value="b"> Water is important for life.</label><label class="option"><input type="radio" name="art-zero-2" value="c"> A water is important for life.</label><label class="option"><input type="radio" name="art-zero-2" value="d"> An water is important for life.</label><label class="option"><input type="radio" name="art-zero-2" value="e"> Waters is important for life.</label></div></div>
+              <div class="question" data-answer="a"><p>3. Complete: We usually have ___ lunch at noon.</p><div class="options"><label class="option"><input type="radio" name="art-zero-3" value="a"> -</label><label class="option"><input type="radio" name="art-zero-3" value="b"> a</label><label class="option"><input type="radio" name="art-zero-3" value="c"> an</label><label class="option"><input type="radio" name="art-zero-3" value="d"> the</label><label class="option"><input type="radio" name="art-zero-3" value="e"> some</label></div></div>
+              <div class="question" data-answer="e"><p>4. Choose the correct sentence.</p><div class="options"><label class="option"><input type="radio" name="art-zero-4" value="a"> The Kazakhstan is large.</label><label class="option"><input type="radio" name="art-zero-4" value="b"> A Kazakhstan is large.</label><label class="option"><input type="radio" name="art-zero-4" value="c"> An Kazakhstan is large.</label><label class="option"><input type="radio" name="art-zero-4" value="d"> Some Kazakhstan is large.</label><label class="option"><input type="radio" name="art-zero-4" value="e"> Kazakhstan is large.</label></div></div>
+              <div class="question" data-answer="c"><p>5. Choose the correct phrase.</p><div class="options"><label class="option"><input type="radio" name="art-zero-5" value="a"> the Mount Everest</label><label class="option"><input type="radio" name="art-zero-5" value="b"> a Mount Everest</label><label class="option"><input type="radio" name="art-zero-5" value="c"> Mount Everest</label><label class="option"><input type="radio" name="art-zero-5" value="d"> an Mount Everest</label><label class="option"><input type="radio" name="art-zero-5" value="e"> some Mount Everest</label></div></div>
+              <button class="check-btn" type="button" data-check="article-zero-test"><span class="inline-lang" data-lang="kk">&#1046;&#1072;&#1091;&#1072;&#1087;&#1090;&#1072;&#1088;&#1076;&#1099; &#1090;&#1077;&#1082;&#1089;&#1077;&#1088;&#1091;</span><span class="inline-lang" data-lang="ru">&#1055;&#1088;&#1086;&#1074;&#1077;&#1088;&#1080;&#1090;&#1100; &#1086;&#1090;&#1074;&#1077;&#1090;&#1099;</span></button>
+              <div class="result-box" data-result="article-zero-test"><h5><span class="inline-lang" data-lang="kk">&#1058;&#1199;&#1089;&#1110;&#1085;&#1076;&#1110;&#1088;&#1084;&#1077;</span><span class="inline-lang" data-lang="ru">&#1054;&#1073;&#1098;&#1103;&#1089;&#1085;&#1077;&#1085;&#1080;&#1077;</span></h5><div class="lang-content" data-lang="kk"><ol><li>&#1058;&#1110;&#1083; &#1072;&#1090;&#1072;&#1091;&#1099;&#1084;&#1077;&#1085; &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100; &#1179;&#1086;&#1083;&#1076;&#1072;&#1085;&#1099;&#1083;&#1084;&#1072;&#1081;&#1076;&#1099;: <b>English</b>.</li><li>&#1046;&#1072;&#1083;&#1087;&#1099; &#1084;&#1072;&#1171;&#1099;&#1085;&#1072;&#1076;&#1072;&#1171;&#1099; &#1089;&#1072;&#1085;&#1072;&#1083;&#1084;&#1072;&#1081;&#1090;&#1099;&#1085; &#1089;&#1257;&#1079; &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100;&#1089;&#1110;&#1079; &#1082;&#1077;&#1083;&#1077;&#1076;&#1110;: <b>Water</b>.</li><li>&#1050;&#1199;&#1085;&#1076;&#1077;&#1083;&#1110;&#1082;&#1090;&#1110; &#1090;&#1072;&#1084;&#1072;&#1179; &#1072;&#1090;&#1072;&#1091;&#1083;&#1072;&#1088;&#1099;&#1084;&#1077;&#1085; &#1082;&#1257;&#1073;&#1110;&#1085;&#1077; &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100; &#1179;&#1086;&#1081;&#1099;&#1083;&#1084;&#1072;&#1081;&#1076;&#1099;: <b>have lunch</b>.</li><li>&#1178;&#1072;&#1079;&#1072;&#1179;&#1089;&#1090;&#1072;&#1085; &#1089;&#1080;&#1103;&#1179;&#1090;&#1099; &#1082;&#1257;&#1087; &#1077;&#1083; &#1072;&#1090;&#1072;&#1091;&#1083;&#1072;&#1088;&#1099; &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100;&#1089;&#1110;&#1079; &#1179;&#1086;&#1083;&#1076;&#1072;&#1085;&#1099;&#1083;&#1072;&#1076;&#1099;: <b>Kazakhstan</b>.</li><li>&#1046;&#1077;&#1082;&#1077; &#1090;&#1072;&#1091; &#1072;&#1090;&#1072;&#1091;&#1099;&#1084;&#1077;&#1085; &#1241;&#1076;&#1077;&#1090;&#1090;&#1077; &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100; &#1073;&#1086;&#1083;&#1084;&#1072;&#1081;&#1076;&#1099;: <b>Mount Everest</b>.</li></ol></div><div class="lang-content" data-lang="ru"><ol><li>&#1057; &#1103;&#1079;&#1099;&#1082;&#1072;&#1084;&#1080; &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100; &#1085;&#1077; &#1080;&#1089;&#1087;&#1086;&#1083;&#1100;&#1079;&#1091;&#1077;&#1090;&#1089;&#1103;: <b>English</b>.</li><li>&#1053;&#1077;&#1080;&#1089;&#1095;&#1080;&#1089;&#1083;&#1103;&#1077;&#1084;&#1086;&#1077; &#1089;&#1083;&#1086;&#1074;&#1086; &#1074; &#1086;&#1073;&#1097;&#1077;&#1084; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1080; &#1080;&#1076;&#1105;&#1090; &#1073;&#1077;&#1079; &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1103;: <b>Water</b>.</li><li>&#1057; &#1086;&#1073;&#1099;&#1095;&#1085;&#1099;&#1084;&#1080; &#1087;&#1088;&#1080;&#1105;&#1084;&#1072;&#1084;&#1080; &#1087;&#1080;&#1097;&#1080; &#1095;&#1072;&#1097;&#1077; &#1085;&#1077;&#1090; &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1103;: <b>have lunch</b>.</li><li>&#1041;&#1086;&#1083;&#1100;&#1096;&#1080;&#1085;&#1089;&#1090;&#1074;&#1086; &#1089;&#1090;&#1088;&#1072;&#1085; &#1073;&#1077;&#1079; &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1103;: <b>Kazakhstan</b>.</li><li>&#1057; &#1086;&#1090;&#1076;&#1077;&#1083;&#1100;&#1085;&#1086;&#1081; &#1075;&#1086;&#1088;&#1086;&#1081; &#1086;&#1073;&#1099;&#1095;&#1085;&#1086; &#1085;&#1077;&#1090; &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1103;: <b>Mount Everest</b>.</li></ol></div></div>
             </div>
           </div>
         </article>
@@ -4019,7 +4171,7 @@ Shymkent is in the south of Kazakhstan.
           </div>
           <div class="subunit-body">
             <div class="lesson-layout">
-              <div class="lesson-box"><h4>English rule</h4><p><b>The</b> is used not only with a known noun, but also with unique things, ordinal numbers, superlatives, and directions when they mean regions.</p></div>
+              <div class="lesson-box"><h4>English rule</h4><p><b>The</b> is used not only with a known noun, but also with unique things, ordinal numbers, and directions when they mean regions.</p></div>
               <div class="lesson-box"><h4><span class="inline-lang" data-lang="kk">&#1058;&#1199;&#1089;&#1110;&#1085;&#1076;&#1110;&#1088;&#1091;</span><span class="inline-lang" data-lang="ru">&#1054;&#1073;&#1098;&#1103;&#1089;&#1085;&#1077;&#1085;&#1080;&#1077;</span></h4><div class="lang-content" data-lang="kk"><p><b>The</b> &#1090;&#1077;&#1082; &#1073;&#1201;&#1088;&#1099;&#1085; &#1073;&#1077;&#1083;&#1075;&#1110;&#1083;&#1110; &#1079;&#1072;&#1090;&#1087;&#1077;&#1085; &#1171;&#1072;&#1085;&#1072; &#1077;&#1084;&#1077;&#1089;, &#1073;&#1110;&#1088;&#1077;&#1075;&#1077;&#1081; &#1079;&#1072;&#1090;&#1090;&#1072;&#1088;&#1084;&#1077;&#1085;, &#1088;&#1077;&#1090;&#1090;&#1110;&#1082; &#1089;&#1072;&#1085; &#1077;&#1089;&#1110;&#1084;&#1076;&#1077;&#1088;&#1084;&#1077;&#1085;, &#1077;&#1187; &#1078;&#1086;&#1171;&#1072;&#1088;&#1099; &#1076;&#1241;&#1088;&#1077;&#1078;&#1077;&#1084;&#1077;&#1085; &#1078;&#1241;&#1085;&#1077; &#1072;&#1081;&#1084;&#1072;&#1179; &#1088;&#1077;&#1090;&#1110;&#1085;&#1076;&#1077; &#1072;&#1081;&#1090;&#1099;&#1083;&#1171;&#1072;&#1085; &#1073;&#1072;&#1171;&#1099;&#1090;&#1090;&#1072;&#1088;&#1084;&#1077;&#1085; &#1179;&#1086;&#1083;&#1076;&#1072;&#1085;&#1099;&#1083;&#1072;&#1076;&#1099;. &#1041;&#1201;&#1083; &#1077;&#1088;&#1077;&#1078;&#1077;&#1083;&#1077;&#1088; &#1090;&#1077;&#1089;&#1090;&#1090;&#1077; &#1257;&#1090;&#1077; &#1078;&#1080;&#1110; &#1082;&#1077;&#1079;&#1076;&#1077;&#1089;&#1077;&#1076;&#1110;.</p></div><div class="lang-content" data-lang="ru"><p><b>The</b> &#1080;&#1089;&#1087;&#1086;&#1083;&#1100;&#1079;&#1091;&#1077;&#1090;&#1089;&#1103; &#1085;&#1077; &#1090;&#1086;&#1083;&#1100;&#1082;&#1086; &#1089; &#1091;&#1078;&#1077; &#1080;&#1079;&#1074;&#1077;&#1089;&#1090;&#1085;&#1099;&#1084; &#1087;&#1088;&#1077;&#1076;&#1084;&#1077;&#1090;&#1086;&#1084;, &#1085;&#1086; &#1080; &#1089; &#1091;&#1085;&#1080;&#1082;&#1072;&#1083;&#1100;&#1085;&#1099;&#1084;&#1080; &#1086;&#1073;&#1098;&#1077;&#1082;&#1090;&#1072;&#1084;&#1080;, &#1087;&#1086;&#1088;&#1103;&#1076;&#1082;&#1086;&#1074;&#1099;&#1084;&#1080; &#1095;&#1080;&#1089;&#1083;&#1080;&#1090;&#1077;&#1083;&#1100;&#1085;&#1099;&#1084;&#1080;, &#1087;&#1088;&#1077;&#1074;&#1086;&#1089;&#1093;&#1086;&#1076;&#1085;&#1086;&#1081; &#1089;&#1090;&#1077;&#1087;&#1077;&#1085;&#1100;&#1102; &#1080; &#1089;&#1090;&#1086;&#1088;&#1086;&#1085;&#1072;&#1084;&#1080; &#1089;&#1074;&#1077;&#1090;&#1072;, &#1077;&#1089;&#1083;&#1080; &#1086;&#1085;&#1080; &#1086;&#1073;&#1086;&#1079;&#1085;&#1072;&#1095;&#1072;&#1102;&#1090; &#1088;&#1077;&#1075;&#1080;&#1086;&#1085;.</p></div></div>
             </div>
             <div class="formula-box"><div class="formula-main">the sun &#183; the moon &#183; the first &#183; the best &#183; the north &#183; the south &#183; the USA &#183; the UK</div><div class="formula-translation"><span class="inline-lang" data-lang="kk"><span class="label">&#1040;&#1091;&#1076;&#1072;&#1088;&#1084;&#1072;:</span> the sun &#8212; &#1082;&#1199;&#1085;, the moon &#8212; &#1072;&#1081;, the first &#8212; &#1073;&#1110;&#1088;&#1110;&#1085;&#1096;&#1110;, the best &#8212; &#1077;&#1187; &#1078;&#1072;&#1179;&#1089;&#1099;, the north &#8212; &#1089;&#1086;&#1083;&#1090;&#1199;&#1089;&#1090;&#1110;&#1082;, the south &#8212; &#1086;&#1187;&#1090;&#1199;&#1089;&#1090;&#1110;&#1082;.</span><span class="inline-lang" data-lang="ru"><span class="label">&#1055;&#1077;&#1088;&#1077;&#1074;&#1086;&#1076;:</span> the sun &#8212; &#1089;&#1086;&#1083;&#1085;&#1094;&#1077;, the moon &#8212; &#1083;&#1091;&#1085;&#1072;, the first &#8212; &#1087;&#1077;&#1088;&#1074;&#1099;&#1081;, the best &#8212; &#1083;&#1091;&#1095;&#1096;&#1080;&#1081;, the north &#8212; &#1089;&#1077;&#1074;&#1077;&#1088;, the south &#8212; &#1102;&#1075;.</span></div></div>
@@ -4058,7 +4210,15 @@ Shymkent is in the south of Kazakhstan.
               <a class="subunit-chip" href="#adjective-too-enough"><strong>Too / Enough / So / Such</strong><span><span class="inline-lang" data-lang="kk">&#1050;&#1199;&#1096;&#1077;&#1081;&#1090;&#1082;&#1110;&#1096; &#1179;&#1201;&#1088;&#1099;&#1083;&#1099;&#1084;&#1076;&#1072;&#1088;</span><span class="inline-lang" data-lang="ru">&#1059;&#1089;&#1080;&#1083;&#1080;&#1090;&#1077;&#1083;&#1100;&#1085;&#1099;&#1077; &#1082;&#1086;&#1085;&#1089;&#1090;&#1088;&#1091;&#1082;&#1094;&#1080;&#1080;</span></span></a>
             </div>
           </div>
-        </div>
+        
+              <a class="subunit-chip" href="#adjective-what-how">
+                <strong>What / How Exclamations</strong>
+                <span>
+                  <span class="inline-lang" data-lang="kk">What a...! / How...!</span>
+                  <span class="inline-lang" data-lang="ru">&#1074;&#1086;&#1089;&#1082;&#1083;&#1080;&#1094;&#1072;&#1090;&#1077;&#1083;&#1100;&#1085;&#1099;&#1077; &#1082;&#1086;&#1085;&#1089;&#1090;&#1088;&#1091;&#1082;&#1094;&#1080;&#1080;</span>
+                </span>
+              </a>
+</div>
 
         <article class="subunit" id="adjective-overview">
           <div class="subunit-header"><div class="subunit-label">Adjective &#183; Sub-unit 1</div><h3>What is an adjective?</h3><div class="subunit-translation"><span class="inline-lang" data-lang="kk">&#1057;&#1099;&#1085; &#1077;&#1089;&#1110;&#1084; &#1076;&#1077;&#1075;&#1077;&#1085; &#1085;&#1077;?</span><span class="inline-lang" data-lang="ru">&#1063;&#1090;&#1086; &#1090;&#1072;&#1082;&#1086;&#1077; &#1087;&#1088;&#1080;&#1083;&#1072;&#1075;&#1072;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086;&#1077;?</span></div></div>
@@ -4181,7 +4341,72 @@ Shymkent is in the south of Kazakhstan.
           </div>
         </article>
       </div>
-    </section>
+    
+
+        <article class="subunit" id="adjective-what-how">
+          <div class="subunit-header">
+            <div class="subunit-label">Adjective &#183; Sub-unit 7</div>
+            <h3>What / How Exclamations</h3>
+            <div class="subunit-translation">
+              <span class="inline-lang" data-lang="kk">What &#1078;&#1241;&#1085;&#1077; How &#1072;&#1088;&#1179;&#1099;&#1083;&#1099; &#1083;&#1077;&#1087;&#1090;&#1110; &#1089;&#1257;&#1081;&#1083;&#1077;&#1084; &#1179;&#1201;&#1088;&#1091;</span>
+              <span class="inline-lang" data-lang="ru">&#1042;&#1086;&#1089;&#1082;&#1083;&#1080;&#1094;&#1072;&#1090;&#1077;&#1083;&#1100;&#1085;&#1099;&#1077; &#1087;&#1088;&#1077;&#1076;&#1083;&#1086;&#1078;&#1077;&#1085;&#1080;&#1103; &#1089; What &#1080; How</span>
+            </div>
+          </div>
+          <div class="subunit-body">
+            <div class="lesson-layout">
+              <div class="lesson-box">
+                <h4>English rule</h4>
+                <p><b>What</b> and <b>How</b> are used in exclamatory sentences. They make a sentence more emotional. <b>What</b> is usually used with a noun phrase. <b>How</b> is used with an adjective or adverb without a noun after it.</p>
+              </div>
+              <div class="lesson-box">
+                <h4><span class="inline-lang" data-lang="kk">&#1058;&#1199;&#1089;&#1110;&#1085;&#1076;&#1110;&#1088;&#1091;</span><span class="inline-lang" data-lang="ru">&#1054;&#1073;&#1098;&#1103;&#1089;&#1085;&#1077;&#1085;&#1080;&#1077;</span></h4>
+                <div class="lang-content" data-lang="kk"><p><b>What</b> &#8212; &#8220;&#1179;&#1072;&#1085;&#1076;&#1072;&#1081;!&#8221; &#1076;&#1077;&#1075;&#1077;&#1085; &#1101;&#1084;&#1086;&#1094;&#1080;&#1103;&#1085;&#1099; &#1073;&#1110;&#1083;&#1076;&#1110;&#1088;&#1077;&#1076;&#1110; &#1078;&#1241;&#1085;&#1077; &#1082;&#1257;&#1073;&#1110;&#1085;&#1077; &#1079;&#1072;&#1090; &#1077;&#1089;&#1110;&#1084;&#1084;&#1077;&#1085; &#1073;&#1110;&#1088;&#1075;&#1077; &#1082;&#1077;&#1083;&#1077;&#1076;&#1110;. <b>How</b> &#8212; &#8220;&#1179;&#1072;&#1085;&#1096;&#1072;&#1083;&#1099;&#1179;&#1090;&#1099;!&#8221; &#1076;&#1077;&#1075;&#1077;&#1085; &#1084;&#1072;&#1171;&#1099;&#1085;&#1072; &#1073;&#1077;&#1088;&#1077;&#1076;&#1110; &#1078;&#1241;&#1085;&#1077; &#1089;&#1099;&#1085; &#1077;&#1089;&#1110;&#1084;&#1084;&#1077;&#1085; &#1085;&#1077;&#1084;&#1077;&#1089;&#1077; &#1199;&#1089;&#1090;&#1077;&#1091;&#1084;&#1077;&#1085; &#1179;&#1086;&#1083;&#1076;&#1072;&#1085;&#1099;&#1083;&#1072;&#1076;&#1099;. <b>What</b> &#1089;&#1257;&#1079;&#1110;&#1085;&#1077;&#1085; &#1082;&#1077;&#1081;&#1110;&#1085; &#1082;&#1257;&#1073;&#1110;&#1085;&#1077; <b>a/an + adjective + singular noun</b> &#1085;&#1077;&#1084;&#1077;&#1089;&#1077; <b>adjective + plural/uncountable noun</b> &#1082;&#1077;&#1083;&#1077;&#1076;&#1110;.</p></div>
+                <div class="lang-content" data-lang="ru"><p><b>What</b> &#1087;&#1077;&#1088;&#1077;&#1076;&#1072;&#1105;&#1090; &#1101;&#1084;&#1086;&#1094;&#1080;&#1102; &#8220;&#1082;&#1072;&#1082;&#1086;&#1081;!&#8221; &#1080; &#1086;&#1073;&#1099;&#1095;&#1085;&#1086; &#1080;&#1089;&#1087;&#1086;&#1083;&#1100;&#1079;&#1091;&#1077;&#1090;&#1089;&#1103; &#1089; &#1075;&#1088;&#1091;&#1087;&#1087;&#1086;&#1081; &#1089;&#1091;&#1097;&#1077;&#1089;&#1090;&#1074;&#1080;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086;&#1075;&#1086;. <b>How</b> &#1079;&#1085;&#1072;&#1095;&#1080;&#1090; &#8220;&#1082;&#1072;&#1082; / &#1085;&#1072;&#1089;&#1082;&#1086;&#1083;&#1100;&#1082;&#1086;!&#8221; &#1080; &#1080;&#1089;&#1087;&#1086;&#1083;&#1100;&#1079;&#1091;&#1077;&#1090;&#1089;&#1103; &#1089; &#1087;&#1088;&#1080;&#1083;&#1072;&#1075;&#1072;&#1090;&#1077;&#1083;&#1100;&#1085;&#1099;&#1084; &#1080;&#1083;&#1080; &#1085;&#1072;&#1088;&#1077;&#1095;&#1080;&#1077;&#1084;. &#1055;&#1086;&#1089;&#1083;&#1077; <b>What</b> &#1095;&#1072;&#1089;&#1090;&#1086; &#1080;&#1076;&#1105;&#1090; <b>a/an + adjective + singular noun</b> &#1080;&#1083;&#1080; <b>adjective + plural/uncountable noun</b>.</p></div>
+              </div>
+            </div>
+
+            <div class="formula-box">
+              <div class="formula-main">What + a/an + adjective + singular noun! &#183; What + adjective + plural/uncountable noun! &#183; How + adjective/adverb!</div>
+              <div class="formula-translation">
+                <span class="inline-lang" data-lang="kk"><span class="label">KZ:</span> What a clear answer! &#8212; &#1178;&#1072;&#1085;&#1076;&#1072;&#1081; &#1090;&#1199;&#1089;&#1110;&#1085;&#1110;&#1082;&#1090;&#1110; &#1078;&#1072;&#1091;&#1072;&#1087;! How quickly she reads! &#8212; &#1054;&#1083; &#1179;&#1072;&#1085;&#1076;&#1072;&#1081; &#1090;&#1077;&#1079; &#1086;&#1179;&#1080;&#1076;&#1099;!</span>
+                <span class="inline-lang" data-lang="ru"><span class="label">RU:</span> What a clear answer! &#8212; &#1050;&#1072;&#1082;&#1086;&#1081; &#1087;&#1086;&#1085;&#1103;&#1090;&#1085;&#1099;&#1081; &#1086;&#1090;&#1074;&#1077;&#1090;! How quickly she reads! &#8212; &#1050;&#1072;&#1082; &#1073;&#1099;&#1089;&#1090;&#1088;&#1086; &#1086;&#1085;&#1072; &#1095;&#1080;&#1090;&#1072;&#1077;&#1090;!</span>
+              </div>
+            </div>
+
+            <div class="example-box">
+              <p class="example-sentence"><span class="mark adjective">What a</span> useful explanation! <span class="mark adjective">How</span> carefully he listened!</p>
+              <p class="example-note"><span class="inline-lang" data-lang="kk">What a useful explanation &#8212; &#8220;&#1179;&#1072;&#1085;&#1076;&#1072;&#1081; &#1087;&#1072;&#1081;&#1076;&#1072;&#1083;&#1099; &#1090;&#1199;&#1089;&#1110;&#1085;&#1076;&#1110;&#1088;&#1091;!&#8221; &#1052;&#1201;&#1085;&#1076;&#1072; explanation &#8212; &#1078;&#1077;&#1082;&#1077;&#1096;&#1077; &#1089;&#1072;&#1085;&#1072;&#1083;&#1072;&#1090;&#1099;&#1085; &#1079;&#1072;&#1090; &#1077;&#1089;&#1110;&#1084;, &#1089;&#1086;&#1085;&#1076;&#1099;&#1179;&#1090;&#1072;&#1085; <b>a</b> &#1082;&#1077;&#1088;&#1077;&#1082;. How carefully &#8212; &#8220;&#1179;&#1072;&#1085;&#1076;&#1072;&#1081; &#1084;&#1201;&#1179;&#1080;&#1103;&#1090;&#8221;, &#1084;&#1201;&#1085;&#1076;&#1072; carefully &#8212; &#1199;&#1089;&#1090;&#1077;&#1091;.</span><span class="inline-lang" data-lang="ru">What a useful explanation &#8212; &#8220;&#1082;&#1072;&#1082;&#1086;&#1077; &#1087;&#1086;&#1083;&#1077;&#1079;&#1085;&#1086;&#1077; &#1086;&#1073;&#1098;&#1103;&#1089;&#1085;&#1077;&#1085;&#1080;&#1077;!&#8221; Explanation &#8212; &#1080;&#1089;&#1095;&#1080;&#1089;&#1083;&#1103;&#1077;&#1084;&#1086;&#1077; &#1089;&#1091;&#1097;&#1077;&#1089;&#1090;&#1074;&#1080;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086;&#1077; &#1074; &#1077;&#1076;&#1080;&#1085;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1084; &#1095;&#1080;&#1089;&#1083;&#1077;, &#1087;&#1086;&#1101;&#1090;&#1086;&#1084;&#1091; &#1085;&#1091;&#1078;&#1077;&#1085; <b>a</b>. How carefully &#8212; &#8220;&#1082;&#1072;&#1082; &#1074;&#1085;&#1080;&#1084;&#1072;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086;&#8221;, carefully &#8212; &#1085;&#1072;&#1088;&#1077;&#1095;&#1080;&#1077;.</span></p>
+            </div>
+
+            <div class="lesson-box">
+              <h4><span class="inline-lang" data-lang="kk">&#1178;&#1201;&#1088;&#1099;&#1083;&#1099;&#1084;&#1076;&#1072;&#1088;&#1076;&#1099; &#1072;&#1078;&#1099;&#1088;&#1072;&#1090;&#1091;</span><span class="inline-lang" data-lang="ru">&#1050;&#1072;&#1082; &#1086;&#1090;&#1083;&#1080;&#1095;&#1072;&#1090;&#1100; &#1082;&#1086;&#1085;&#1089;&#1090;&#1088;&#1091;&#1082;&#1094;&#1080;&#1080;</span></h4>
+              <ul>
+                <li><b>What a/an + adjective + singular noun!</b> &#8212; <b>What an interesting story!</b> &#8212; &#1178;&#1072;&#1085;&#1076;&#1072;&#1081; &#1179;&#1099;&#1079;&#1099;&#1179; &#1086;&#1179;&#1080;&#1171;&#1072;! / &#1050;&#1072;&#1082;&#1072;&#1103; &#1080;&#1085;&#1090;&#1077;&#1088;&#1077;&#1089;&#1085;&#1072;&#1103; &#1080;&#1089;&#1090;&#1086;&#1088;&#1080;&#1103;!</li>
+                <li><b>What + adjective + plural noun!</b> &#8212; <b>What difficult tasks!</b> &#8212; &#1178;&#1072;&#1085;&#1076;&#1072;&#1081; &#1179;&#1080;&#1099;&#1085; &#1090;&#1072;&#1087;&#1089;&#1099;&#1088;&#1084;&#1072;&#1083;&#1072;&#1088;! / &#1050;&#1072;&#1082;&#1080;&#1077; &#1090;&#1088;&#1091;&#1076;&#1085;&#1099;&#1077; &#1079;&#1072;&#1076;&#1072;&#1085;&#1080;&#1103;!</li>
+                <li><b>What + adjective + uncountable noun!</b> &#8212; <b>What useful advice!</b> &#8212; &#1178;&#1072;&#1085;&#1076;&#1072;&#1081; &#1087;&#1072;&#1081;&#1076;&#1072;&#1083;&#1099; &#1082;&#1077;&#1187;&#1077;&#1089;! / &#1050;&#1072;&#1082;&#1086;&#1081; &#1087;&#1086;&#1083;&#1077;&#1079;&#1085;&#1099;&#1081; &#1089;&#1086;&#1074;&#1077;&#1090;!</li>
+                <li><b>How + adjective!</b> &#8212; <b>How simple!</b> &#8212; &#1178;&#1072;&#1085;&#1076;&#1072;&#1081; &#1086;&#1187;&#1072;&#1081;! / &#1050;&#1072;&#1082; &#1087;&#1088;&#1086;&#1089;&#1090;&#1086;!</li>
+                <li><b>How + adverb!</b> &#8212; <b>How quietly they spoke!</b> &#8212; &#1054;&#1083;&#1072;&#1088; &#1179;&#1072;&#1085;&#1076;&#1072;&#1081; &#1078;&#1072;&#1081; &#1089;&#1257;&#1081;&#1083;&#1077;&#1076;&#1110;! / &#1050;&#1072;&#1082; &#1090;&#1080;&#1093;&#1086; &#1086;&#1085;&#1080; &#1075;&#1086;&#1074;&#1086;&#1088;&#1080;&#1083;&#1080;!</li>
+              </ul>
+            </div>
+
+            <div class="mistake-box">
+              <h4><span class="inline-lang" data-lang="kk">&#1046;&#1080;&#1110; &#1179;&#1072;&#1090;&#1077;</span><span class="inline-lang" data-lang="ru">&#1063;&#1072;&#1089;&#1090;&#1072;&#1103; &#1086;&#1096;&#1080;&#1073;&#1082;&#1072;</span></h4>
+              <p><span class="inline-lang" data-lang="kk"><b>What useful explanation!</b> &#8212; &#1179;&#1072;&#1090;&#1077;, &#1077;&#1075;&#1077;&#1088; <b>explanation</b> &#1078;&#1077;&#1082;&#1077;&#1096;&#1077; &#1089;&#1072;&#1085;&#1072;&#1083;&#1072;&#1090;&#1099;&#1085; &#1079;&#1072;&#1090; &#1077;&#1089;&#1110;&#1084; &#1073;&#1086;&#1083;&#1089;&#1072;. &#1044;&#1201;&#1088;&#1099;&#1089;&#1099;: <b>What a useful explanation!</b> &#1041;&#1110;&#1088;&#1072;&#1179; <b>What useful advice!</b> &#1076;&#1201;&#1088;&#1099;&#1089;, &#1257;&#1081;&#1090;&#1082;&#1077;&#1085;&#1110; <b>advice</b> &#1089;&#1072;&#1085;&#1072;&#1083;&#1084;&#1072;&#1081;&#1090;&#1099;&#1085; &#1079;&#1072;&#1090; &#1077;&#1089;&#1110;&#1084;.</span><span class="inline-lang" data-lang="ru"><b>What useful explanation!</b> &#8212; &#1086;&#1096;&#1080;&#1073;&#1082;&#1072;, &#1077;&#1089;&#1083;&#1080; <b>explanation</b> &#1080;&#1089;&#1095;&#1080;&#1089;&#1083;&#1103;&#1077;&#1084;&#1086;&#1077; &#1089;&#1091;&#1097;&#1077;&#1089;&#1090;&#1074;&#1080;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086;&#1077; &#1074; &#1077;&#1076;&#1080;&#1085;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1084; &#1095;&#1080;&#1089;&#1083;&#1077;. &#1055;&#1088;&#1072;&#1074;&#1080;&#1083;&#1100;&#1085;&#1086;: <b>What a useful explanation!</b> &#1053;&#1086; <b>What useful advice!</b> &#1087;&#1088;&#1072;&#1074;&#1080;&#1083;&#1100;&#1085;&#1086;, &#1087;&#1086;&#1090;&#1086;&#1084;&#1091; &#1095;&#1090;&#1086; <b>advice</b> &#1085;&#1077;&#1080;&#1089;&#1095;&#1080;&#1089;&#1083;&#1103;&#1077;&#1084;&#1086;&#1077;.</span></p>
+            </div>
+
+            <div class="test-box" data-test="adjective-what-how-test">
+              <div class="test-header"><h4>Mini test &#183; What / How</h4><span class="mini-badge">5 questions</span></div>
+              <div class="question" data-answer="d"><p>1. ___ beautiful painting!</p><div class="options"><label class="option"><input type="radio" name="wh-1" value="a"> How a</label><label class="option"><input type="radio" name="wh-1" value="b"> What</label><label class="option"><input type="radio" name="wh-1" value="c"> How</label><label class="option"><input type="radio" name="wh-1" value="d"> What a</label><label class="option"><input type="radio" name="wh-1" value="e"> What an</label></div></div>
+              <div class="question" data-answer="a"><p>2. ___ quickly the students answered!</p><div class="options"><label class="option"><input type="radio" name="wh-2" value="a"> How</label><label class="option"><input type="radio" name="wh-2" value="b"> What</label><label class="option"><input type="radio" name="wh-2" value="c"> What a</label><label class="option"><input type="radio" name="wh-2" value="d"> What an</label><label class="option"><input type="radio" name="wh-2" value="e"> Such</label></div></div>
+              <div class="question" data-answer="c"><p>3. ___ useful advice!</p><div class="options"><label class="option"><input type="radio" name="wh-3" value="a"> What a</label><label class="option"><input type="radio" name="wh-3" value="b"> What an</label><label class="option"><input type="radio" name="wh-3" value="c"> What</label><label class="option"><input type="radio" name="wh-3" value="d"> How a</label><label class="option"><input type="radio" name="wh-3" value="e"> How an</label></div></div>
+              <div class="question" data-answer="b"><p>4. ___ honest answer!</p><div class="options"><label class="option"><input type="radio" name="wh-4" value="a"> What a</label><label class="option"><input type="radio" name="wh-4" value="b"> What an</label><label class="option"><input type="radio" name="wh-4" value="c"> How</label><label class="option"><input type="radio" name="wh-4" value="d"> What</label><label class="option"><input type="radio" name="wh-4" value="e"> Such</label></div></div>
+              <div class="question" data-answer="e"><p>5. ___ careful she is!</p><div class="options"><label class="option"><input type="radio" name="wh-5" value="a"> What</label><label class="option"><input type="radio" name="wh-5" value="b"> What a</label><label class="option"><input type="radio" name="wh-5" value="c"> What an</label><label class="option"><input type="radio" name="wh-5" value="d"> Such</label><label class="option"><input type="radio" name="wh-5" value="e"> How</label></div></div>
+              <button class="check-btn" type="button" data-check="adjective-what-how-test"><span class="inline-lang" data-lang="kk">&#1053;&#1241;&#1090;&#1080;&#1078;&#1077;&#1085;&#1110; &#1082;&#1257;&#1088;&#1089;&#1077;&#1090;&#1091;</span><span class="inline-lang" data-lang="ru">&#1055;&#1086;&#1082;&#1072;&#1079;&#1072;&#1090;&#1100; &#1088;&#1077;&#1079;&#1091;&#1083;&#1100;&#1090;&#1072;&#1090;</span></button>
+              <div class="result-box" data-result="adjective-what-how-test"><h5><span class="inline-lang" data-lang="kk">&#1058;&#1199;&#1089;&#1110;&#1085;&#1076;&#1110;&#1088;&#1091;</span><span class="inline-lang" data-lang="ru">&#1054;&#1073;&#1098;&#1103;&#1089;&#1085;&#1077;&#1085;&#1080;&#1077;</span></h5><ol><li><b>painting</b> &#8212; &#1078;&#1077;&#1082;&#1077;&#1096;&#1077; &#1089;&#1072;&#1085;&#1072;&#1083;&#1072;&#1090;&#1099;&#1085; &#1079;&#1072;&#1090; &#1077;&#1089;&#1110;&#1084;, &#1089;&#1086;&#1085;&#1076;&#1099;&#1179;&#1090;&#1072;&#1085; <b>What a</b>.</li><li><b>quickly</b> &#8212; &#1199;&#1089;&#1090;&#1077;&#1091;, &#1089;&#1086;&#1085;&#1076;&#1099;&#1179;&#1090;&#1072;&#1085; <b>How</b>.</li><li><b>advice</b> &#8212; &#1089;&#1072;&#1085;&#1072;&#1083;&#1084;&#1072;&#1081;&#1090;&#1099;&#1085; &#1079;&#1072;&#1090; &#1077;&#1089;&#1110;&#1084;, &#1072;&#1088;&#1090;&#1080;&#1082;&#1083;&#1100; &#1179;&#1086;&#1081;&#1099;&#1083;&#1084;&#1072;&#1081;&#1076;&#1099;: <b>What useful advice!</b></li><li><b>honest</b> &#1076;&#1099;&#1073;&#1099;&#1089;&#1099; &#1076;&#1072;&#1091;&#1099;&#1089;&#1090;&#1099;&#1076;&#1072;&#1085; &#1073;&#1072;&#1089;&#1090;&#1072;&#1083;&#1072;&#1076;&#1099;, &#1089;&#1086;&#1085;&#1076;&#1099;&#1179;&#1090;&#1072;&#1085; <b>an</b>: <b>What an honest answer!</b></li><li><b>careful</b> &#8212; &#1089;&#1099;&#1085; &#1077;&#1089;&#1110;&#1084;, &#1079;&#1072;&#1090; &#1077;&#1089;&#1110;&#1084; &#1078;&#1086;&#1179;, &#1089;&#1086;&#1085;&#1076;&#1099;&#1179;&#1090;&#1072;&#1085; <b>How careful!</b></li></ol></div>
+            </div>
+          </div>
+        </article>
+</section>
     <section class="grammar-section" id="pronoun">
       <div class="page-shell">
         <div class="grammar-hero">
@@ -5676,24 +5901,29 @@ Shymkent is in the south of Kazakhstan.
     </div>
   </footer>
 
-  <a class="back-to-top" href="#top" aria-label="Back to top">&#8593;</a>
+  <button class="back-to-top" type="button" onclick="window.scrollTo({top:0, behavior:'smooth'});" aria-label="Back to top"><span class="arrow">&#8593;</span><span class="inline-lang" data-lang="kk">&#1046;&#1086;&#1171;&#1072;&#1088;&#1099;</span><span class="inline-lang" data-lang="ru">&#1053;&#1072;&#1074;&#1077;&#1088;&#1093;</span></button>
 
   <script>
     function switchLanguage(lang) {
+      if (lang !== "kk" && lang !== "ru") lang = "kk";
+
       document.body.classList.remove("lang-kk", "lang-ru");
       document.body.classList.add("lang-" + lang);
+      document.documentElement.setAttribute("lang", lang === "kk" ? "kk" : "ru");
+
+      document.querySelectorAll(".inline-lang, .block-lang, .lang-content").forEach(function(el) {
+        const isActive = el.getAttribute("data-lang") === lang;
+        el.hidden = !isActive;
+        el.style.display = isActive ? (el.classList.contains("inline-lang") ? "inline" : "block") : "none";
+      });
 
       document.querySelectorAll(".lang-btn").forEach(function(btn) {
-        btn.classList.remove("active");
+        const isActive = btn.getAttribute("data-set-lang") === lang;
+        btn.classList.toggle("active", isActive);
+        btn.setAttribute("aria-pressed", isActive ? "true" : "false");
       });
 
-      document.querySelectorAll('[data-set-lang="' + lang + '"]').forEach(function(btn) {
-        btn.classList.add("active");
-      });
-
-      try {
-        localStorage.setItem("geGrammarLang", lang);
-      } catch (e) {}
+      try { localStorage.setItem("geGrammarLang", lang); } catch (e) {}
     }
 
     function checkTest(testId) {
